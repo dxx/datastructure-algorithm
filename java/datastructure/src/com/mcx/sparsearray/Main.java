@@ -104,8 +104,9 @@ public class Main {
     public static int[][] readSparseArray() {
         int[][] sparseArray = {};
         File file = new File(sparseArrayFileName);
-        try (FileInputStream fis = new FileInputStream(file)) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fis));
+        try (FileInputStream fis = new FileInputStream(file);
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fis))
+        ) {
             // 读取第一行
             String str = bufferedReader.readLine();
             String[] strs = str.split("\t");
@@ -130,7 +131,6 @@ public class Main {
                 sparseArray[i][2] = val;
                 i++;
             }
-            bufferedReader.readLine();
         } catch (Exception e) {
             e.printStackTrace();
         }
