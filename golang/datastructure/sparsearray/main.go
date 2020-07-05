@@ -89,6 +89,7 @@ func storageSparseArray(sparseArray [][3]int) {
 
     if err != nil {
         fmt.Println("创建文件 sparse.data 错误:", err)
+        return
     }
     // 存储矩阵格式
     for i := 0; i < len(sparseArray); i++ {
@@ -112,6 +113,7 @@ func readSparseArray() [][3]int {
 
     if err != nil {
         fmt.Println("打开文件 sparse.data 错误:", err)
+        return nil
     }
     sparseArray := make([][3]int, 0)
     reader := bufio.NewReader(file)
