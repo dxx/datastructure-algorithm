@@ -10,7 +10,7 @@
 
 下图是一个 0 值远大于非 0 值的二维数组
 
-![data_structure_sparsearray_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_02.png)
+![data_structure_sparsearray_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_01.png)
 
 稀疏数组可以看做是一个压缩的数组，稀疏数组的好处有：
 
@@ -19,7 +19,7 @@
 
 采用稀疏数组的存储方式为第一行存储原始数据总行数，总列数，默认值 0，接下来每一行都存储非0数所在行，所在列，和具体值。上图中的二维数组转成稀疏数组后如下：
 
-![data_structure_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_02.png)
+![data_structure_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_02.png)
 
 
 
