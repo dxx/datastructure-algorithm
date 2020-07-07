@@ -10,7 +10,7 @@
 
 下图是一个 0 值远大于非 0 值的二维数组
 
-![data_structure_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_01.png)
+![data_structure_sparsearray_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_02.png)
 
 稀疏数组可以看做是一个压缩的数组，稀疏数组的好处有：
 

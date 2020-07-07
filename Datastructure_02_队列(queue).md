@@ -8,7 +8,7 @@
 
 队列是一种特殊的线性表，它只允许在线性表的前端进行删除操作，在表的后端进行插入操作，所以队列又称为先进先出（FIFO—first in first out）的线性表。进行插入操作的一端叫做队尾，进行删除操作的一端叫做队头。队列的数据元素叫做队列元素，在队列中插入一个队列元素称为入队，从队列中删除一个队列元素称为出队。
 
-![data_structure_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_03.png)
+![data_structure_queue_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_queue_01.png)
 
 ### 顺序队列
 
