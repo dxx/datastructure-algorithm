@@ -36,7 +36,7 @@ ReversePoland.prototype._priority = function(opt1, opt2) {
   let operation2 = operations[opt2];
   if (!operation1 || !operation2) {
     console.error("请检查运算符: " + opt1 + "," + opt2);
-	return;
+    return;
   }
   return operation1.priority - operation2.priority;
 }
