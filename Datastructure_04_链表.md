@@ -18,7 +18,7 @@
 
 我们的都知道水浒传里面有梁山英雄排名，以梁山英雄排名为例，用单向链表来写一个示例。
 
-![shuihuzhuan](./images/shuihuzhuan.png)
+![shuihuzhuan](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/shuihuzhuan.png)
 
 首先定义一个结构体用来存储数据和下一个指针：
 
@@ -527,7 +527,7 @@ func main() {
 
 循环链表的特点是表中最后一个结点的指针域指向头结点，整个链表形成一个环。
 
-![data_structure_linkedlist_04](./images/data_structure_linkedlist_04.png)
+![data_structure_linkedlist_04](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_04.png)
 
 下面创建一个双向的循环链表结构体：
 
