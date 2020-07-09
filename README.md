@@ -40,6 +40,8 @@
 
 [栈(stack)](./Datastructure_03_栈(stack).md)
 
+[链表](./Datastructure_04_链表.md)
+
 ## 算法
 
 待更新...
