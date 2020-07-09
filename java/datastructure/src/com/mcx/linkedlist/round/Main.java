@@ -99,7 +99,7 @@ public class Main {
                 if (tempNode.getNo() == node.getNo()) {
                     isExist = true;
                     // 头结点删除了，将头结点的下一个结点作为头结点
-                    headNode = tempNode.next;
+                    headNode = tempNode.getNext();
                 }
                 break;
             } else if (tempNode.getNo() == node.getNo()) {

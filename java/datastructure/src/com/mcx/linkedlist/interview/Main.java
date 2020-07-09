@@ -36,6 +36,9 @@ public class Main {
             return null;
         }
         int length = getNodeLength(headNode);
+        if (index <= 0 || index > length) {
+            return null;
+        }
         Node lastNode = headNode.getNext();
         for (int i = 0; i < length - index; i++) {
             lastNode = lastNode.getNext();
