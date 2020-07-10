@@ -42,6 +42,12 @@
 
 [链表](./Datastructure_04_链表.md)
 
+[哈希表(散列)](./Datastructure_05_哈希表(散列).md)
+
+[树](./Datastructure_06_树.md)
+
+[图](./Datastructure_07_图.md)
+
 ## 算法
 
 待更新...
