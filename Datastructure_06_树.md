@@ -10,7 +10,7 @@
 
 [二叉排序树](./Datastructure_06_树.md#二叉排序树)
 
-[AVL 树](./Datastructure_06_树.md#AVL 树)
+[AVL 树](./Datastructure_06_树.md#AVL%20树)
 
 ### 简介
 
