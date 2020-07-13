@@ -50,4 +50,20 @@
 
 ## 算法
 
-待更新...
+[递归](./Algorithm_01_递归.md)
+
+[排序](./Algorithm_02_排序.md)
+
+[查找](./Algorithm_03_查找.md)
+
+[分治算法](./Algorithm_04_分治算法.md)
+
+[KMP算法](./Algorithm_05_KMP算法.md)
+
+[贪心算法](./Algorithm_06_贪心算法.md)
+
+[普里姆(Prim)算法](./Algorithm_07_普里姆(Prim)算法.md)
+
+[克鲁斯卡尔算法](./Algorithm_08_克鲁斯卡尔算法.md)
+
+[马踏棋盘算法](./Algorithm_09_马踏棋盘算法.md)
