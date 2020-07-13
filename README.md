@@ -36,13 +36,13 @@
 
 [稀疏数组](./Datastructure_01_稀疏数组.md)
 
-[队列(queue)](./Datastructure_02_队列(queue).md)
+[队列](./Datastructure_02_队列.md)
 
-[栈(stack)](./Datastructure_03_栈(stack).md)
+[栈](./Datastructure_03_栈.md)
 
 [链表](./Datastructure_04_链表.md)
 
-[哈希表(散列)](./Datastructure_05_哈希表(散列).md)
+[哈希表](./Datastructure_05_哈希表.md)
 
 [树](./Datastructure_06_树.md)
 
