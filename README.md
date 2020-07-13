@@ -52,13 +52,36 @@
 
 [递归](./Algorithm_01_递归.md)
 
+* [迷宫回溯](./Algorithm_01_递归.md#迷宫回缩)
+
+* [八皇后](./Algorithm_01_递归.md#八皇后)
+
 [排序](./Algorithm_02_排序.md)
+
+* [冒泡排序](./Algorithm_02_排序.md#冒泡排序)
+* [选择排序](./Algorithm_02_排序.md#选择排序)
+* [插入排序](./Algorithm_02_排序.md#插入排序)
+* [快速排序](./Algorithm_02_排序.md#快速排序)
+* [希尔排序](./Algorithm_02_排序.md#希尔排序)
+* [归并排序](./Algorithm_02_排序.md#归并排序)
+* [基数排序](./Algorithm_02_排序.md#基数排序)
 
 [查找](./Algorithm_03_查找.md)
 
+* [线性查找](./Algorithm_03_查找.md#线性查找)
+* [二分法查找](./Algorithm_03_查找.md#二分法查找)
+* [二分法查找(非递归)](./Algorithm_03_查找.md#二分法查找(非递归))
+* [插值查找](./Algorithm_03_查找.md#插值查找)
+* [斐波那契查找](./Algorithm_03_查找.md#斐波那契查找)
+
 [分治算法](./Algorithm_04_分治算法.md)
 
+* [汉诺塔](./Algorithm_04_分治算法.md#汉诺塔)
+
 [KMP算法](./Algorithm_05_KMP算法.md)
+
+* [暴力匹配](./Algorithm_05_KMP算法.md#暴力匹配)
+* [KMP匹配](./Algorithm_05_KMP算法.md#KMP匹配)
 
 [贪心算法](./Algorithm_06_贪心算法.md)
 
