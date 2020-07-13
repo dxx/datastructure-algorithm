@@ -42,7 +42,7 @@ Kruskal 算法是一种用来查找最小生成树的算法。用来解决同样
 
 对于判断是否构成回路分析如下：
 
-在将 E、F，C、D ，D、E 加入到 V 中之后，这几条边的顶点就都有了终点 F。
+在将 E-F、C-D、D-E 加入到 V 中之后，这几条边的顶点就都有了终点 F。
 
 ![algorithm_kruskal_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_3.png)
 
