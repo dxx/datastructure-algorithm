@@ -65,7 +65,7 @@
 * [希尔排序](./Algorithm_02_排序.md#希尔排序)
 * [归并排序](./Algorithm_02_排序.md#归并排序)
 * [基数排序](./Algorithm_02_排序.md#基数排序)
-* [堆排序](./Datastructure_06_树#堆排序)
+* [堆排序](./Datastructure_06_树.md#堆排序)
 
 [查找](./Algorithm_03_查找.md)
 
