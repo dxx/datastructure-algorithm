@@ -99,10 +99,11 @@ func main() {
         {1, 0, 0, 0, 0, 0 , 0, 1},
         {1, 1, 1, 1, 1, 1 , 1, 1},
     }
-    fmt.Printf("探路之前\n")
-    for i := 0; i < 8; i++ {
-        for j := 0; j < 8; j++ {
-            fmt.Printf("%d ", miGongMap[i][j])
+
+    fmt.Printf("探路之前:\n")
+    for _, nums := range miGongMap {
+        for _, anInt := range nums {
+            fmt.Printf("%d ", anInt)
         }
         fmt.Println()
     }
@@ -110,10 +111,10 @@ func main() {
     // 开始探路,起点为 1, 1
     walk(miGongMap, 1, 1)
 
-    fmt.Printf("探路之后\n")
-    for i := 0; i < 8; i++ {
-        for j := 0; j < 8; j++ {
-            fmt.Printf("%d ", miGongMap[i][j])
+    fmt.Printf("探路之后:\n")
+    for _, nums := range miGongMap {
+        for _, anInt := range nums {
+            fmt.Printf("%d ", anInt)
         }
         fmt.Println()
     }
