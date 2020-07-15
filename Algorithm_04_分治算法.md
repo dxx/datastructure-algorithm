@@ -57,7 +57,7 @@ func hannotower(num int, a, b, c byte) {
         hannotower(num - 1, a, c, b)
         // 最后一个盘从 a 移动到 c
         fmt.Printf("第%d个盘从 %s 到 %s\n", num, string(a), string(c))
-        // 先将除了最后一个盘之外的所有盘从 a 移动到 b
+        // 再将 b 柱子上的所有盘移动到 c 柱子上
         hannotower(num - 1, b, a, c)
     }
 }
