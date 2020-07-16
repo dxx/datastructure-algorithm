@@ -1,6 +1,6 @@
 ## 递归
 
->各种语言实现代码：[Go](./golang/algorithm/recursion)   Java(待实现)   JavaScript(待实现)
+>各种语言实现代码：[Go](./golang/algorithm/recursion)   [Java](./java/algorithm/src/com/mcx/recursion)   [JavaScript](./javascript/algorithm/recursion)
 >
 >默认使用 **Go** 语言实现。
 
