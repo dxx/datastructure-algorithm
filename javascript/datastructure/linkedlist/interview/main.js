@@ -48,7 +48,7 @@ function testReverseNode() {
 function main() {
   // testGetLength();
   // testGetLastIndexNode();
-  testReverseNode();
+  // testReverseNode();
 }
 
 main();

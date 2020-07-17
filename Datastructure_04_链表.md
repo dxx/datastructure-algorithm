@@ -254,7 +254,7 @@ func main() {
 
 ### 单链表面试题
 
-#### 获取单链表节点个数
+#### 获取单链表结点个数
 
 遍历链表，统计出了头结点以外的结点，头结点不存储数据。
 
@@ -279,8 +279,44 @@ func getNodeLength(headNode *Node) int {
 
 #### 获取倒数第 N 个结点
 
-1. 获取链表节点数 length
-2. 遍历到 length - n 个节点
+快慢指针
+
+1. 定义快指针 fast 和 慢指针 slow
+2. 快慢指针的初始值指向头结点
+3. 快指针先走 index 步
+4. 慢指针开始走直到快指针指向了末尾结点
+5. 此时慢指针就是倒数第 n 个结点
+
+```go
+func getLastIndexNode(headNode *Node, index int) *Node {
+    // 头结点为空，index 小于等于 0 返回空
+    if headNode == nil || index <= 0 {
+        return nil
+    }
+    fast := headNode
+    slow := headNode
+    for fast != nil {
+        if index > 0 {
+            fast = fast.next
+            index--
+            continue
+        }
+        // 快慢指针同时走
+        fast = fast.next
+        slow = slow.next
+    }
+    // index 超过了链表的长度
+    if slow == headNode {
+        return nil
+    }
+    return slow
+}
+```
+
+遍历
+
+1. 获取链表结点数 length
+2. 遍历到 length - n 个结点
 3. 然后返回
 
 ```go

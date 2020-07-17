@@ -25,12 +25,48 @@ public class Main {
     }
 
     /**
-     * 获取倒数第 n 个节点
-     * 1.获取链表节点数 length
-     * 2.遍历到 length - n 个节点
-     * 3.然后返回
+     * 获取倒数第 n 个结点
+     *
+     * 快慢指针
+     * 1.定义快指针 fast 和 慢指针 slow
+     * 2.快慢指针的初始值指向头结点
+     * 3.快指针先走 index 步
+     * 4.慢指针开始走直到快指针指向了末尾结点
+     * 5.此时慢指针就是倒数第 n 个结点
      */
     public static Node getLastIndexNode(Node headNode, int index) {
+        // 头结点为空，index 小于等于 0 返回空
+        if (headNode == null || index <= 0) {
+            return null;
+        }
+        Node fast = headNode;
+        Node slow = headNode;
+        while (fast != null) {
+            if (index > 0) {
+                fast = fast.getNext();
+                index--;
+                continue;
+            }
+            // 快慢指针同时走
+            fast = fast.getNext();
+            slow = slow.getNext();
+        }
+        // index 超过了链表的长度
+        if (slow == headNode) {
+            return null;
+        }
+        return slow;
+    }
+
+    /**
+     * 获取倒数第 n 个结点
+     *
+     * 遍历
+     * 1.获取链表结点数 length
+     * 2.遍历到 length - n 个结点
+     * 3.然后返回
+     */
+    public static Node getLastIndexNode2(Node headNode, int index) {
         // 头结点为空，返回空
         if (headNode == null) {
             return null;
