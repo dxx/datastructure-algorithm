@@ -257,7 +257,7 @@ A->B->C->D->E->
 
 ![data_structure_graph_01_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
 
-上图中添加顶点的顺序为 A B C D E。假设 A 为初始顶点，对上图进行深度优先遍历后就是 A -> B -> C -> E -> D。
+上图中添加顶点的顺序为 A B C D E。假设 A 为初始顶点，对上图进行广度优先遍历后就是 A -> B -> C -> E -> D。
 
 步骤：
 
