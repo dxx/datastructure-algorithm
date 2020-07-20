@@ -1,6 +1,6 @@
 ## 分治算法
 
->各种语言实现代码：[Go](./golang/algorithm/divide)   Java(待实现)   JavaScript(待实现)
+>各种语言实现代码：[Go](./golang/algorithm/divide)   [Java](./java/algorithm/src/com/mcx/divide)   [JavaScript](./javascript/algorithm/divide)
 >
 >默认使用 **Go** 语言实现。
 
@@ -52,14 +52,14 @@
 func hannotower(num int, a, b, c byte) {
     if num == 1 { // 只有一个盘
         fmt.Printf("第1个盘从 %s 到 %s\n", string(a), string(c))
-    } else {
-        // 先将除了最后一个盘之外的所有盘从 a 移动到 b
-        hannotower(num - 1, a, c, b)
-        // 最后一个盘从 a 移动到 c
-        fmt.Printf("第%d个盘从 %s 到 %s\n", num, string(a), string(c))
-        // 再将 b 柱子上的所有盘移动到 c 柱子上
-        hannotower(num - 1, b, a, c)
+		return
     }
+    // 先将除了最后一个盘之外的所有盘从 a 移动到 b
+    hannotower(num - 1, a, c, b)
+    // 最后一个盘从 a 移动到 c
+    fmt.Printf("第%d个盘从 %s 到 %s\n", num, string(a), string(c))
+    // 再将 b 柱子上的所有盘移动到 c 柱子上
+    hannotower(num - 1, b, a, c)
 }
 
 func main() {
