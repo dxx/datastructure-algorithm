@@ -18,7 +18,7 @@ import "fmt"
 func hannotower(num int, a, b, c byte) {
     if num == 1 { // 只有一个盘
         fmt.Printf("第1个盘从 %s 到 %s\n", string(a), string(c))
-		return
+        return
     }
     // 先将除了最后一个盘之外的所有盘从 a 移动到 b
     hannotower(num - 1, a, c, b)
