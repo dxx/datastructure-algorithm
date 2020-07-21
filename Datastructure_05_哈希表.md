@@ -1,6 +1,6 @@
 ## 哈希表(散列)
 
-> 各种语言实现代码：[Go](./golang/datastructure/hashtable)   Java(待实现)   JavaScript(待实现)
+> 各种语言实现代码：[Go](./golang/datastructure/hashtable)   [Java](./java/datastructure/src/com/mcx/hashtable)   [JavaScript](./javascript/datastructure/hashtable)
 >
 > 默认使用 **Go** 语言实现。
 
