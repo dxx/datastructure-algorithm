@@ -13,13 +13,13 @@
  * 将 B 柱子上的所有盘移动到 C 柱子上
  */
 function hannotower(num, a, b, c) {
-    if (num == 1) {
-        console.log("第1个盘从 " + a + " 到 " + c);
-        return;
-    }
-    hannotower(num - 1, a, c ,b);
-    console.log("第" + num + "个盘从 " + a + " 到 " + c);
-    hannotower(num - 1, b, a, c);
+  if (num == 1) {
+    console.log("第1个盘从 " + a + " 到 " + c);
+    return;
+  }
+  hannotower(num - 1, a, c ,b);
+  console.log("第" + num + "个盘从 " + a + " 到 " + c);
+  hannotower(num - 1, b, a, c);
 }
 
 function main() {
