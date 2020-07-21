@@ -15,7 +15,7 @@ type Employee struct {
     name string
 }
 
-// 链表结构体
+// 单链表结构体
 type LinkNode struct {
     employee *Employee
     next     *LinkNode
@@ -42,19 +42,18 @@ func (h *Hashtable) Add(employee *Employee) error {
         // 添加到链表数组中，作为头结点
         h.linkArray[index] = linkNode
         return nil
-    } else {
-        // 判断头结点
-        if headNode.employee.id > employee.id {
-            // 新结点作为头结点
-            linkNode.next = headNode
-            h.linkArray[index] = linkNode
-            return nil
-        } else if headNode.employee.id == employee.id {
-            return errors.New("员工id重复")
-        }
+    }
+    // 判断头结点
+    if headNode.employee.id > employee.id {
+        // 新结点作为头结点
+        linkNode.next = headNode
+        h.linkArray[index] = linkNode
+        return nil
+    } else if headNode.employee.id == employee.id {
+        return errors.New("员工id重复")
     }
 
-    // 查找后续结点中是否有合适的位置插入
+    // 查找后续结点中合适的位置插入
     tempNode := headNode
     for {
         if tempNode.next == nil { // 最后一个结点
@@ -82,19 +81,18 @@ func (h *Hashtable) Update(employee *Employee) {
 }
 
 // 删除员工的方法
-func (h *Hashtable) delete(id int) {
+func (h *Hashtable) Delete(id int) {
     // 计算下标
     index := id % 5
     headNode := h.linkArray[index]
     // 数组没有元素
     if headNode == nil {
         return
-    } else {
-        // 判断头结点
-        if headNode.employee.id == id {
-            h.linkArray[index] = headNode.next
-            return
-        }
+    }
+    // 判断头结点
+    if headNode.employee.id == id {
+        h.linkArray[index] = headNode.next
+        return
     }
 
     // 查找后续结点中需要删除的员工
@@ -198,7 +196,7 @@ func testDeleteEmployee() {
     hashtable.List()
 
     // 修改员工
-    hashtable.delete(2)
+    hashtable.Delete(2)
 
     fmt.Println("删除员工后:")
     hashtable.List()
