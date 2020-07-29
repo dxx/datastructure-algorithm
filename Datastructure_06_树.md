@@ -519,9 +519,7 @@ func infixThreadTree(node *ThreadedBinaryTreeNode) {
         return
     }
     // 线索化左子节点
-    if node.left != nil {
-        infixThreadTree(node.left)
-    }
+    infixThreadTree(node.left)
 
     // 线索化当前结点
     // 如果 left 为 nil, 处理前驱节点
@@ -540,9 +538,7 @@ func infixThreadTree(node *ThreadedBinaryTreeNode) {
     previous = node
 
     // 线索化右子节点
-    if node.right != nil {
-        infixThreadTree(node.right)
-    }
+    infixThreadTree(node.right)
 }
 ```
 
