@@ -33,6 +33,7 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
     if arrBinaryTree.array == nil || length == 0 ||index >= length {
         return
     }
+    // 当前节点
     fmt.Println(arrBinaryTree.array[index])
     // 左子节点下标
     leftIndex := 2 * index + 1
@@ -44,14 +45,10 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
     arrBinaryTree.preOrderFromIndex(rightIndex)
 }
 
-func testArrOrder() {
+func main() {
     nos := []int{1, 2, 3, 4, 5, 6, 7}
     arrayBinaryTree := NewArrayBinaryTree(nos)
 
     fmt.Println("======前序遍历======")
     arrayBinaryTree.PreOrder()
-}
-
-func main() {
-    testArrOrder()
 }

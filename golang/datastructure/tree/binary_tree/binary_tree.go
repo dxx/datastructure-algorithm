@@ -61,16 +61,14 @@ func preOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
     if node.no == no {
         return node
     }
-    var returnNode *BinaryTreeNode
     // 左边查找
-    returnNode = preOrderSearch(node.left, no)
+    returnNode := preOrderSearch(node.left, no)
     if returnNode != nil {
         // 左边找到了节点，返回
         return returnNode
     }
     // 右边查找
-    returnNode = preOrderSearch(node.right, no)
-    return returnNode
+    return preOrderSearch(node.right, no)
 }
 
 // 中序查找
@@ -78,9 +76,8 @@ func infixOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
     if node == nil {
         return nil
     }
-    var returnNode *BinaryTreeNode
     // 左边查找
-    returnNode = infixOrderSearch(node.left, no)
+    returnNode := infixOrderSearch(node.left, no)
     if returnNode != nil {
         // 左边找到了节点，返回
         return returnNode
@@ -90,8 +87,7 @@ func infixOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
         return node
     }
     // 右边查找
-    returnNode = infixOrderSearch(node.right, no)
-    return returnNode
+    return infixOrderSearch(node.right, no)
 }
 
 // 后序查找

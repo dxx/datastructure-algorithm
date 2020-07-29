@@ -190,16 +190,14 @@ func preOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
     if node.no == no {
         return node
     }
-    var returnNode *BinaryTreeNode
     // 左边查找
-    returnNode = preOrderSearch(node.left, no)
+    returnNode := preOrderSearch(node.left, no)
     if returnNode != nil {
         // 左边找到了节点，返回
         return returnNode
     }
     // 右边查找
-    returnNode = preOrderSearch(node.right, no)
-    return returnNode
+    return preOrderSearch(node.right, no)
 }
 ```
 
@@ -210,9 +208,8 @@ func infixOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
     if node == nil {
         return nil
     }
-    var returnNode *BinaryTreeNode
     // 左边查找
-    returnNode = infixOrderSearch(node.left, no)
+    returnNode := infixOrderSearch(node.left, no)
     if returnNode != nil {
         // 左边找到了节点，返回
         return returnNode
@@ -222,8 +219,7 @@ func infixOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
         return node
     }
     // 右边查找
-    returnNode = infixOrderSearch(node.right, no)
-    return returnNode
+    return infixOrderSearch(node.right, no)
 }
 ```
 
@@ -423,6 +419,7 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
     if arrBinaryTree.array == nil || length == 0 ||index >= length {
         return
     }
+    // 当前节点
     fmt.Println(arrBinaryTree.array[index])
     // 左子节点下标
     leftIndex := 2 * index + 1
@@ -438,7 +435,7 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
 测试代码：
 
 ```go
-func testArrOrder() {
+func main() {
     nos := []int{1, 2, 3, 4, 5, 6, 7}
     arrayBinaryTree := NewArrayBinaryTree(nos)
 
@@ -605,7 +602,7 @@ no=10的后继节点为1
 func infixOrderThreadedTree(node *ThreadedBinaryTreeNode) {
     currentNode := node
     for currentNode != nil {
-        // 循环找到 leftTag = 1 的节点, 第一个找到的就是最左边的叶子节点
+        // 循环找到 leftTag = 0 的节点, 第一个找到的就是最左边的叶子节点
         for currentNode.leftTag == 0 {
             currentNode = currentNode.left
         }
