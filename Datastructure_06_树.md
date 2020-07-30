@@ -704,7 +704,7 @@ func heapSort(nums[] int) {
     // 将堆顶的根节点和叶子节点进交换，此时叶子节点就是最大值
     for i := len(nums) - 1; i > 0; i-- {
         nums[0], nums[i] = nums[i], nums[0]
-        // 对于剩余的元素重新构造成大顶堆或小顶堆
+        // 对于剩余的元素重新构造成大顶堆
         adjustHeap(nums, 0, i)
     }
 }
