@@ -1378,7 +1378,7 @@ func NewBinarySortTree() *BinarySortTree {
 
 #### 添加节点
 
-添加节点方法如下：
+添加节点的方法如下：
 
 ```go
 // 添加结点
