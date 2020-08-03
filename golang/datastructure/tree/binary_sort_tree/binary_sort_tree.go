@@ -199,6 +199,6 @@ func main() {
 
     binarySortTree.Delete(10)
 
-    fmt.Println("======删除只有俩颗子树的节点10======")
+    fmt.Println("======删除有两颗子树的节点10======")
     binarySortTree.InfixOrder()
 }
