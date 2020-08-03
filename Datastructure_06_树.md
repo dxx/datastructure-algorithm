@@ -916,7 +916,7 @@ i: 105  空格: 32  l: 108  o: 111  v: 118  e: 101  空格: 32  g: 103  o: 111
 
 ![data_structure_tree_16](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_16.png)
 
-> 转成哈夫曼树时顺序不同，每个字符的在树中的位置也会不同，但是最后生成的哈夫曼编码长度不变。
+> 转成哈夫曼树时顺序不同，每个字符在树中的位置也会不同，但是最后生成的哈夫曼编码长度不变。
 
 根据哈夫曼编码，给每个字符串规定前缀编码，节点左边的路径为 0，节点右边的路径为 1，则上述字符串每个字符对应的编码如下：
 
@@ -1378,7 +1378,7 @@ func NewBinarySortTree() *BinarySortTree {
 
 #### 添加节点
 
-添加节点方法如下：
+添加节点的方法如下：
 
 ```go
 // 添加结点
