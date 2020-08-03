@@ -97,7 +97,7 @@ func (sortTree *BinarySortTree) recursionSearch(node *BinaryTreeNode, no int) (*
 // 2.节点是子节点且只有一颗子树，左子树或右子树。如果被删除的节点是父节点的
 //   左子节点，将父节点的左子节点指向该删除节点的子树，如果是父节点的右子节
 //   点，则将父节点的右子节点指向该删除节点的子树
-// 3.节点是子节点且只有两颗子树。从被删除节点的左子树中找到最小值的节点，将
+// 3.节点是子节点且只有两颗子树。从被删除节点的右子节点的左子树中找到最小值的节点，将
 //   其删除，然后将该节点的值赋值给被删除的节点
 func (sortTree *BinarySortTree) Delete(no int) {
     parentNode, node := sortTree.search(no)
