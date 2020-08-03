@@ -1472,6 +1472,17 @@ no:12
 代码实现：
 
 ```go
+func (sortTree *BinarySortTree) search(no int) (*BinaryTreeNode, *BinaryTreeNode) {
+    if sortTree.root == nil {
+        return nil, nil
+    }
+    // 查找的节点就是根节点
+    if sortTree.root.no == no {
+        return nil, sortTree.root
+    }
+    return sortTree.recursionSearch(sortTree.root, no)
+}
+
 // 递归查找指定节点
 // 返回查找到的父节点和查找到的节点
 func (sortTree *BinarySortTree) recursionSearch(node *BinaryTreeNode, no int) (*BinaryTreeNode, *BinaryTreeNode) {
