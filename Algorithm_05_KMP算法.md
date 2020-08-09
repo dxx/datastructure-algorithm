@@ -120,12 +120,12 @@ ABCABD 在 CBC DCABCABABCABD BBCCA 中的位置为 11
 
 以上述模式字符串 ABCAB 为例：
 
-* A 没有前缀和后缀，公有元素长度为 0。
-* AB 的前缀有 A，后缀有 B，公有元素长度为 0。
-* ABC 的前缀有 A、AB，后缀有 BC、C，公有元素长度为 0。
-* ABCA 的前缀有 A、AB、ABC，后缀有 BCA、CA、A，公有元素长度为 1。
-* ABCAB 的前缀有 A、AB、ABC、ABCA，后缀有 BCAB、CAB、AB、B，公有元素长度为 2。
-* ABCABD 的前缀有 A、AB、ABC、ABCA、ABCAB，后缀有 BCABD、CABD、ABD、BD、D，公有元素长度为 0。
+* A 没有前缀和后缀，共有元素长度为 0。
+* AB 的前缀有 A，后缀有 B，共有元素长度为 0。
+* ABC 的前缀有 A、AB，后缀有 BC、C，共有元素长度为 0。
+* ABCA 的前缀有 A、AB、ABC，后缀有 BCA、CA、A，共有元素长度为 1。
+* ABCAB 的前缀有 A、AB、ABC、ABCA，后缀有 BCAB、CAB、AB、B，共有元素长度为 2。
+* ABCABD 的前缀有 A、AB、ABC、ABCA、ABCAB，后缀有 BCABD、CABD、ABD、BD、D，共有元素长度为 0。
 
 所以 ABCABD 中每个字符对于的匹配值分别为 0、0、0、1、2、0。
 
