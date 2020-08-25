@@ -296,7 +296,7 @@ func (graph *Graph) bfs(isVisited []bool, v int) {
     for !queue.IsEmpty() {
         // 取出头结点下标
         u, _ := queue.Take()
-        // 获取第一个邻接节点的小标
+        // 获取第一个邻接节点的下标
         w := graph.getFirstVertex(u)
         for w != -1 {
             // 未被访问
