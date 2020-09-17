@@ -77,10 +77,10 @@
 
 * [汉诺塔](./Algorithm_04_分治算法.md#汉诺塔)
 
-[KMP算法](./Algorithm_05_KMP算法.md)
+[KMP算法](./Algorithm_06_KMP算法.md)
 
-* [暴力匹配](./Algorithm_05_KMP算法.md#暴力匹配)
-* [KMP匹配](./Algorithm_05_KMP算法.md#KMP匹配)
+* [暴力匹配](./Algorithm_06_KMP算法.md#暴力匹配)
+* [KMP匹配](./Algorithm_06_KMP算法.md#KMP匹配)
 
 [贪心算法](./Algorithm_07_贪心算法.md)
 
