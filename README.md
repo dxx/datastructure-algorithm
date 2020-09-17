@@ -77,6 +77,10 @@
 
 * [汉诺塔](./Algorithm_04_分治算法.md#汉诺塔)
 
+[动态规划](./Algorithm_05_动态规划.md)
+
+* [背包问题](./Algorithm_05_动态规划.md#背包问题)
+
 [KMP算法](./Algorithm_06_KMP算法.md)
 
 * [暴力匹配](./Algorithm_06_KMP算法.md#暴力匹配)
