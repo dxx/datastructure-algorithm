@@ -11,18 +11,18 @@ function selectSort(nums) {
   }
   let length = nums.length;
   for (let i = 0; i < length - 1; i++) {
-      // 记录最小值的下标
-      let minIndex = i;
-      for (let j = i + 1; j < length; j++) {
-          if (nums[minIndex] > nums[j]) {
-              // 修改最小值下标
-              minIndex = j;
-          }
+    // 记录最小值的下标
+    let minIndex = i;
+    for (let j = i + 1; j < length; j++) {
+      if (nums[minIndex] > nums[j]) {
+         // 修改最小值下标
+        minIndex = j;
       }
-      // 优化：判断是否需要交换
-      if (minIndex != i) {
-          swap(nums, i, minIndex);
-      }
+    }
+    // 优化：判断是否需要交换
+    if (minIndex != i) {
+      swap(nums, i, minIndex);
+    }
   }
 }
 
