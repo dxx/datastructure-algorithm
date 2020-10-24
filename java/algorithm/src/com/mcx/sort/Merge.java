@@ -22,6 +22,11 @@ public class Merge {
         decompose(nums, 0, nums.length - 1);
     }
 
+    /**
+     * 分解
+     * start: 开始下标
+     * end: 结束下标
+     */
     private static void decompose(int[] nums, int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
@@ -31,6 +36,12 @@ public class Merge {
         }
     }
 
+    /**
+     * 合并
+     * left: 左边有序序列起始下标
+     * mid: 中间下标
+     * right: 右边有序序列起始下标
+     */
     private static void merge(int[] nums, int left, int mid, int right) {
         int[] temp = new int[right - left + 1]; // 临时保存元素的数组
         int i = left; // 左边有序序列的起始下标
