@@ -24,14 +24,13 @@ public class Radix {
         }
         int maxLength = String.valueOf(max).length();
 
-        // var bucket [10][len(nums)]int
         int[][] bucket = new int[10][nums.length]; // 桶数组
         int[] order = new int[10]; // 存放每个桶真实存放数据的长度
 
         int n = 1; // 控制元素的位数
         for (int i = 0; i < maxLength; i++) {
             for (int num : nums) {
-                int bucketIndex = num / n % 10; // 计算桶的下表
+                int bucketIndex = num / n % 10; // 计算桶的下标
                 bucket[bucketIndex][order[bucketIndex]] = num;
                 order[bucketIndex]++; // 尾下标 + 1
             }
