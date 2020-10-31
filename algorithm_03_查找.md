@@ -94,10 +94,9 @@ func binarySearch(nums[] int, start, end int, findVal int) int {
     } else if findVal > nums[mid] {
         // 向右递归
         return binarySearch(nums, mid + 1, end, findVal)
-    } else {
-        // 查找值和中间值相等，返回下标
-        return mid
     }
+    // 查找值和中间值相等，返回下标
+    return mid
 }
 ```
 
@@ -109,9 +108,9 @@ func main() {
     nums := []int{1, 8, 10, 89, 100, 100, 123}
     index := binarySearch(nums, 0, len(nums) - 1, value)
     if index != -1 {
-        fmt.Printf("找到%d, 下标为%d\n", value, index)
+        fmt.Printf("找到 %d, 下标为 %d\n", value, index)
     } else {
-        fmt.Printf("未找到%d\n", value)
+        fmt.Printf("未找到 %d\n", value)
     }
 }
 ```
@@ -119,7 +118,7 @@ func main() {
 输出：
 
 ```
-找到100, 下标为5
+找到 100, 下标为 5
 ```
 
 ### 插值查找
@@ -350,9 +349,9 @@ func main() {
     nums := []int{1, 8, 10, 89, 100, 100, 123}
     index := binarySearchNoRecursion(nums, value)
     if index != -1 {
-        fmt.Printf("找到%d, 下标为%d\n", value, index)
+        fmt.Printf("找到 %d, 下标为 %d\n", value, index)
     } else {
-        fmt.Printf("未找到%d\n", value)
+        fmt.Printf("未找到 %d\n", value)
     }
 }
 ```
@@ -360,5 +359,5 @@ func main() {
 输出：
 
 ```
-找到100, 下标为5
+找到 100, 下标为 5
 ```
