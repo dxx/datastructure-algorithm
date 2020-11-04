@@ -308,7 +308,7 @@ func main() {
 
 ## 二分法查找(非递归)
 
->各种语言实现代码：[Go](./golang/algorithm/binarysearch)   Java(待实现)   JavaScript(待实现)
+>各种语言实现代码：[Go](./golang/algorithm/binarysearch)   [Java](./java/algorithm/src/com\mcx/binarysearch)   [JavaScript](./javascript/algorithm/binarysearch)
 >
 >默认使用 **Go** 语言实现。
 
