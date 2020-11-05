@@ -158,7 +158,7 @@ func insertValSearch(nums[] int, start, end int, findVal int) int {
     }
     // 根据 findVal 自适应计算中间下标
     mid := start + (end - start) * (findVal - nums[start]) / (nums[end] - nums[start])
-    fmt.Printf("mid:%d\n", mid)
+    fmt.Printf("mid: %d\n", mid)
     if findVal < nums[mid] {
         // 向左递归
         return insertValSearch(nums, start, mid - 1, findVal)
@@ -184,9 +184,9 @@ func main() {
     value := 58
     index := insertValSearch(nums, 0, len(nums) - 1, value)
     if index != -1 {
-        fmt.Printf("找到%d, 下标为%d\n", value, index)
+        fmt.Printf("找到 %d, 下标为 %d\n", value, index)
     } else {
-        fmt.Printf("未找到%d\n", value)
+        fmt.Printf("未找到 %d\n", value)
     }
 }
 ```
@@ -194,8 +194,8 @@ func main() {
 输出：
 
 ```
-mid:57
-找到58, 下标为57
+mid: 57
+找到 58, 下标为 57
 ```
 
 可以看到，第一次 mid 直接就计算出值为 57，调用一次就能找到下标。
