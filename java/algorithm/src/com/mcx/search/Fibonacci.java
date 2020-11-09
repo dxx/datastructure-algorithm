@@ -36,7 +36,7 @@ public class Fibonacci {
         }
         // 创建一个切片，长度为斐波那契分割数的值
         int dstLength = f[k];
-        int[] dst = new int[dstLength];
+        int[] dst;
         // 将要查找的数组复制到 dst 中
         dst = Arrays.copyOf(nums, dstLength);
         // 将最后一个元素填充到 dst 元素为 0 的位置
