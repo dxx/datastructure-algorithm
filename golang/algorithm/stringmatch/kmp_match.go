@@ -8,7 +8,7 @@ import "fmt"
 
 func kmpSearch(str, match string) int {
     next := getNext(match)
-    fmt.Println(next)
+
     for i, j := 0, 0; i < len(str); i++ {
         // 算法核心点
         for j > 0 && str[i] != match[j] {
