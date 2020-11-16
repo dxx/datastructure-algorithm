@@ -1,6 +1,6 @@
 ## KMP 算法
 
->各种语言实现代码：[Go](./golang/algorithm/stringmatch)   Java(待实现)   JavaScript(待实现)
+>各种语言实现代码：[Go](./golang/algorithm/stringmatch)   [Java](./java/algorithm/src/com/mcx/stringmatch)   [JavaScript](./javascript/algorithm/stringmatch)
 >
 >默认使用 **Go** 语言实现。
 
