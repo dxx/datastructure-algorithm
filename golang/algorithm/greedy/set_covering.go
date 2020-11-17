@@ -72,7 +72,7 @@ func getBroadcast(broadcasts map[string][]string) []string {
     return selectBroadcasts
 }
 
-//求交集
+// 求交集
 func intersect(slice1, slice2 []string) []string {
     m := make(map[string]int)
     nn := make([]string, 0)
