@@ -70,14 +70,6 @@ public class SetCovering {
         return selectBroadcasts;
     }
 
-    /**
-     * 求交集
-     */
-    public static List<String> intersect(List<String> list1, List<String> list2) {
-        list1.retainAll(list2);
-        return list1;
-    }
-
     public static void main(String[] args) {
         Map<String, List<String>> broadcastMap = new HashMap<>();
         broadcastMap.put("B1", new ArrayList<>(Arrays.asList("北京", "上海", "天津")));
