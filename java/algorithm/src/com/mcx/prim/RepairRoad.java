@@ -32,6 +32,16 @@ public class RepairRoad {
             this.graph = graph;
         }
 
+        public void showGraph() {
+            for (int[] edges : this.graph.matrix) {
+                System.out.print("[ ");
+                for (int val : edges) {
+                    System.out.printf("%10d ", val);
+                }
+                System.out.print("]\n");
+            }
+        }
+
     }
 
     public static class Graph {
