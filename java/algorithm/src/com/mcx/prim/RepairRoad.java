@@ -67,7 +67,7 @@ public class RepairRoad {
                 // 修改最小的权值
                 minWeight = Integer.MAX_VALUE;
 
-                System.out.printf("边:%s-%s => %d\n",
+                System.out.printf("边: %s - %s => %d\n",
                         this.graph.vertexes[v1],
                         this.graph.vertexes[v2],
                         this.graph.matrix[v1][v2]);
