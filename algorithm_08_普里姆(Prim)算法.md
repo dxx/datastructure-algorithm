@@ -1,6 +1,6 @@
 ## 普里姆(Prim)算法
 
->各种语言实现代码：[Go](./golang/algorithm/prim)   Java(待实现)   JavaScript(待实现)
+>各种语言实现代码：[Go](./golang/algorithm/prim)   [Java](./java/algorithm/src/com/mcx/prim)   [JavaScript](./javascript/algorithm/prim)
 >
 >默认使用 **Go** 语言实现。
 
