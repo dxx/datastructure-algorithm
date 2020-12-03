@@ -34,7 +34,7 @@ function toSparseArray(array) {
   for (let i = 0; i < array.length; i++) {
   for (let j = 0; j < array[i].length; j++) {
     if (array[i][j] != 0) {
-		count++;
+        count++;
       }
     }
   }
@@ -50,10 +50,10 @@ function toSparseArray(array) {
   for (let i = 0, row = 1; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
       if (array[i][j] != 0) {
-      sparseArray[row][0] = i;
-      sparseArray[row][1] = j;
-      sparseArray[row][2] = array[i][j];
-      row++;
+        sparseArray[row][0] = i;
+        sparseArray[row][1] = j;
+        sparseArray[row][2] = array[i][j];
+        row++;
       }
     }
   }
