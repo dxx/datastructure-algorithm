@@ -26,8 +26,8 @@ const fs = require("fs");
 const sparseArrayFileName = "./sparse.data";
 
 /**
-* 二维数组转稀疏数组
-*/
+ * 二维数组转稀疏数组
+ */
 function toSparseArray(array) {
   // 统计非 0 的数量
   let count = 0;
