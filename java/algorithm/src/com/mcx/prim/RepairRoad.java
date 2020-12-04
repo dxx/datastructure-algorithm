@@ -15,6 +15,9 @@ import java.util.Map;
  */
 public class RepairRoad {
 
+    /**
+     * 最小生成树
+     */
     public static class MinTree {
 
         public Graph graph;
