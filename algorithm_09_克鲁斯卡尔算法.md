@@ -58,7 +58,7 @@ type MinTree struct {
 
 type Graph struct {
     vertexes  []string // 顶点
-    matrix     [][]int  // 邻接矩阵
+    matrix    [][]int  // 邻接矩阵
     numOfEdge int      // 边的条数
 }
 
@@ -137,7 +137,7 @@ func (minTree *MinTree) Kruskal() {
 
     // 输出最小生成树
     for _, edge := range edges {
-        fmt.Printf("边:%s-%s => %d\n",
+        fmt.Printf("边: %s-%s => %d\n",
             edge.start,
             edge.end,
             edge.weight)
