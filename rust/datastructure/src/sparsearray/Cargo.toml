@@ -1,0 +1,7 @@
+[package]
+name = "sparsearray"
+version = "0.1.0"
+
+[[bin]]
+name = "datastructure_sparsearray"
+path = "./main.rs"
