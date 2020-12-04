@@ -69,7 +69,7 @@ func (minTree *MinTree) Prim(v int) {
         // 修改最小的权值
         minWeight = intMax
 
-        fmt.Printf("边: %s - %s => %d\n",
+        fmt.Printf("边: %s-%s => %d\n",
             minTree.graph.vertexes[v1],
             minTree.graph.vertexes[v2],
             minTree.graph.matrix[v1][v2])

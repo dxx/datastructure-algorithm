@@ -63,7 +63,7 @@ MinTree.prototype.prim = function(v) {
     // 修改最小的权值
     minWeight = Number.MAX_VALUE;
       
-    console.log("边: " + this.graph.vertexes[v1] + " - " + this.graph.vertexes[v2] + " => " + this.graph.matrix[v1][v2]);
+    console.log("边: " + this.graph.vertexes[v1] + "-" + this.graph.vertexes[v2] + " => " + this.graph.matrix[v1][v2]);
   }
 }
 
