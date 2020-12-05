@@ -23,9 +23,7 @@ function MinTree(vertexes, edges) {
       initialMatrix[i][j] = edges[i][j];
     }
   }
-  let graph = new Graph();
-  graph.vertexes = initialVertexes;
-  graph.matrix = initialMatrix;
+  let graph = new Graph(initialVertexes, initialMatrix);
   this.graph = graph;
 }
 
