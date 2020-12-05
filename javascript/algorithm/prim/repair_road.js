@@ -9,7 +9,9 @@
  * 5.重复以上操作 n-1 次。
  */
 
-// 最小生成树
+/**
+ * 最小生成树
+ */
 function MinTree(vertexes, edges) {
   let numOfVertex = vertexes.length;
   let initialVertexes = new Array(numOfVertex);
