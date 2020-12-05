@@ -5,5 +5,5 @@ name = "datastructure"
 version = "0.1.0"
 
 [[package]]
-name = "datastructure-sparsearray"
+name = "sparsearray"
 version = "0.1.0"
