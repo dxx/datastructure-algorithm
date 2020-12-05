@@ -62,15 +62,15 @@ type Graph struct {
     numOfEdge int      // 边的条数
 }
 
-func (edge *Edge) String() string {
-    return fmt.Sprintf("%s-%s:%d", edge.start, edge.end, edge.weight)
-}
-
 // 边
 type Edge struct {
     start  string // 起始顶点
     end    string // 结束顶点
     weight int    // 边的权值
+}
+
+func (edge *Edge) String() string {
+    return fmt.Sprintf("%s-%s:%d", edge.start, edge.end, edge.weight)
 }
 
 func NewMinTree(vertexes []string, edges [][]int) *MinTree {
