@@ -13,7 +13,7 @@ func main() {
     _ = stack.Push("two")
     _ = stack.Push("three")
 
-    // 栈满，如法入栈
+    // 栈满，无法入栈
     err := stack.Push("four")
     if err != nil {
         fmt.Println(err)

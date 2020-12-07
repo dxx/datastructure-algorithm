@@ -28,7 +28,7 @@ func NewStack(size int) *Stack {
 // 入栈
 func (s *Stack) Push(elem string) error {
     // 判断栈是否已满
-    if s.top == s.maxSize-1 {
+    if s.top == s.maxSize - 1 {
         return errors.New("stack is full")
     }
     s.top++ // 栈顶加 1
