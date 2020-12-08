@@ -1,0 +1,7 @@
+[package]
+name = "queue-sequence"
+version = "0.1.0"
+
+[[bin]]
+name = "queue_sequence"
+path = "./main.rs"
