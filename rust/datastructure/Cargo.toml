@@ -7,7 +7,8 @@ edition = "2018"
 [workspace]
 members = [
     "src/sparsearray",
-    "src/queue/sequence"
+    "src/queue/sequence",
+    "src/queue/round"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
