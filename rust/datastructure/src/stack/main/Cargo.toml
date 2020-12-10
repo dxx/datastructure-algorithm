@@ -1,0 +1,10 @@
+[package]
+name = "stack"
+version = "0.1.0"
+
+[[bin]]
+name = "stack"
+path = "./main.rs"
+
+[dependencies]
+array_stack = { path = "../../stack/lib" }

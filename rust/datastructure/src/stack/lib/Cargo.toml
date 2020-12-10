@@ -1,0 +1,7 @@
+[package]
+name = "array_stack"
+version = "0.1.0"
+
+[lib]
+name = "array_stack"
+path = "./array_stack.rs"
