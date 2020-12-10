@@ -19,6 +19,7 @@ struct IntQueue {
 }
 
 impl IntQueue {
+
     pub fn new(size: usize) -> Self {
         return IntQueue{
             array: vec![0; size],
@@ -27,6 +28,7 @@ impl IntQueue {
             rear: 0
         };
     }
+
     pub fn put(&mut self, elem: i32) -> Result<i32, String> {
         if self.is_full() {
             return Err(String::from("queue is full"));
@@ -36,6 +38,7 @@ impl IntQueue {
         self.rear = (self.rear + 1) % self.max_size;
         return Ok(elem);
     }
+
     pub fn take(&mut self) -> Option<i32> {
         if self.is_empty() {
             return None;
@@ -44,18 +47,22 @@ impl IntQueue {
         self.front = (self.front + 1) % self.max_size;
         return Some(elem);
     }
+
     fn is_empty(&self) -> bool {
         // 队头指针等于队尾指针表示队列为空
         return self.front == self.rear;
     }
+
     fn is_full(&self) -> bool {
         // 空出一个位置，判断是否等于队头指针
         // 队尾指针指向的位置不能存放队列元素，实际上会比 max_size 指定的大小少一
         return (self.rear + 1) % self.max_size == self.front;
     }
+
     fn size(&self) -> usize {
         return (self.rear + self.max_size - self.front) % self.max_size;
     }
+
     fn show_queue(&self) {
         let mut str = String::from("[");
         let mut temp_front = self.front;
@@ -88,12 +95,12 @@ fn main() {
     println!("取出一个元素:{}", num);
     let num = int_queue.take().unwrap();
     println!("取出一个元素:{}", num);
-    let r = int_queue.take();
-    match r {
+    let o = int_queue.take();
+    match o {
         Some(data) => {
             println!("{}", data);
         },
-        None  => {
+        None => {
             println!("出队失败: queue is empty");
         }
     }

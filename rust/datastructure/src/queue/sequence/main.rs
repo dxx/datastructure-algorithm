@@ -18,6 +18,7 @@ struct IntQueue {
 }
 
 impl IntQueue {
+
     pub fn new(size: usize) -> Self {
         return IntQueue{
             array: vec![0; size],
@@ -26,6 +27,7 @@ impl IntQueue {
             rear: 0
         };
     }
+
     pub fn put(&mut self, elem: i32) -> Result<i32, String> {
         // 队尾指针不能超过最大队列元素大小
         if self.rear >= self.max_size {
@@ -35,6 +37,7 @@ impl IntQueue {
         self.rear = self.rear + 1; // 队尾指针加一
         return Ok(elem);
     }
+
     pub fn take(&mut self) -> Option<i32> {
         // 队头指针等于队尾指针表示队列为空
         if self.front == self.rear {
@@ -44,6 +47,7 @@ impl IntQueue {
         self.front = self.front + 1; // 队头指针加一
         return Some(elem);
     }
+
     pub fn show_queue(&self) {
         let mut str = String::from("[");
         for i in self.front..self.rear {
@@ -70,24 +74,24 @@ fn main() {
     println!("取出一个元素:{}", num);
     let num = int_queue.take().unwrap();
     println!("取出一个元素:{}", num);
-    let r = int_queue.take();
-    match r {
+    let o = int_queue.take();
+    match o {
         Some(data) => {
             println!("{}", data);
         },
-        None  => {
+        None => {
             println!("出队失败: queue is empty");
         }
     }
 
     // 此时队列已经用完，无法放数据
-    let res = int_queue.put(4); // 队列已满，无法放入数据
-    match res {
+    let r = int_queue.put(4); // 队列已满，无法放入数据
+    match r {
         Ok(data) => {
             println!("{}", data);
         },
-        Err(e)  => {
-            println!("入队失败：{}", e);
+        Err(e) => {
+            println!("入队失败: {}", e);
         }
     }
     int_queue.show_queue();
