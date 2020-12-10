@@ -21,7 +21,7 @@ struct IntQueue {
 impl IntQueue {
 
     pub fn new(size: usize) -> Self {
-        return IntQueue{
+        return IntQueue {
             array: vec![0; size],
             max_size: size,
             front: 0,
