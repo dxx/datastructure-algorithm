@@ -11,7 +11,7 @@ import (
 type Opt struct {
     operation string
     priority  int
-    optFunc   func(num1, num2 int) int
+    optFunc   func(int, int) int
 }
 
 // 定义相关操作符对应的优先级和计算方法
