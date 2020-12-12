@@ -12,6 +12,7 @@ pub struct Stack {
 }
 
 impl Stack {
+
     pub fn new(size: usize) -> Self {
         return Stack {
             array: vec![String::from(""); size + 1],
@@ -26,7 +27,7 @@ impl Stack {
         if self.top == self.max_size - 1 {
             return Err(String::from("stack is full"));
         }
-        self.top = self.top + 1; // 栈顶加 1
+        self.top += 1; // 栈顶加 1
         self.array[self.top] = elem;
         return Ok(self.array[self.top].clone());
     }
@@ -37,7 +38,7 @@ impl Stack {
             return None;
         }
         let elem = self.array[self.top].clone();
-        self.top = self.top - 1; // 栈顶减 1
+        self.top -= 1; // 栈顶减 1
         return Some(elem);
     }
 

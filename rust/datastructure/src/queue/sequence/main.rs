@@ -34,7 +34,7 @@ impl IntQueue {
             return Err(String::from("queue is full"));
         }
         self.array[self.rear] = elem;
-        self.rear = self.rear + 1; // 队尾指针加一
+        self.rear += 1; // 队尾指针加一
         return Ok(elem);
     }
 
@@ -44,7 +44,7 @@ impl IntQueue {
             return None;
         }
         let elem = self.array[self.front];
-        self.front = self.front + 1; // 队头指针加一
+        self.front += 1; // 队头指针加一
         return Some(elem);
     }
 
