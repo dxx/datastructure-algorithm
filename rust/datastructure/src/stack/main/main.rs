@@ -1,8 +1,10 @@
 extern crate array_stack;
 
+use array_stack::Stack;
+
 fn main() {
     // 创建一个栈
-    let mut stack = array_stack::Stack::new(3);
+    let mut stack = Stack::new(3);
     // 入栈
     let _ = stack.push(String::from("one"));
     let _ = stack.push(String::from("two"));
