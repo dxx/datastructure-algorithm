@@ -11,7 +11,8 @@ members = [
     "src/queue/round",
 	"src/stack/lib",
     "src/stack/main",
-    "src/stack/calculator"
+    "src/stack/calculator",
+    "src/stack/reversepoland"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
