@@ -18,7 +18,6 @@
 /// 1	3	6
 /// 2	1	1
 /// 3	3	5
-
 use std::fs;
 
 const SPARSE_ARRAY_FILENAME: &str = "./sparse.data";
@@ -81,7 +80,7 @@ fn storage_sparse_array(sparse_array: Vec<[i32; 3]>) {
         }
         data.push_str("\n");
     }
-    
+
     fs::write(SPARSE_ARRAY_FILENAME, data).unwrap();
 }
 
@@ -92,7 +91,7 @@ fn read_sparse_array() -> Vec<[i32; 3]> {
     // 读取第一行
     let mut strs: Vec<&str> = file_lines[0].split("\t").collect();
 
-      // 第一行信息
+    // 第一行信息
     let mut row: i32 = strs[0].parse().unwrap();
     let mut col: i32 = strs[1].parse().unwrap();
     let mut val: usize = strs[2].parse().unwrap();
@@ -102,7 +101,7 @@ fn read_sparse_array() -> Vec<[i32; 3]> {
     // 从第二行开始
     for i in 1..file_lines.len() {
         if !file_lines[i].is_empty() {
-            strs = file_lines[i].split("\t").collect();   
+            strs = file_lines[i].split("\t").collect();
             row = strs[0].parse().unwrap();
             col = strs[1].parse().unwrap();
             val = strs[2].parse().unwrap();
@@ -126,7 +125,7 @@ fn print_sparse_array(array: Vec<[i32; 3]>) {
         for j in 0..array[i].len() {
             print!("{}\t", array[i][j]);
         }
-        print!("\n");   
+        print!("\n");
     }
 }
 
@@ -151,7 +150,7 @@ fn main() {
     // 存储稀疏数组
     storage_sparse_array(sparse_array.clone());
 
-      // 读取稀疏数组
+    // 读取稀疏数组
     sparse_array = read_sparse_array();
     println!("读取的稀疏数组：");
     print_sparse_array(sparse_array.clone());
