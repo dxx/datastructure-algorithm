@@ -13,18 +13,17 @@
 struct IntQueue {
     array: Vec<i32>, // 存放队列元素的数组
     max_size: usize, // 最大队列元素大小
-    front: usize, // 队头指针
-    rear: usize // 队尾指针
+    front: usize,    // 队头指针
+    rear: usize,     // 队尾指针
 }
 
 impl IntQueue {
-
     pub fn new(size: usize) -> Self {
         return IntQueue {
             array: vec![0; size],
             max_size: size,
             front: 0,
-            rear: 0
+            rear: 0,
         };
     }
 
@@ -78,7 +77,7 @@ fn main() {
     match o {
         Some(data) => {
             println!("{}", data);
-        },
+        }
         None => {
             println!("出队失败: queue is empty");
         }
@@ -89,7 +88,7 @@ fn main() {
     match r {
         Ok(data) => {
             println!("{}", data);
-        },
+        }
         Err(e) => {
             println!("入队失败: {}", e);
         }
