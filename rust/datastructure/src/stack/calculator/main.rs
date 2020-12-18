@@ -12,29 +12,59 @@ use std::collections::HashMap;
 pub struct Operation {
     opt: String,
     priority: i8,
-    opt_func: fn(i32, i32) -> i32
+    opt_func: fn(i32, i32) -> i32,
 }
 
 /// 计算器结构体
 pub struct Calculator {
     num_stack: Stack,
     operation_stack: Stack,
-    operations: HashMap<String, Operation>
+    operations: HashMap<String, Operation>,
 }
 
 impl Calculator {
-
     pub fn new() -> Self {
         return Calculator {
             num_stack: Stack::new(10),
             operation_stack: Stack::new(10),
             operations: [
-                (String::from("+"), Operation { opt: String::from("+"), priority: 1, opt_func: |num1: i32, num2: i32| -> i32 { num1 + num2 }}),
-                (String::from("-"), Operation { opt: String::from("-"), priority: 1, opt_func: |num1: i32, num2: i32| -> i32 { num1 - num2 }}),
-                (String::from("*"), Operation { opt: String::from("*"), priority: 2, opt_func: |num1: i32, num2: i32| -> i32 { num1 * num2 }}),
-                (String::from("/"), Operation { opt: String::from("/"), priority: 2, opt_func: |num1: i32, num2: i32| -> i32 { num1 / num2 }})
-                ].iter().cloned().collect()
-            }
+                (
+                    String::from("+"),
+                    Operation {
+                        opt: String::from("+"),
+                        priority: 1,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 + num2 },
+                    },
+                ),
+                (
+                    String::from("-"),
+                    Operation {
+                        opt: String::from("-"),
+                        priority: 1,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 - num2 },
+                    },
+                ),
+                (
+                    String::from("*"),
+                    Operation {
+                        opt: String::from("*"),
+                        priority: 2,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 * num2 },
+                    },
+                ),
+                (
+                    String::from("/"),
+                    Operation {
+                        opt: String::from("/"),
+                        priority: 2,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 / num2 },
+                    },
+                ),
+            ]
+            .iter()
+            .cloned()
+            .collect(),
+        };
     }
 
     /// 判断是否是操作符号
@@ -77,7 +107,11 @@ impl Calculator {
         let num_str2 = self.num_stack.pop().unwrap();
         let opt = self.operation_stack.pop().unwrap();
         // 计算值
-        return self.calculate_num(num_str1.parse::<i32>().unwrap(), num_str2.parse::<i32>().unwrap(), &opt);
+        return self.calculate_num(
+            num_str1.parse::<i32>().unwrap(),
+            num_str2.parse::<i32>().unwrap(),
+            &opt,
+        );
     }
 
     /// 计算表达式的值
@@ -110,8 +144,9 @@ impl Calculator {
                 }
             } else if self.is_num(char) {
                 // 向后面再取一位判断是否为数字
-                if index < expression.chars().count() - 1 &&
-                    self.is_num(&expression[index + 1..index + 2]) {
+                if index < expression.chars().count() - 1
+                    && self.is_num(&expression[index + 1..index + 2])
+                {
                     number = number + &char.to_owned();
                     index += 1;
                     continue;
@@ -138,7 +173,6 @@ impl Calculator {
         let result = self.num_stack.pop().unwrap();
         println!("表达式执行结果：{}={}", expression, result);
     }
-
 }
 
 fn main() {

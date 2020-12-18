@@ -7,18 +7,17 @@
 
 pub struct Stack {
     array: Vec<String>, // 存放栈元素的向量
-    max_size: usize, // 最大栈元素大小
-    top: usize // 栈顶
+    max_size: usize,    // 最大栈元素大小
+    top: usize,         // 栈顶
 }
 
 impl Stack {
-
     pub fn new(size: usize) -> Self {
         return Stack {
             array: vec![String::from(""); size + 1],
             max_size: size + 1, // 0 下标不存数据，实际容量要多出一个
-            top: 0 // 初始化为 0
-        }
+            top: 0,             // 初始化为 0
+        };
     }
 
     /// 入栈
@@ -27,7 +26,7 @@ impl Stack {
         if self.top == self.max_size - 1 {
             return Err(String::from("stack is full"));
         }
-        self.top += 1; // 栈顶加 1
+        self.top = self.top + 1; // 栈顶加 1
         self.array[self.top] = elem;
         return Ok(self.array[self.top].clone());
     }
@@ -38,7 +37,7 @@ impl Stack {
             return None;
         }
         let elem = self.array[self.top].clone();
-        self.top -= 1; // 栈顶减 1
+        self.top = self.top - 1; // 栈顶减 1
         return Some(elem);
     }
 

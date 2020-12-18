@@ -12,24 +12,54 @@ use std::collections::HashMap;
 pub struct Operation {
     opt: String,
     priority: i8,
-    opt_func: fn(i32, i32) -> i32
+    opt_func: fn(i32, i32) -> i32,
 }
 
 pub struct ReversePoland {
-    operations: HashMap<String, Operation>
+    operations: HashMap<String, Operation>,
 }
 
 impl ReversePoland {
-
     pub fn new() -> Self {
         return ReversePoland {
             operations: [
-                (String::from("+"), Operation { opt: String::from("+"), priority: 1, opt_func: |num1: i32, num2: i32| -> i32 { num1 + num2 }}),
-                (String::from("-"), Operation { opt: String::from("-"), priority: 1, opt_func: |num1: i32, num2: i32| -> i32 { num1 - num2 }}),
-                (String::from("*"), Operation { opt: String::from("*"), priority: 2, opt_func: |num1: i32, num2: i32| -> i32 { num1 * num2 }}),
-                (String::from("/"), Operation { opt: String::from("/"), priority: 2, opt_func: |num1: i32, num2: i32| -> i32 { num1 / num2 }})
-            ].iter().cloned().collect()
-        }
+                (
+                    String::from("+"),
+                    Operation {
+                        opt: String::from("+"),
+                        priority: 1,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 + num2 },
+                    },
+                ),
+                (
+                    String::from("-"),
+                    Operation {
+                        opt: String::from("-"),
+                        priority: 1,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 - num2 },
+                    },
+                ),
+                (
+                    String::from("*"),
+                    Operation {
+                        opt: String::from("*"),
+                        priority: 2,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 * num2 },
+                    },
+                ),
+                (
+                    String::from("/"),
+                    Operation {
+                        opt: String::from("/"),
+                        priority: 2,
+                        opt_func: |num1: i32, num2: i32| -> i32 { num1 / num2 },
+                    },
+                ),
+            ]
+            .iter()
+            .cloned()
+            .collect(),
+        };
     }
 
     /// 判断是否为数字
@@ -80,8 +110,11 @@ impl ReversePoland {
             // 从数栈中弹出两个数，从符号栈中弹出一个符号
             let num_str1 = stack.pop().unwrap();
             let num_str2 = stack.pop().unwrap();
-            let result = self.calculate_num(num_str1.parse::<i32>().unwrap(),
-                                            num_str2.parse::<i32>().unwrap(), str);
+            let result = self.calculate_num(
+                num_str1.parse::<i32>().unwrap(),
+                num_str2.parse::<i32>().unwrap(),
+                str,
+            );
             // 入栈
             let _ = stack.push(result.to_string());
         }
@@ -96,11 +129,11 @@ impl ReversePoland {
             return expressions;
         }
         for mut i in 0..expr.len() {
-            let mut char = String::from(&expr[i..i+1]);
+            let mut char = String::from(&expr[i..i + 1]);
             if self.is_num(&char) {
                 // 向后面继续判断是否为数字
-                while i + 1 < expr.len() && self.is_num(&expr[i+1..i+2]) {
-                    char += &expr[i+1..i+2];
+                while i + 1 < expr.len() && self.is_num(&expr[i + 1..i + 2]) {
+                    char += &expr[i + 1..i + 2];
                     i += 1;
                 }
             }
@@ -126,7 +159,7 @@ impl ReversePoland {
             if str == "(" {
                 // 如果是 ( 直接入栈
                 let _ = stack.push(String::from(str));
-                continue
+                continue;
             }
             if str == ")" {
                 while stack.peek().unwrap() != "(" {
@@ -147,7 +180,9 @@ impl ReversePoland {
                     continue;
                 }
                 // 栈不为空，并且当前字符串的优先级小于等于栈顶的元素
-                while !stack.is_empty() && self.priority(&option.unwrap().opt, &stack.peek().unwrap()) <= 0 {
+                while !stack.is_empty()
+                    && self.priority(&option.unwrap().opt, &stack.peek().unwrap()) <= 0
+                {
                     let elem = stack.pop().unwrap();
                     // 将栈顶的元素追加到 suffixes
                     suffixes.push(elem);
@@ -166,7 +201,6 @@ impl ReversePoland {
 
         return suffixes;
     }
-
 }
 
 fn main() {

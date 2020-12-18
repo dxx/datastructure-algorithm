@@ -15,8 +15,8 @@ fn main() {
     match r {
         Ok(data) => {
             println!("{}", data);
-        },
-        Err(e)  => {
+        }
+        Err(e) => {
             println!("{}", e);
         }
     }
@@ -36,12 +36,11 @@ fn main() {
     match o {
         Some(data) => {
             println!("{}", data);
-        },
+        }
         None => {
             println!("stack is empty");
         }
     }
 
     stack.show_stack();
-
 }
