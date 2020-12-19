@@ -10,7 +10,7 @@ type HeroNode struct {
     no       int       // 编号
     name     string    // 姓名
     nickname string    // 昵称
-    previous *HeroNode // 上一个结点
+    prev *HeroNode // 上一个结点
     next     *HeroNode // 下一个结点
 }
 
@@ -25,7 +25,7 @@ func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
     // 将当前结点插入到链表的最后一个结点
     lastNode.next = newNode
     // 将新结点的上一个结点指向当前结点
-    newNode.previous = lastNode
+    newNode.prev = lastNode
 }
 
 // 删除指定结点
@@ -34,11 +34,11 @@ func deleteNode(headNode *HeroNode, node *HeroNode) {
     for tempNode != nil {
         if tempNode.no == node.no {
             // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-            tempNode.previous.next = tempNode.next
+            tempNode.prev.next = tempNode.next
             // 最后一个结点的 next 指向空
             if tempNode.next != nil {
                 // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-                tempNode.next.previous = tempNode.previous
+                tempNode.next.prev = tempNode.prev
             }
             return
         }

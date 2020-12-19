@@ -9,7 +9,7 @@ import "fmt"
 
 type Person struct {
     no       int     // 编号
-    previous *Person // 上一个人
+    prev *Person // 上一个人
     next     *Person // 下一个人
 }
 
@@ -35,19 +35,19 @@ func NewBoyLinkedList(count int) *PersonLinkedList {
             // 初始化 First 节点
             personLinkedList.first = person
             personLinkedList.first.next = personLinkedList.first
-            personLinkedList.first.previous = personLinkedList.first
+            personLinkedList.first.prev = personLinkedList.first
 
             // 将 prev 指向 First 节点，继续下一次循环
             prev = personLinkedList.first
             continue
         }
         prev.next = person
-        person.previous = prev
+        person.prev = prev
 
         // 新增加的节点的下一个节点指向第一节点
         person.next = personLinkedList.first
         // 第一个节点的上一个节点指向新增加的节点
-        personLinkedList.first.previous = person
+        personLinkedList.first.prev = person
 
         prev = person
     }
@@ -92,7 +92,7 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
 
     for {
         // 表示只有一个节点
-        if current.previous == current && current.next == current {
+        if current.prev == current && current.next == current {
             break
         }
 
@@ -101,8 +101,8 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
             current = current.next
         }
         // 删除元素
-        current.previous.next = current.next
-        current.next.previous = current.previous
+        current.prev.next = current.next
+        current.next.prev = current.prev
 
         fmt.Printf("出队人的编号:%d\n", current.no)
         current = current.next

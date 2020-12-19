@@ -10,7 +10,7 @@ import "fmt"
 type PersonNode struct {
     no       int
     name     string
-    previous *PersonNode
+    prev *PersonNode
     next     *PersonNode
 }
 
@@ -20,7 +20,7 @@ func insertNode(headNode *PersonNode, newNode *PersonNode) {
     if headNode.next == nil {
         headNode.no = newNode.no
         headNode.name = newNode.name
-        headNode.previous = headNode
+        headNode.prev = headNode
         headNode.next = headNode
         return
     }
@@ -31,10 +31,10 @@ func insertNode(headNode *PersonNode, newNode *PersonNode) {
     }
     // 将新结点添加到链表末尾
     lastNode.next = newNode
-    newNode.previous = lastNode
+    newNode.prev = lastNode
     // 将新结点下一个结点指针指向头结点
     newNode.next = headNode
-    headNode.previous = newNode
+    headNode.prev = newNode
 }
 
 // 删除指定结点，返回头结点
@@ -44,7 +44,7 @@ func deleteNode(headNode *PersonNode, node *PersonNode) *PersonNode {
         // 头结点就是要删除的结点
         if headNode.no == node.no {
             headNode.next = nil
-            headNode.previous = nil
+            headNode.prev = nil
         }
         return headNode
     }
@@ -67,9 +67,9 @@ func deleteNode(headNode *PersonNode, node *PersonNode) *PersonNode {
     // 存在需要删除的结点
     if isExist {
         // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-        tempNode.previous.next = tempNode.next
+        tempNode.prev.next = tempNode.next
         // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-        tempNode.next.previous = tempNode.previous
+        tempNode.next.prev = tempNode.prev
     }
     return headNode
 }

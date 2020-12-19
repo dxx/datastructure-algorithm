@@ -405,7 +405,7 @@ type HeroNode struct {
     no int // 编号
     name string // 姓名
     nickname string // 昵称
-    previous *HeroNode // 上一个结点
+    prev *HeroNode // 上一个结点
     next *HeroNode // 下一个结点
 }
 ```
@@ -449,7 +449,7 @@ func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
     // 将当前结点插入到链表的最后一个结点
     lastNode.next = newNode
     // 将新结点的上一个结点指向当前结点
-    newNode.previous = lastNode
+    newNode.prev = lastNode
 }
 ```
 
@@ -496,11 +496,11 @@ func deleteNode(headNode *HeroNode, node *HeroNode) {
     for tempNode != nil {
         if tempNode.no == node.no {
             // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-            tempNode.previous.next = tempNode.next
+            tempNode.prev.next = tempNode.next
             // 最后一个结点的 next 指向空
             if tempNode.next != nil {
                 // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-                tempNode.next.previous = tempNode.previous
+                tempNode.next.prev = tempNode.prev
             }
             return
         }
@@ -571,7 +571,7 @@ func main() {
 type PersonNode struct {
     no int
     name string
-    previous *PersonNode
+    prev *PersonNode
     next *PersonNode
 }
 ```
@@ -612,7 +612,7 @@ func insertNode(headNode *PersonNode, newNode *PersonNode) {
     if headNode.next == nil {
         headNode.no = newNode.no
         headNode.name = newNode.name
-        headNode.previous = headNode
+        headNode.prev = headNode
         headNode.next = headNode
         return
     }
@@ -623,10 +623,10 @@ func insertNode(headNode *PersonNode, newNode *PersonNode) {
     }
     // 将新结点添加到链表末尾
     lastNode.next = newNode
-    newNode.previous = lastNode
+    newNode.prev = lastNode
     // 将新结点下一个结点指针指向头结点
     newNode.next = headNode
-    headNode.previous = newNode
+    headNode.prev = newNode
 }
 ```
 
@@ -674,7 +674,7 @@ func deleteNode(headNode *PersonNode, node *PersonNode) *PersonNode {
         // 头结点就是要删除的结点
         if headNode.no == node.no {
             headNode.next = nil
-            headNode.previous = nil
+            headNode.prev = nil
         }
         return headNode
     }
@@ -697,9 +697,9 @@ func deleteNode(headNode *PersonNode, node *PersonNode) *PersonNode {
     // 存在需要删除的结点
     if isExist {
         // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-        tempNode.previous.next = tempNode.next
+        tempNode.prev.next = tempNode.next
         // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-        tempNode.next.previous = tempNode.previous
+        tempNode.next.previous = tempNode.prev
     }
     return headNode
 }
@@ -785,7 +785,7 @@ func main() {
 ```go
 type Person struct {
     no       int     // 编号
-    previous *Person // 上一个人
+    prev *Person // 上一个人
     next     *Person // 下一个人
 }
 
@@ -815,19 +815,19 @@ func NewBoyLinkedList(count int) *PersonLinkedList {
             // 初始化 First 节点
             personLinkedList.first = person
             personLinkedList.first.next = personLinkedList.first
-            personLinkedList.first.previous = personLinkedList.first
+            personLinkedList.first.prev = personLinkedList.first
 
             // 将 prev 指向 First 节点，继续下一次循环
             prev = personLinkedList.first
             continue
         }
         prev.next = person
-        person.previous = prev
+        person.prev = prev
 
         // 新增加的节点的下一个节点指向第一节点
         person.next = personLinkedList.first
         // 第一个节点的上一个节点指向新增加的节点
-        personLinkedList.first.previous = person
+        personLinkedList.first.prev = person
 
         prev = person
     }
@@ -880,7 +880,7 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
 
     for {
         // 表示只有一个节点
-        if current.previous == current && current.next == current {
+        if current.prev == current && current.next == current {
             break
         }
 
@@ -890,7 +890,7 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
         }
         // 删除元素
         current.previous.next = current.next
-        current.next.previous = current.previous
+        current.next.prev = current.prev
 
         fmt.Printf("出队人的编号:%d\n", current.no)
         current = current.next
