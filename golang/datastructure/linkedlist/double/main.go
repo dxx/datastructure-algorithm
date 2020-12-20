@@ -14,6 +14,14 @@ type HeroNode struct {
     next     *HeroNode // 下一个结点
 }
 
+func NewHeroNode(no int, name, nickname string) *HeroNode {
+    return &HeroNode {
+        no: no,
+        name: name,
+        nickname: nickname,
+    }
+}
+
 // 在链表尾部插入，通过 head 找到链表的尾部
 func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
     lastNode := headNode
@@ -67,11 +75,11 @@ func testInsertAtTail() {
     // 创建 head 结点，head 结点不包含数据
     headNode := new(HeroNode)
     // 创建第一个结点
-    heroNode1 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
+    heroNode1 := NewHeroNode(3, "吴用", "智多星")
     // 创建第二个结点
-    heroNode2 := &HeroNode{no: 6, name: "林冲", nickname: "豹子头"}
+    heroNode2 := NewHeroNode(6, "林冲", "豹子头")
     // 创建第三个结点
-    heroNode3 := &HeroNode{no: 7, name: "秦明", nickname: "霹雳火"}
+    heroNode3 := NewHeroNode(7, "秦明", "霹雳火")
 
     // 将结点添加到链表尾部
     insertAtTail(headNode, heroNode1)
@@ -84,11 +92,11 @@ func testInsertAtTail() {
 func testDeleteNode() {
     // 创建结点
     headNode := new(HeroNode)
-    heroNode1 := &HeroNode{no: 1, name: "宋江", nickname: "呼保义"}
-    heroNode2 := &HeroNode{no: 2, name: "卢俊义", nickname: "玉麒麟"}
-    heroNode3 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
-    heroNode4 := &HeroNode{no: 4, name: "公孙胜", nickname: "入云龙"}
-    heroNode5 := &HeroNode{no: 5, name: "关胜", nickname: "大刀"}
+    heroNode1 := NewHeroNode(1, "宋江", "呼保义")
+    heroNode2 := NewHeroNode(2, "卢俊义", "玉麒麟")
+    heroNode3 := NewHeroNode(3, "吴用", "智多星")
+    heroNode4 := NewHeroNode(4, "公孙胜", "入云龙")
+    heroNode5 := NewHeroNode(5, "关胜", "大刀")
 
     // 插入结点
     insertAtTail(headNode, heroNode1)

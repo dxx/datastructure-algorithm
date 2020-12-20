@@ -13,6 +13,14 @@ type HeroNode struct {
     next     *HeroNode // 下一个结点
 }
 
+func NewHeroNode(no int, name, nickname string) *HeroNode {
+    return &HeroNode {
+        no: no,
+        name: name,
+        nickname: nickname,
+    }
+}
+
 // 在链表尾部插入，通过 head 找到链表的尾部
 func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
     lastNode := headNode
@@ -78,11 +86,11 @@ func testInsertAtTail() {
     // 创建 head 结点，head 结点不包含数据
     headNode := new(HeroNode)
     // 创建第一个结点
-    heroNode1 := &HeroNode{no: 1, name: "宋江", nickname: "呼保义"}
+    heroNode1 := NewHeroNode(1, "宋江", "呼保义")
     // 创建第二个结点
-    heroNode2 := &HeroNode{no: 2, name: "卢俊义", nickname: "玉麒麟"}
+    heroNode2 := NewHeroNode(2, "卢俊义", "玉麒麟")
     // 创建第三个结点
-    heroNode3 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
+    heroNode3 := NewHeroNode(3, "吴用", "智多星")
 
     // 将结点添加到链表尾部
     insertAtTail(headNode, heroNode1)
@@ -95,9 +103,9 @@ func testInsertAtTail() {
 func testSortInsertByNo() {
     // 创建结点，用来做尾部插入
     head := new(HeroNode)
-    node1 := &HeroNode{no: 1, name: "宋江", nickname: "呼保义"}
-    node2 := &HeroNode{no: 2, name: "卢俊义", nickname: "玉麒麟"}
-    node3 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
+    node1 := NewHeroNode(1, "宋江", "呼保义")
+    node2 := NewHeroNode(2, "卢俊义", "玉麒麟")
+    node3 := NewHeroNode(3, "吴用", "智多星")
 
     insertAtTail(head, node1)
     insertAtTail(head, node3) // 将第三个结点插入到第二个位置
@@ -109,11 +117,11 @@ func testSortInsertByNo() {
     // 创建 head 结点
     headNode := new(HeroNode)
     // 创建第一个结点
-    heroNode1 := &HeroNode{no: 1, name: "宋江", nickname: "呼保义"}
+    heroNode1 := NewHeroNode(1, "宋江", "呼保义")
     // 创建第二个结点
-    heroNode2 := &HeroNode{no: 2, name: "卢俊义", nickname: "玉麒麟"}
+    heroNode2 := NewHeroNode(2, "卢俊义", "玉麒麟")
     // 创建第三个结点
-    heroNode3 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
+    heroNode3 := NewHeroNode(3, "吴用", "智多星")
 
     // 将结点按照 no 升序插入
     sortInsertByNo(headNode, heroNode1)
@@ -127,11 +135,11 @@ func testSortInsertByNo() {
 func testDeleteNode() {
     // 创建结点
     headNode := new(HeroNode)
-    heroNode1 := &HeroNode{no: 1, name: "宋江", nickname: "呼保义"}
-    heroNode2 := &HeroNode{no: 2, name: "卢俊义", nickname: "玉麒麟"}
-    heroNode3 := &HeroNode{no: 3, name: "吴用", nickname: "智多星"}
-    heroNode4 := &HeroNode{no: 4, name: "公孙胜", nickname: "入云龙"}
-    heroNode5 := &HeroNode{no: 5, name: "关胜", nickname: "大刀"}
+    heroNode1 := NewHeroNode(1, "宋江", "呼保义")
+    heroNode2 := NewHeroNode(2, "卢俊义", "玉麒麟")
+    heroNode3 := NewHeroNode(3, "吴用", "智多星")
+    heroNode4 := NewHeroNode(4, "公孙胜", "入云龙")
+    heroNode5 := NewHeroNode(5, "关胜", "大刀")
 
     // 插入结点
     insertAtTail(headNode, heroNode1)
