@@ -12,7 +12,8 @@ members = [
 	"src/stack/lib",
     "src/stack/main",
     "src/stack/calculator",
-    "src/stack/reversepoland"
+    "src/stack/reversepoland",
+    "src/linkedlist/single"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

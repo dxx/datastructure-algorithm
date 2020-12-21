@@ -1,0 +1,7 @@
+[package]
+name = "linkedlist-single"
+version = "0.1.0"
+
+[[bin]]
+name = "linkedlist_single"
+path = "./main.rs"
