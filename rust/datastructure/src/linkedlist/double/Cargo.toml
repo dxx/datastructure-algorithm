@@ -1,0 +1,7 @@
+[package]
+name = "linkedlist-double"
+version = "0.1.0"
+
+[[bin]]
+name = "linkedlist_double"
+path = "./main.rs"
