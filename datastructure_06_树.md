@@ -4,13 +4,13 @@
 >
 > 默认使用 **Go** 语言实现。
 
-[二叉树](./Datastructure_06_树.md#二叉树)
+[二叉树](./datastructure_06_树.md#二叉树)
 
-[哈夫曼树](./Datastructure_06_树.md#哈夫曼树)
+[哈夫曼树](./datastructure_06_树.md#哈夫曼树)
 
-[二叉排序树](./Datastructure_06_树.md#二叉排序树)
+[二叉排序树](./datastructure_06_树.md#二叉排序树)
 
-[AVL树](./Datastructure_06_树.md#AVL树)
+[AVL树](./datastructure_06_树.md#AVL树)
 
 ### 简介
 
