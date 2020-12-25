@@ -9,7 +9,7 @@ import "fmt"
 
 type Person struct {
     no       int     // 编号
-    prev *Person // 上一个人
+    prev     *Person // 上一个人
     next     *Person // 下一个人
 }
 
