@@ -88,6 +88,7 @@ fn delete_node(head_node: Option<Rc<RefCell<HeroNode>>>, no: i32) -> Option<Rc<R
     return head_node;
 }
 
+/// 打印链表结点内容
 fn print_head_node_info(head_node: Option<Rc<RefCell<HeroNode>>>) {
     let mut borrow_head_node = Rc::clone(head_node.as_ref().unwrap());
     if borrow_head_node.borrow().next.is_none() {
