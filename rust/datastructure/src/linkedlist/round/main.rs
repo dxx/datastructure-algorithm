@@ -5,7 +5,6 @@ use std::rc::Rc;
 /// 循环链表的特点是表中最后一个结点的指针域指向头结点，整个链表形成一个环
 
 /// 双向循环链表
-#[derive(PartialEq)]
 pub struct PersonNode {
     no: i32,
     name: String,
@@ -88,9 +87,11 @@ fn delete_node(
     if deleted_node.is_some() {
         let mut node = deleted_node.as_ref().unwrap();
         // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-        node.borrow().prev.as_ref().unwrap().borrow_mut().next = Some(Rc::clone(node.borrow().next.as_ref().unwrap()));
+        node.borrow().prev.as_ref().unwrap().borrow_mut().next =
+            Some(Rc::clone(node.borrow().next.as_ref().unwrap()));
         // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-        node.borrow().next.as_ref().unwrap().borrow_mut().prev = Some(Rc::clone(node.borrow().prev.as_ref().unwrap()));
+        node.borrow().next.as_ref().unwrap().borrow_mut().prev =
+            Some(Rc::clone(node.borrow().prev.as_ref().unwrap()));
         if node.borrow().no == temp_node.borrow().no {
             // 头结点删除了，将头结点的下一个结点作为头结点
             return Some(Rc::clone(node.borrow().next.as_ref().unwrap()));
@@ -149,25 +150,11 @@ fn test_insert_node() {
 
 fn test_delete_node() {
     // 创建结点
-    let mut head_node = Some(PersonNode::new(
-        1,
-        String::from("张三"),
-    ));
-    let hero_node2 = Some(PersonNode::new(
-        2,
-        String::from("李四"),
-    ));
-    let hero_node3 = Some(PersonNode::new(
-        3,
-        String::from("王五"),
-    ));
-    let hero_node4 = Some(PersonNode::new(
-        4,
-        String::from("赵六"),
-    ));
-    let hero_node5 = Some(PersonNode::new(
-        5, String::from("孙七"),
-    ));
+    let mut head_node = Some(PersonNode::new(1, String::from("张三")));
+    let hero_node2 = Some(PersonNode::new(2, String::from("李四")));
+    let hero_node3 = Some(PersonNode::new(3, String::from("王五")));
+    let hero_node4 = Some(PersonNode::new(4, String::from("赵六")));
+    let hero_node5 = Some(PersonNode::new(5, String::from("孙七")));
 
     // 插入结点
     head_node = insert_node(head_node, hero_node2);
