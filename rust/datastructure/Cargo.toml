@@ -14,7 +14,8 @@ members = [
     "src/stack/calculator",
     "src/stack/reversepoland",
     "src/linkedlist/single",
-    "src/linkedlist/double"
+    "src/linkedlist/double",
+    "src/linkedlist/round"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

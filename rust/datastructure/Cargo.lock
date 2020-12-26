@@ -34,6 +34,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1482821306169ec4d07f6aca392a4681f66c75c9918aa49641a2595db64053cb"
 
 [[package]]
+name = "linkedlist-double"
+version = "0.1.0"
+
+[[package]]
+name = "linkedlist-round"
+version = "0.1.0"
+
+[[package]]
 name = "linkedlist-single"
 version = "0.1.0"
 
