@@ -38,6 +38,10 @@ name = "linkedlist-double"
 version = "0.1.0"
 
 [[package]]
+name = "linkedlist-interview"
+version = "0.1.0"
+
+[[package]]
 name = "linkedlist-round"
 version = "0.1.0"
 
