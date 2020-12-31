@@ -53,19 +53,7 @@ fn get_node_length(head_node: Option<Box<Node>>) -> u32 {
     return length
 }
 
-fn test_get_length() {
-    let mut head_node = Some(Box::new(Node::new(String::from("node1"))));
-    let node2 = Some(Box::new(Node::new(String::from("node2"))));
-    let node3 = Some(Box::new(Node::new(String::from("node3"))));
-    head_node = insert_at_tail(head_node, node2);
-    head_node = insert_at_tail(head_node, node3);
-
-    let length = get_node_length(head_node);
-    println!("单链表结点个数为: {}\n", length);
-}
-
 /// 获取倒数第 n 个结点
-
 /// 遍历
 /// 1.获取链表结点数 length
 /// 2.遍历到 length - n 个结点
@@ -87,6 +75,17 @@ fn get_last_index_node(
         last_node = &mut last_node.as_mut().unwrap().next;
     }
     return last_node.take();
+}
+
+fn test_get_length() {
+    let mut head_node = Some(Box::new(Node::new(String::from("node1"))));
+    let node2 = Some(Box::new(Node::new(String::from("node2"))));
+    let node3 = Some(Box::new(Node::new(String::from("node3"))));
+    head_node = insert_at_tail(head_node, node2);
+    head_node = insert_at_tail(head_node, node3);
+
+    let length = get_node_length(head_node);
+    println!("单链表结点个数为: {}\n", length);
 }
 
 fn test_get_last_index_node() {
