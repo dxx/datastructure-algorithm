@@ -77,6 +77,26 @@ fn get_last_index_node(
     return last_node.take();
 }
 
+/// 单链表反转
+/// 1.定义一个新的头结点 reverseHead
+/// 2.遍历链表，每遍历一个结点，将其取出，放在新的头结点 reverseHead 的后面
+/// 3.最后将头结点的 next 结点指向 reverseHead 的 next 结点
+fn reverse_node(head_node: Option<Box<Node>>) -> Option<Box<Node>> {
+    if head_node.is_none() {
+        return None;
+    }
+    let mut reverse_head = Some(Node::new(String::from("")));
+    let mut current = head_node;
+    while current.is_some() {
+        let mut node = current.unwrap();
+        let mut next = node.next.take();
+        node.next = reverse_head.as_mut().unwrap().next.take();
+        reverse_head.as_mut().unwrap().next = Some(node);
+        current = next;
+    }
+    return reverse_head.take().unwrap().next;
+}
+
 fn test_get_length() {
     let mut head_node = Some(Box::new(Node::new(String::from("node1"))));
     let node2 = Some(Box::new(Node::new(String::from("node2"))));
@@ -100,7 +120,23 @@ fn test_get_last_index_node() {
     println!("单链表结点中倒数第{}个结点为: {}", index, last_node.as_ref().unwrap().name);
 }
 
+fn test_reverse_node() {
+    let mut head_node = Some(Box::new(Node::new(String::from("node1"))));
+    let node2 = Some(Box::new(Node::new(String::from("node2"))));
+    let node3 = Some(Box::new(Node::new(String::from("node3"))));
+    head_node = insert_at_tail(head_node, node2);
+    head_node = insert_at_tail(head_node, node3);
+
+    println!("反转前:");
+    print_node_info(head_node.clone());
+
+    head_node = reverse_node(head_node);
+    println!("反转后:");
+    print_node_info(head_node.clone());
+}
+
 fn main() {
     // test_get_length();
     // test_get_last_index_node();
+	// test_reverse_node();
 }
