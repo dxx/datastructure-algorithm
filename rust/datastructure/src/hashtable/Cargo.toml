@@ -1,0 +1,7 @@
+[package]
+name = "hashtable"
+version = "0.1.0"
+
+[[bin]]
+name = "hashtable"
+path = "./main.rs"
