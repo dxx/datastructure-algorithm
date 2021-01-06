@@ -46,14 +46,14 @@ fn sort_insert_by_no(
     loop {
         let node = temp_node;
         // 最后一个结点，跳出循环
-        if node.next.is_none() || node.next.as_mut().unwrap().no > new_node.as_mut().unwrap().no {
+        if node.next.is_none() || node.next.as_ref().unwrap().no > new_node.as_ref().unwrap().no {
             // new_node 结点应该插入到 node 后面
             // node 的下一个结点插入到 new_node 的下一个结点
             new_node.as_mut().unwrap().next = node.next.clone();
             // new_node 结点插入到 new_node 的下一个结点
             node.next = Some(new_node.unwrap());
             break;
-        } else if node.next.as_mut().unwrap().no == new_node.as_mut().unwrap().no {
+        } else if node.next.as_ref().unwrap().no == new_node.as_ref().unwrap().no {
             panic!("no 相等不能插入") // no 相等不能插入
         }
         temp_node = node.next.as_mut().unwrap();
