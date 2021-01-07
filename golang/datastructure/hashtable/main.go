@@ -195,7 +195,7 @@ func testDeleteEmployee() {
     fmt.Println("删除员工前:")
     hashtable.List()
 
-    // 修改员工
+    // 删除员工
     hashtable.Delete(2)
 
     fmt.Println("删除员工后:")

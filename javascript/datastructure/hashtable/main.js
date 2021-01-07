@@ -198,7 +198,7 @@ function testDeleteEmployee() {
   console.log("删除员工前:");
   hashtable.list();
 
-  // 修改员工
+  // 删除员工
   hashtable.delete(2);
 
   console.log("删除员工后:");
