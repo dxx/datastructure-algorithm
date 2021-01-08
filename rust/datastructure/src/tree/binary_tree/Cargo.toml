@@ -1,0 +1,7 @@
+[package]
+name = "tree-binary-tree"
+version = "0.1.0"
+
+[[bin]]
+name = "tree_binary_tree"
+path = "./main.rs"
