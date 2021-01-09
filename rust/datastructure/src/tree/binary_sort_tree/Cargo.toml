@@ -1,0 +1,7 @@
+[package]
+name = "tree-binary-sort-tree"
+version = "0.1.0"
+
+[[bin]]
+name = "tree_binary_sort_tree"
+path = "./main.rs"

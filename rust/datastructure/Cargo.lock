@@ -136,6 +136,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "tree-binary-sort-tree"
+version = "0.1.0"
+
+[[package]]
 name = "tree-binary-tree"
 version = "0.1.0"
 

@@ -18,7 +18,8 @@ members = [
     "src/linkedlist/round",
     "src/linkedlist/interview",
     "src/hashtable",
-    "src/tree/binary_tree"
+    "src/tree/binary_tree",
+    "src/tree/binary_sort_tree"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
