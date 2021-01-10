@@ -40,6 +40,7 @@ impl BinarySortTree {
         BinarySortTree { root: None }
     }
 
+    /// 添加结点
     pub fn add(&mut self, mut node: Option<Rc<RefCell<BinaryTreeNode>>>) {
         if node.is_none() {
             return;
@@ -79,6 +80,51 @@ impl BinarySortTree {
         }
     }
 
+    pub fn search(
+        &self,
+        no: u32,
+    ) -> (
+        Option<Rc<RefCell<BinaryTreeNode>>>,
+        Option<Rc<RefCell<BinaryTreeNode>>>,
+    ) {
+        if self.root.is_none() {
+            return (None, None);
+        }
+        if self.root.as_ref().unwrap().borrow().no == no {
+            return (None, self.root.clone());
+        }
+        return self.recursion_search(self.root.clone(), no);
+    }
+
+    /// 递归查找指定节点
+    /// 返回查找到的父节点和查找到的节点
+    fn recursion_search(
+        &self,
+        node: Option<Rc<RefCell<BinaryTreeNode>>>,
+        no: u32,
+    ) -> (
+        Option<Rc<RefCell<BinaryTreeNode>>>,
+        Option<Rc<RefCell<BinaryTreeNode>>>,
+    ) {
+        if node.is_none() {
+            return (None, None);
+        }
+        let borrowed_node = node.as_ref().unwrap().borrow();
+        if borrowed_node.left.is_some() && borrowed_node.left.as_ref().unwrap().borrow().no == no {
+            return (node.clone(), borrowed_node.left.clone());
+        }
+        if borrowed_node.right.is_some() && borrowed_node.right.as_ref().unwrap().borrow().no == no
+        {
+            return (node.clone(), borrowed_node.right.clone());
+        }
+        // 判断是往左边还是往右边查找
+        return if no < borrowed_node.no {
+            self.recursion_search(borrowed_node.left.clone(), no)
+        } else {
+            self.recursion_search(borrowed_node.right.clone(), no)
+        };
+    }
+
     pub fn infix_order(&self) {
         if self.root.is_none() {
             return;
@@ -106,4 +152,8 @@ fn main() {
 
     println!("======中序遍历======");
     binary_sort_tree.infix_order();
+
+    println!("======查找节点======");
+    let (_parent, node) = binary_sort_tree.search(6);
+    println!("查找no={}", node.as_ref().unwrap().borrow().no);
 }
