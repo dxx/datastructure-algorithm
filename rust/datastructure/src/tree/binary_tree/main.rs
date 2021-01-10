@@ -186,7 +186,7 @@ fn test_search() {
     println!("======后序查找======");
     println!("查找no={}", no);
     let node = post_order_search(root.clone(), no);
-    println!("查找结果: no={}", node.as_ref().unwrap().borrow().no)
+    println!("查找结果: no={}", node.as_ref().unwrap().borrow().no);
 }
 
 fn main() {
