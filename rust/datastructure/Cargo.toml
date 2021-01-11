@@ -19,7 +19,8 @@ members = [
     "src/linkedlist/interview",
     "src/hashtable",
     "src/tree/binary_tree",
-    "src/tree/binary_sort_tree"
+    "src/tree/binary_sort_tree",
+    "src/tree/avl_tree"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
