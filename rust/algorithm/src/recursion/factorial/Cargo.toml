@@ -1,0 +1,7 @@
+[package]
+name = "recursion-factorial"
+version = "0.1.0"
+
+[[bin]]
+name = "recursion_factorial"
+path = "main.rs"
