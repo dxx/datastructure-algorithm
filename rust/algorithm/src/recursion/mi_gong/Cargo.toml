@@ -1,0 +1,7 @@
+[package]
+name = "recursion-migong"
+version = "0.1.0"
+
+[[bin]]
+name = "recursion_migong"
+path = "main.rs"
