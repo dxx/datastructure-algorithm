@@ -1,9 +1,9 @@
 use std::collections::LinkedList;
 
 pub struct Graph {
-    vertexes: Vec<String>, // 顶点
-    matrix: Vec<Vec<u32>>, // 邻接矩阵。0-不通，1-通
-    num_of_edge: usize,    // 边的数目
+    pub vertexes: Vec<String>, // 顶点
+    pub matrix: Vec<Vec<u32>>, // 邻接矩阵。0-不通，1-通
+    pub num_of_edge: usize,    // 边的数目
 }
 
 impl Graph {
