@@ -1,6 +1,6 @@
 ## 图
 
-> 各种语言实现代码：[Go](./golang/datastructure/graph)   [Java](./java/datastructure/src/com/mcx/graph)   [JavaScript](./javascript/datastructure/graph)
+> 各种语言实现代码：[Go](./golang/datastructure/graph)   [Java](./java/datastructure/src/com/mcx/graph)   [JavaScript](./javascript/datastructure/graph)   [Rust](./rust/datastructure/src/graph)
 >
 > 默认使用 **Go** 语言实现。
 
