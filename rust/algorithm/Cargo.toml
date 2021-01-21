@@ -10,7 +10,8 @@ members = [
     "src/recursion/mi_gong",
     "src/recursion/eight_queen",
     "src/sort/bubble",
-    "src/sort/select"
+    "src/sort/select",
+    "src/sort/insert"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
