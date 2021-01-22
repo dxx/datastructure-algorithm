@@ -1,0 +1,7 @@
+[package]
+name = "sort-quick"
+version = "0.1.0"
+
+[[bin]]
+name = "sort_quick"
+path = "main.rs"
