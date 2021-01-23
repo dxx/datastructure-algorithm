@@ -31,3 +31,7 @@ version = "0.1.0"
 [[package]]
 name = "sort-select"
 version = "0.1.0"
+
+[[package]]
+name = "sort-shell"
+version = "0.1.0"
