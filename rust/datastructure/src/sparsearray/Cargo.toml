@@ -1,7 +1,0 @@
-[package]
-name = "sparsearray"
-version = "0.1.0"
-
-[[bin]]
-name = "sparsearray"
-path = "./main.rs"

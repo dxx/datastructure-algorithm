@@ -1,7 +1,0 @@
-[package]
-name = "linkedlist-interview"
-version = "0.1.0"
-
-[[bin]]
-name = "linkedlist_interview"
-path = "./main.rs"

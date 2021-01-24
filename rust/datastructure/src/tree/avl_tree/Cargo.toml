@@ -1,7 +1,0 @@
-[package]
-name = "tree-avl-tree"
-version = "0.1.0"
-
-[[bin]]
-name = "tree_avl_tree"
-path = "./main.rs"

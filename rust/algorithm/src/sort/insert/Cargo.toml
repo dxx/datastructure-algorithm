@@ -1,7 +1,0 @@
-[package]
-name = "sort-insert"
-version = "0.1.0"
-
-[[bin]]
-name = "sort_insert"
-path = "main.rs"

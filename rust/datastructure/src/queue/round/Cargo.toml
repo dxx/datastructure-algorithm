@@ -1,7 +1,0 @@
-[package]
-name = "queue-round"
-version = "0.1.0"
-
-[[bin]]
-name = "queue_round"
-path = "./main.rs"

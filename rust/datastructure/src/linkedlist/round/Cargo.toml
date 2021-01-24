@@ -1,7 +1,0 @@
-[package]
-name = "linkedlist-round"
-version = "0.1.0"
-
-[[bin]]
-name = "linkedlist_round"
-path = "./main.rs"

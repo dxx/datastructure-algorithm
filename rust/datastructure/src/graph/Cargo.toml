@@ -1,7 +1,0 @@
-[package]
-name = "graph"
-version = "0.1.0"
-
-[[bin]]
-name = "graph"
-path = "./main.rs"

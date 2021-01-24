@@ -57,7 +57,7 @@ impl Hashtable {
             return Ok(true);
         }
 
-        let mut head_node = link_array[index].as_mut().unwrap();
+        let head_node = link_array[index].as_mut().unwrap();
         // 判断头结点
         if head_node.employee.id > id {
             link_node.next = link_array[index].take();
@@ -103,7 +103,7 @@ impl Hashtable {
         if link_array[index].is_none() {
             return;
         }
-        let mut head_node = link_array[index].as_mut().unwrap();
+        let head_node = link_array[index].as_mut().unwrap();
         // 判断头结点
         if head_node.employee.id == id {
             link_array[index] = head_node.next.take();
@@ -134,7 +134,7 @@ impl Hashtable {
     fn get_employee_by_id(&mut self, id: u32) -> Option<&mut Box<Employee>> {
         // 计算下标
         let index = id as usize % self.link_array.len();
-        let mut head_node = &mut self.link_array[index];
+        let head_node = &mut self.link_array[index];
         // 向量没有元素
         if head_node.is_none() {
             return None;
@@ -194,6 +194,7 @@ impl Hashtable {
     }
 }
 
+#[test]
 fn test_add_employee() {
     // 创建一个哈希表
     let mut hashtable = Hashtable::new(5);
@@ -211,6 +212,7 @@ fn test_add_employee() {
     hashtable.list();
 }
 
+#[test]
 fn test_update_employee() {
     let mut hashtable = Hashtable::new(5);
     let employee1 = Box::new(Employee::new(1, String::from("张三")));
@@ -233,6 +235,7 @@ fn test_update_employee() {
     hashtable.list();
 }
 
+#[test]
 fn test_delete_employee() {
     let mut hashtable = Hashtable::new(5);
     let employee1 = Box::new(Employee::new(2, String::from("李四")));
@@ -247,10 +250,4 @@ fn test_delete_employee() {
 
     println!("删除员工后:");
     hashtable.list();
-}
-
-fn main() {
-    // test_add_employee();
-    // test_update_employee();
-    // test_delete_employee();
 }

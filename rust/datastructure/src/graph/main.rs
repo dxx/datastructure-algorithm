@@ -39,11 +39,6 @@ impl Graph {
         self.vertexes.len()
     }
 
-    /// 获取边的数量
-    pub fn get_num_of_edge(&self) -> usize {
-        self.num_of_edge
-    }
-
     /// 深度优先遍历
     pub fn dfs(&self) {
         let mut is_visited = vec![false; self.get_num_of_vertex()];
@@ -163,7 +158,8 @@ impl Graph {
     }
 }
 
-fn main() {
+#[test]
+fn test_graph() {
     let vertexes = ["A", "B", "C", "D", "E"];
     let mut graph = Graph::new(5);
 

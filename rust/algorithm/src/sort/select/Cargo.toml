@@ -1,7 +1,0 @@
-[package]
-name = "sort-select"
-version = "0.1.0"
-
-[[bin]]
-name = "sort_select"
-path = "main.rs"

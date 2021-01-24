@@ -2,28 +2,8 @@
 name = "datastructure"
 version = "0.1.0"
 authors = ["code-mcx <1827939333@qq.com>"]
-edition = "2018"
-
-[workspace]
-members = [
-    "src/sparsearray",
-    "src/queue/sequence",
-    "src/queue/round",
-	"src/stack/lib",
-    "src/stack/main",
-    "src/stack/calculator",
-    "src/stack/reversepoland",
-    "src/linkedlist/single",
-    "src/linkedlist/double",
-    "src/linkedlist/round",
-    "src/linkedlist/interview",
-    "src/hashtable",
-    "src/tree/binary_tree",
-    "src/tree/binary_sort_tree",
-    "src/tree/avl_tree",
-    "src/graph"
-]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+regex = "0.1"

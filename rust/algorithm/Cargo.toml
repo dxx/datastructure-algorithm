@@ -2,19 +2,6 @@
 name = "algorithm"
 version = "0.1.0"
 authors = ["code-mcx <1827939333@qq.com>"]
-edition = "2018"
-
-[workspace]
-members = [
-    "src/recursion/factorial",
-    "src/recursion/mi_gong",
-    "src/recursion/eight_queen",
-    "src/sort/bubble",
-    "src/sort/select",
-    "src/sort/insert",
-    "src/sort/quick",
-    "src/sort/shell"
-]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
