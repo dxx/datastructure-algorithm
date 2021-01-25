@@ -21,3 +21,6 @@ mod sort_quick;
 
 #[path = "sort/shell.rs"]
 mod sort_shell;
+
+#[path = "sort/merge.rs"]
+mod sort_merge;
