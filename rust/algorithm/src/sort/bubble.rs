@@ -6,12 +6,10 @@ fn bubble_sort(nums: &mut Vec<i32>) {
     // 外循环为排序趟数，length 个数进行 length - 1 趟
     for i in 0..length - 1 {
         // 内循环为每趟比较的次数，第 i 趟比较 length - i 次
-        for j in 0..length - 1 - i {
-            // 递减循环
-            let index = length - 1 - j;
+        for j in (i + 1..=length - 1).rev() {
             // 相邻元素比较比较大小，然后交换位置
-            if nums[index] < nums[index - 1] {
-                swap(nums, index, index - 1);
+            if nums[j] < nums[j - 1] {
+                swap(nums, j, j - 1);
             }
         }
         println!("第 {} 趟排序结果:{:?}", i + 1, nums);
@@ -24,11 +22,11 @@ fn optimize_bubble_sort(nums: &mut Vec<i32>) {
     let length = nums.len();
     let mut is_change = false; // 标记是否发生交换
     for i in 0..length - 1 {
-        for j in 0..length - 1 - i {
-            // 递减循环
-            let index = length - 1 - j;
-            if nums[index] < nums[index - 1] {
-                swap(nums, index, index - 1);
+        // 内循环为每趟比较的次数，第 i 趟比较 length - i 次
+        for j in (i + 1..=length - 1).rev() {
+            // 相邻元素比较比较大小，然后交换位置
+            if nums[j] < nums[j - 1] {
+                swap(nums, j, j - 1);
                 is_change = true; // 发生交换
             }
         }
