@@ -24,3 +24,6 @@ mod sort_shell;
 
 #[path = "sort/merge.rs"]
 mod sort_merge;
+
+#[path = "sort/radix.rs"]
+mod sort_radix;
