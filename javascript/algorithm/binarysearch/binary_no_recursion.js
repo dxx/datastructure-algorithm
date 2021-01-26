@@ -12,7 +12,7 @@ function binarySearchNoRecursion(nums, findVal) {
     } else if (findVal > nums[mid]) { // 查找的值在右边
       start = mid + 1;
     } else {
-      // 找到目标值的下表
+      // 找到目标值的下标
       return mid;
     }
   }
