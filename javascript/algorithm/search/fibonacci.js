@@ -17,11 +17,11 @@ function fibonacci() {
 function fibonacciSearch(nums, findVal) {
   let start = 0;
   let end = nums.length - 1;
-  let k = 0; // 斐波那契分割数的下表
+  let k = 0; // 斐波那契分割数的下标
   let mid = 0; // 中间值
   let f = fibonacci(); // 斐波那契数列
 
-  // 获取斐波那契分割数的小标
+  // 获取斐波那契分割数的下标
   while (end > f[k] - 1) {
       k++;
   }

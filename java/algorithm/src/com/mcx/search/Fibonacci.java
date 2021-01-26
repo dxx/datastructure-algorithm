@@ -26,11 +26,11 @@ public class Fibonacci {
     public static int fibonacciSearch(int[] nums, int findVal) {
         int start = 0;
         int end = nums.length - 1;
-        int k = 0; // 斐波那契分割数的下表
+        int k = 0; // 斐波那契分割数的下标
         int mid = 0; // 中间值
         int[] f = fibonacci(); // 斐波那契数列
 
-        // 获取斐波那契分割数的小标
+        // 获取斐波那契分割数的下标
         while (end > f[k] - 1) {
             k++;
         }

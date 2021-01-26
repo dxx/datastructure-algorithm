@@ -20,11 +20,11 @@ func fibonacci() []int {
 func fibonacciSearch(nums[] int, findVal int) int {
     start := 0
     end := len(nums) - 1
-    k := 0 // 斐波那契分割数的下表
+    k := 0 // 斐波那契分割数的下标
     mid := 0 // 中间值
     f := fibonacci() // 斐波那契数列
 
-    // 获取斐波那契分割数的小标
+    // 获取斐波那契分割数的下标
     for end > f[k] - 1 {
         k++
     }
