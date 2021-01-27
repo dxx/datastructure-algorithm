@@ -2,7 +2,7 @@
 /// 1.假定第一元素为最大或最小的元素
 /// 2.找出最大或最小的元素的小标，循环 length - 1 次
 /// 3.每次循环完成后将最大值或最小值和本次循环的第一个元素交换
-fn select_sort(nums: &mut Vec<i32>) {
+fn select_sort(nums: &mut [i32]) {
     let length = nums.len();
     for i in 0..length - 1 {
         // 记录最小值的下标
@@ -20,7 +20,7 @@ fn select_sort(nums: &mut Vec<i32>) {
     }
 }
 
-fn swap(v: &mut Vec<i32>, a: usize, b: usize) {
+fn swap(v: &mut [i32], a: usize, b: usize) {
     let temp = v[a];
     v[a] = v[b];
     v[b] = temp;
@@ -28,7 +28,7 @@ fn swap(v: &mut Vec<i32>, a: usize, b: usize) {
 
 #[test]
 fn test_select_sort() {
-    let mut nums = vec![3, 5, 7, 1, 2, 4, 9, 6, 8];
+    let mut nums = [3, 5, 7, 1, 2, 4, 9, 6, 8];
     println!("排序前: {:?}", nums);
     select_sort(&mut nums);
     println!("排序后: {:?}", nums);

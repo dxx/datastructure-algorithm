@@ -7,14 +7,14 @@
 /// 6.重复第 5 步，直到有一个下标超出序列尾部
 /// 7.将另一个序列中剩余的元素保存当前顺序放入临时序列中
 /// 8.最后将临时序列复制到原始序列对应的位置
-fn merge_sort(nums: &mut Vec<i32>) {
+fn merge_sort(nums: &mut [i32]) {
     decompose(nums, 0, nums.len() - 1);
 }
 
 /// 分解
 /// start: 开始下标
 /// end: 结束下标
-fn decompose(nums: &mut Vec<i32>, start: usize, end: usize) {
+fn decompose(nums: &mut [i32], start: usize, end: usize) {
     if start < end {
         let mid = (start + end) / 2;
         decompose(nums, start, mid); // 左边
@@ -27,7 +27,7 @@ fn decompose(nums: &mut Vec<i32>, start: usize, end: usize) {
 /// left: 左边有序序列起始下标
 /// mid: 中间下标
 /// right: 右边有序序列起始下标
-fn merge(nums: &mut Vec<i32>, left: usize, mid: usize, right: usize) {
+fn merge(nums: &mut [i32], left: usize, mid: usize, right: usize) {
     let mut temp = Vec::new(); // 临时保存元素的向量
     let mut i = left; // 左边有序序列的起始下标
     let mut j = mid + 1; // 右边有序列表的起始下标
@@ -67,7 +67,7 @@ fn merge(nums: &mut Vec<i32>, left: usize, mid: usize, right: usize) {
 
 #[test]
 fn test_merge_sort() {
-    let mut nums = vec![5, 0, 1, 7, 3, 2, 4, 9, 6, 8];
+    let mut nums = [5, 0, 1, 7, 3, 2, 4, 9, 6, 8];
     println!("排序前: {:?}", nums);
     merge_sort(&mut nums);
     println!("排序后: {:?}", nums);

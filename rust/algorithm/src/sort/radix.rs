@@ -3,7 +3,7 @@
 /// 2.遍历待排序的数组，从最低位开始，求出每个元素的个位数作为二维数组的下标，将其放入到二维数组对应的数组中
 /// 3.从二维数组中依次取出所有元素放入原数组中
 /// 4.重复步骤 2，依次计算个位、十位、百位等，作为下标，直到待排序数组中的最大位数
-fn radix_sort(nums: &mut Vec<i32>) {
+fn radix_sort(nums: &mut [i32]) {
     if nums.len() == 0 {
         return;
     }
@@ -45,7 +45,7 @@ fn radix_sort(nums: &mut Vec<i32>) {
 
 #[test]
 fn test_radix_sort() {
-    let mut nums = vec![5, 1, 7, 13, 21, 32, 9, 66, 8, 20];
+    let mut nums = [5, 1, 7, 13, 21, 32, 9, 66, 8, 20];
     println!("排序前: {:?}", nums);
     radix_sort(&mut nums);
     println!("排序后: {:?}", nums);

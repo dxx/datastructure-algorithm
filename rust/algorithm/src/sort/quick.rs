@@ -2,7 +2,7 @@
 /// 1.获取最中间的元素，然后分别将左边和右边的元素分别和最中间的元素进行比较
 /// 2.左边找出比中间大的元素，右边找出比中间小的元素，交换左右的位置
 /// 3.一次比较完成后，将左边和右边分别递归重复以上操作
-fn quick_sort(nums: &mut Vec<i32>, start: usize, end: usize) {
+fn quick_sort(nums: &mut [i32], start: usize, end: usize) {
     let mut l = start as i32;
     let mut r = end as i32;
     // 获取最中间的元素
@@ -43,7 +43,7 @@ fn quick_sort(nums: &mut Vec<i32>, start: usize, end: usize) {
     }
 }
 
-fn swap(v: &mut Vec<i32>, a: usize, b: usize) {
+fn swap(v: &mut [i32], a: usize, b: usize) {
     let temp = v[a];
     v[a] = v[b];
     v[b] = temp;
@@ -51,7 +51,7 @@ fn swap(v: &mut Vec<i32>, a: usize, b: usize) {
 
 #[test]
 fn test_quick_sort() {
-    let mut nums = vec![5, 1, 8, 3, 7, 2, 9, 4, 6];
+    let mut nums = [5, 1, 8, 3, 7, 2, 9, 4, 6];
     println!("排序前: {:?}", nums);
     let len = nums.len();
     quick_sort(&mut nums, 0, len - 1);

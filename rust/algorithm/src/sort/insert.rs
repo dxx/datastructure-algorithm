@@ -3,7 +3,7 @@
 /// 2.将右边无序列表的第一个元素，标记为要插入的值（insertValue），并记录要插入的位置（insertIndex）
 /// 3.依次和左边的无序列表中的元素比较，如果顺序颠倒，则将有序列表中当前被比较的元素后移，同时修改 insertIndex
 /// 4.最后将 insertValue 插入到 insertIndex 位置
-fn insert_sort(nums: &mut Vec<i32>) {
+fn insert_sort(nums: &mut [i32]) {
     for i in 1..nums.len() {
         // 要插入的下标
         let mut index= i as i32 - 1;
@@ -31,7 +31,7 @@ fn insert_sort(nums: &mut Vec<i32>) {
 
 #[test]
 fn test_insert_sort() {
-    let mut nums = vec![5, 1, 7, 3, 2, 4, 9, 6, 8];
+    let mut nums = [5, 1, 7, 3, 2, 4, 9, 6, 8];
     println!("排序前: {:?}", nums);
     insert_sort(&mut nums);
     println!("排序后: {:?}", nums);
