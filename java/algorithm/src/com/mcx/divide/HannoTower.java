@@ -18,11 +18,11 @@ public class HannoTower {
 
     public static void move(int num, char a, char b, char c) {
         if (num == 1) { // 只有一个盘
-            System.out.printf("第1个盘从 %s 到 %s\n", a, c);
+            System.out.printf("第 1 个盘从 %s 到 %s\n", a, c);
             return;
         }
         move(num - 1, a, c, b);
-        System.out.printf("第%d个盘从 %s 到 %s\n", num, a, c);
+        System.out.printf("第 %d 个盘从 %s 到 %s\n", num, a, c);
         move(num - 1, b, a, c);
     }
 
