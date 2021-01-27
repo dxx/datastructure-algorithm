@@ -32,7 +32,7 @@ impl fmt::Debug for Node {
     }
 }
 
-// 构建哈夫曼树
+/// 构建哈夫曼树
 fn create_huffman_tree(nums: Vec<u32>) -> Option<Rc<RefCell<Node>>> {
     if nums.len() == 0 {
         return None;
