@@ -38,8 +38,8 @@ mod hashtable;
 #[path = "tree/binary_tree.rs"]
 mod binary_tree;
 
-#[path = "tree/seq_binary_tree.rs"]
-mod seq_binary_tree;
+#[path = "tree/binary_tree_seq_storage.rs"]
+mod binary_tree_seq_storage;
 
 #[path = "tree/huffman_tree.rs"]
 mod binary_huffman_tree;
