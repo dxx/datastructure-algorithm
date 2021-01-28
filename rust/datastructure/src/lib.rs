@@ -42,7 +42,7 @@ mod binary_tree;
 mod binary_tree_seq_storage;
 
 #[path = "tree/huffman_tree.rs"]
-mod binary_huffman_tree;
+mod huffman_tree;
 
 #[path = "tree/binary_sort_tree.rs"]
 mod binary_sort_tree;
