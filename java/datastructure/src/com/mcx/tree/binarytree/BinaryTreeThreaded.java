@@ -7,18 +7,18 @@ package com.mcx.tree.binarytree;
  * 线索的二叉树称为线索二叉树。对二叉树以某种遍历方式（如先序、中序、
  * 后序或层次等）进行遍历，使其变为线索二叉树的过程称为对二叉树进行线索化
  */
-public class ThreadedBinaryTree {
+public class BinaryTreeThreaded {
 
-    public static class ThreadedBinaryTreeNode {
+    public static class BinaryTreeThreadedNode {
         private int no; // 编号
-        private ThreadedBinaryTreeNode left; // 左子节点
-        private ThreadedBinaryTreeNode right; // 右子节点
+        private BinaryTreeThreadedNode left; // 左子节点
+        private BinaryTreeThreadedNode right; // 右子节点
 
         // 增加两个标记
         private int leftTag; // 左节点标记。如果 leftTag = 0, left 表示左子节点, 如果为 leftTag = 1, left 表示前驱节点
         private int rightTag; // 右节点标记。如果 rightTag = 0, right 表示右子节点, 如果为 rightTag = 1, right 表示后继节点
 
-        public ThreadedBinaryTreeNode(int no) {
+        public BinaryTreeThreadedNode(int no) {
             this.no = no;
         }
 
@@ -30,19 +30,19 @@ public class ThreadedBinaryTree {
             this.no = no;
         }
 
-        public ThreadedBinaryTreeNode getLeft() {
+        public BinaryTreeThreadedNode getLeft() {
             return left;
         }
 
-        public void setLeft(ThreadedBinaryTreeNode left) {
+        public void setLeft(BinaryTreeThreadedNode left) {
             this.left = left;
         }
 
-        public ThreadedBinaryTreeNode getRight() {
+        public BinaryTreeThreadedNode getRight() {
             return right;
         }
 
-        public void setRight(ThreadedBinaryTreeNode right) {
+        public void setRight(BinaryTreeThreadedNode right) {
             this.right = right;
         }
 
@@ -65,8 +65,8 @@ public class ThreadedBinaryTree {
         /**
          * 从最左边至最右边查找指定节点（测试使用）
          */
-        public ThreadedBinaryTreeNode search(int no) {
-            ThreadedBinaryTreeNode leftChildNode = this;
+        public BinaryTreeThreadedNode search(int no) {
+            BinaryTreeThreadedNode leftChildNode = this;
             while (leftChildNode.getLeft() != null) {
                 leftChildNode = leftChildNode.getLeft();
             }
@@ -81,12 +81,12 @@ public class ThreadedBinaryTree {
         }
     }
 
-    private static ThreadedBinaryTreeNode previous; // 记录遍历时的上一个结点
+    private static BinaryTreeThreadedNode previous; // 记录遍历时的上一个结点
 
     /**
      * 中序线索化二叉树
      */
-    public static void infixThreadTree(ThreadedBinaryTreeNode node) {
+    public static void infixThreadTree(BinaryTreeThreadedNode node) {
         if (node == null) {
             return;
         }
@@ -116,8 +116,8 @@ public class ThreadedBinaryTree {
     /**
      * 中序遍历线索化二叉树
      */
-    public static void infixOrderThreadedTree(ThreadedBinaryTreeNode node) {
-        ThreadedBinaryTreeNode currentNode = node;
+    public static void infixOrderThreadedTree(BinaryTreeThreadedNode node) {
+        BinaryTreeThreadedNode currentNode = node;
         while (currentNode != null) {
             // 循环找到 leftTag = 0 的节点, 第一个找到的就是最左边的叶子节点
             while (currentNode.getLeftTag() == 0) {
@@ -135,13 +135,13 @@ public class ThreadedBinaryTree {
         }
     }
 
-    public static ThreadedBinaryTreeNode initThreadedNode() {
-        ThreadedBinaryTreeNode root = new ThreadedBinaryTreeNode(1);
-        ThreadedBinaryTreeNode node2 = new ThreadedBinaryTreeNode(2);
-        ThreadedBinaryTreeNode node3 = new ThreadedBinaryTreeNode(6);
-        ThreadedBinaryTreeNode node4 = new ThreadedBinaryTreeNode(8);
-        ThreadedBinaryTreeNode node5 = new ThreadedBinaryTreeNode(10);
-        ThreadedBinaryTreeNode node6 = new ThreadedBinaryTreeNode(16);
+    public static BinaryTreeThreadedNode initThreadedNode() {
+        BinaryTreeThreadedNode root = new BinaryTreeThreadedNode(1);
+        BinaryTreeThreadedNode node2 = new BinaryTreeThreadedNode(2);
+        BinaryTreeThreadedNode node3 = new BinaryTreeThreadedNode(6);
+        BinaryTreeThreadedNode node4 = new BinaryTreeThreadedNode(8);
+        BinaryTreeThreadedNode node5 = new BinaryTreeThreadedNode(10);
+        BinaryTreeThreadedNode node6 = new BinaryTreeThreadedNode(16);
 
         // 手动建立树的关系
         root.setLeft(node2);
@@ -154,19 +154,19 @@ public class ThreadedBinaryTree {
     }
 
     public static void testInfixThreadedTree() {
-        ThreadedBinaryTreeNode root = initThreadedNode();
+        BinaryTreeThreadedNode root = initThreadedNode();
 
         infixThreadTree(root);
 
         // 获取 no = 10 的结点，输出前驱和后继节点
-        ThreadedBinaryTreeNode node = root.search(10);
+        BinaryTreeThreadedNode node = root.search(10);
 
         System.out.printf("no=%d的前驱节点为%d\n", node.getNo(), node.getLeft().getNo());
         System.out.printf("no=%d的后继节点为%d\n", node.getNo(), node.getRight().getNo());
     }
 
     public static void testInfixOrderThreadedTree() {
-        ThreadedBinaryTreeNode root = initThreadedNode();
+        BinaryTreeThreadedNode root = initThreadedNode();
 
         infixThreadTree(root);
 
@@ -174,7 +174,7 @@ public class ThreadedBinaryTree {
     }
 
     public static void main(String[] args) {
-         testInfixThreadedTree();
+        // testInfixThreadedTree();
         // testInfixOrderThreadedTree();
     }
 }

@@ -14,11 +14,11 @@ package com.mcx.tree.binarytree;
  * n 表示二叉树中第几个节点，对应该节点在数组中的位置
  * 位置从 0 开始，顺序为从上之下，从左至右
  */
-public class SeqBinaryTree {
+public class BinaryTreeSeqStorage {
 
     private final int[] array; // 存储节点数组
 
-    public SeqBinaryTree(int[] array) {
+    public BinaryTreeSeqStorage(int[] array) {
         this.array = array;
     }
 
@@ -48,9 +48,9 @@ public class SeqBinaryTree {
 
     public static void main(String[] args) {
         int[] nos = new int[]{1, 2, 3, 4, 5, 6, 7};
-        SeqBinaryTree seqBinaryTree = new SeqBinaryTree(nos);
+        BinaryTreeSeqStorage binaryTreeSeqStorage = new BinaryTreeSeqStorage(nos);
 
         System.out.println("======前序遍历======");
-        seqBinaryTree.preOrder();
+        binaryTreeSeqStorage.preOrder();
     }
 }
