@@ -107,7 +107,7 @@ fn print_round_node_info(head_node: Option<Rc<RefCell<PersonNode>>>) {
         return;
     }
     let mut info = String::from("[");
-    let info_node = Rc::clone(&head_node.as_ref().unwrap());
+    let info_node = Rc::clone(head_node.as_ref().unwrap());
     info.push_str(&format!(
         "{{no:{}, name:{}}}",
         info_node.borrow().no,
