@@ -1,4 +1,4 @@
-package com.mcx.linkedlist.josephu;
+package com.mcx.linkedlist.joseph;
 
 /**
  * 约瑟夫问题
