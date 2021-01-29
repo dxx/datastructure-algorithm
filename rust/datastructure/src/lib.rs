@@ -41,6 +41,9 @@ mod binary_tree;
 #[path = "tree/binary_tree_seq_storage.rs"]
 mod binary_tree_seq_storage;
 
+#[path = "tree/heap_sort.rs"]
+mod heap_sort;
+
 #[path = "tree/huffman_tree.rs"]
 mod huffman_tree;
 
