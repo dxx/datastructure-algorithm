@@ -6,7 +6,7 @@ use std::rc::Rc;
 /// 从 1 开始报数，数到 m 的那个人出列它的下一位又从 1 开始报数数到 m
 /// 的那个人又出列，依次类推，直到所有人出列为止，由此产生一个出队编号的序列
 
-#[derive(Eq, PartialEq, Debug)]
+#[derive(Eq, PartialEq)]
 pub struct Person {
     pub no: u32,                           // 编号
     pub prev: Option<Rc<RefCell<Person>>>, // 前一个人
