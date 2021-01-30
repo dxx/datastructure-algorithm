@@ -30,6 +30,9 @@ mod linked_list_round;
 #[path = "linked_list/interview.rs"]
 mod linked_list_interview;
 
+#[path = "linked_list/joseph.rs"]
+mod linked_list_joseph;
+
 
 #[path = "hashtable/main.rs"]
 mod hashtable;
