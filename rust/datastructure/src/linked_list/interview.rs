@@ -1,4 +1,4 @@
-#[derive(Clone)]
+#[derive(Eq, PartialEq, Clone)]
 pub struct Node {
     name: String,
     next: Option<Box<Node>>
@@ -54,12 +54,50 @@ fn get_node_length(head_node: Option<Box<Node>>) -> u32 {
 }
 
 /// 获取倒数第 n 个结点
+
+/// 快慢指针
+/// 1.定义快指针 fast 和 慢指针 slow
+/// 2.快慢指针的初始值指向头结点
+/// 3.快指针先走 index 步
+/// 4.慢指针开始走直到快指针指向了末尾结点
+/// 5.此时慢指针就是倒数第 n 个结点
+fn get_last_index_node(
+    head_node: Option<Box<Node>>,
+    index: usize
+) -> Option<Box<Node>> {
+    // 头结点为空，index 等于 0 返回 None
+    if head_node.is_none() || index == 0 {
+        return None;
+    }
+    let mut fast = head_node.as_ref();
+    let mut slow = head_node.as_ref();
+    let mut i = index;
+    let mut length = 0;
+    while fast.is_some() {
+        length += 1;
+
+        if i > 0 {
+            fast = fast.unwrap().next.as_ref();
+            i -= 1;
+            continue;
+        }
+        // 快慢指针同时走
+        fast = fast.unwrap().next.as_ref();
+        slow = slow.unwrap().next.as_ref();
+    }
+    // index 超过了链表的长度
+    if index > length {
+        return None;
+    }
+    return slow.cloned();
+}
+
 /// 遍历
 /// 1.获取链表结点数 length
 /// 2.遍历到 length - n 个结点
 /// 3.然后返回
-fn get_last_index_node(
-    mut head_node: Option<Box<Node>>,
+fn get_last_index_node2(
+    head_node: Option<Box<Node>>,
     index: usize
 ) -> Option<Box<Node>> {
     // 头结点为空
@@ -70,11 +108,11 @@ fn get_last_index_node(
     if index <= 0 || index > (length as usize) {
         return None;
     }
-    let mut last_node = &mut head_node;
+    let mut last_node = head_node.as_ref();
     for _ in 0..(length as usize - index) {
-        last_node = &mut last_node.as_mut().unwrap().next;
+        last_node = last_node.as_ref().unwrap().next.as_ref();
     }
-    return last_node.take();
+    return last_node.cloned();
 }
 
 /// 单链表反转
@@ -119,7 +157,20 @@ fn test_get_last_index_node() {
 
     let index = 2;
     let last_node = get_last_index_node(head_node, index);
-    println!("单链表结点中倒数第{}个结点为: {}", index, last_node.as_ref().unwrap().name);
+    println!("单链表结点中倒数第 {} 个结点为: {}", index, last_node.as_ref().unwrap().name);
+}
+
+#[test]
+fn test_get_last_index_node2() {
+    let mut head_node = Some(Box::new(Node::new(String::from("node1"))));
+    let node2 = Some(Box::new(Node::new(String::from("node2"))));
+    let node3 = Some(Box::new(Node::new(String::from("node3"))));
+    head_node = insert_at_tail(head_node, node2);
+    head_node = insert_at_tail(head_node, node3);
+
+    let index = 2;
+    let last_node = get_last_index_node2(head_node, index);
+    println!("单链表结点中倒数第 {} 个结点为: {}", index, last_node.as_ref().unwrap().name);
 }
 
 #[test]

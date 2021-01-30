@@ -41,10 +41,13 @@ public class Main {
         }
         Node fast = headNode;
         Node slow = headNode;
+		int i = index;
+		int length = 0;
         while (fast != null) {
-            if (index > 0) {
+			length++;
+            if (i > 0) {
                 fast = fast.getNext();
-                index--;
+                i--;
                 continue;
             }
             // 快慢指针同时走
@@ -52,7 +55,7 @@ public class Main {
             slow = slow.getNext();
         }
         // index 超过了链表的长度
-        if (slow == headNode) {
+        if (index > length) {
             return null;
         }
         return slow;
@@ -132,7 +135,7 @@ public class Main {
         node2.setNext(node3);
         int index = 2;
         Node lastNode = getLastIndexNode(headNode, index);
-        System.out.printf("单链表结点中倒数第%d个结点为: %s\n", index, lastNode.getName());
+        System.out.printf("单链表结点中倒数第 %d 个结点为: %s\n", index, lastNode.getName());
     }
 
     public static void testReverseNode() {

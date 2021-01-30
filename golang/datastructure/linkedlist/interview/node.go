@@ -62,10 +62,13 @@ func getLastIndexNode(headNode *Node, index int) *Node {
     }
     fast := headNode
     slow := headNode
+    i := index
+    length := 0
     for fast != nil {
-        if index > 0 {
+        length++
+        if i > 0 {
             fast = fast.next
-            index--
+            i--
             continue
         }
         // 快慢指针同时走
@@ -73,7 +76,7 @@ func getLastIndexNode(headNode *Node, index int) *Node {
         slow = slow.next
     }
     // index 超过了链表的长度
-    if slow == headNode {
+    if index > length {
         return nil
     }
     return slow

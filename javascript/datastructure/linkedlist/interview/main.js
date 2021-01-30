@@ -24,7 +24,7 @@ function testGetLastIndexNode() {
   node2.next = node3;
   let index = 2;
   let lastNode = getLastIndexNode(headNode, index);
-  console.log("单链表结点中倒数第" + index + "个结点为: " + lastNode.name);
+  console.log("单链表结点中倒数第 " + index + " 个结点为: " + lastNode.name);
 }
 
 function testReverseNode() {

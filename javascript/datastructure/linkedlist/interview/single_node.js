@@ -54,10 +54,13 @@ function getLastIndexNode(headNode, index) {
   }
   let fast = headNode;
   let slow = headNode;
+  let i = index;
+  let length = 0;
   while (fast != null) {
-      if (index > 0) {
+	  length++;
+      if (i > 0) {
           fast = fast.next;
-          index--;
+          i--;
           continue;
       }
       // 快慢指针同时走
@@ -65,7 +68,7 @@ function getLastIndexNode(headNode, index) {
       slow = slow.next;
   }
   // index 超过了链表的长度
-  if (slow == headNode) {
+  if (index > length) {
       return null;
   }
   return slow;

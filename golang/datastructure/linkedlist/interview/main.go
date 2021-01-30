@@ -25,7 +25,7 @@ func testGetLastIndexNode() {
     insertAtTail(headNode, node3)
     var index = 2
     lastNode := getLastIndexNode(headNode, index)
-    fmt.Printf("单链表结点中倒数第%d个结点为: %s\n", index, lastNode.name)
+    fmt.Printf("单链表结点中倒数第 %d 个结点为: %s\n", index, lastNode.name)
 }
 
 func testReverseNode() {
