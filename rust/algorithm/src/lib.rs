@@ -28,3 +28,7 @@ mod sort_merge;
 
 #[path = "sort/radix.rs"]
 mod sort_radix;
+
+
+#[path = "search/sequence.rs"]
+mod search_sequence;
