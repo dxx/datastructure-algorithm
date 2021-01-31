@@ -101,11 +101,11 @@ public class Main {
 
         public void count(int start, int num) {
             if (start < 1 || start > this.getLength()) {
-                System.out.printf("start 不能小于 1 或者不能大于%d\n", this.getLength());
+                System.out.printf("start 不能小于 1 或者不能大于 %d\n", this.getLength());
                 return;
             }
             if (num > this.getLength()) {
-                System.out.printf("num 不能大于元素个数:%d\n", this.getLength());
+                System.out.printf("num 不能大于元素个数: %d\n", this.getLength());
                 return;
             }
 
@@ -131,10 +131,10 @@ public class Main {
                 current.getPrev().setNext(current.getNext());
                 current.getNext().setPrev(current.getPrev());
 
-                System.out.printf("出队人的编号:%d\n", current.getNo());
+                System.out.printf("出队人的编号: %d\n", current.getNo());
                 current = current.getNext();
             }
-            System.out.printf("最后留下人的编号:%d\n", current.getNo());
+            System.out.printf("最后留下人的编号: %d\n", current.getNo());
         }
 
         public Person getFirst() {

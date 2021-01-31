@@ -19,9 +19,9 @@ function main() {
   let elem2 = stack.pop();
   let elem3 = stack.pop();
 
-  console.log("出栈:" + elem1);
-  console.log("出栈:" + elem2);
-  console.log("出栈:" + elem3);
+  console.log("出栈: " + elem1);
+  console.log("出栈: " + elem2);
+  console.log("出栈: " + elem3);
 
   let elem = stack.pop();
   if (elem == null) {

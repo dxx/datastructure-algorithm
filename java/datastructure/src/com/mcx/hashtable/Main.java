@@ -96,7 +96,7 @@ public class Main {
                 this.getLinkArray()[index] = linkNode;
                 return;
             } else if (employee.getId() == headNode.getEmployee().getId()) {
-                throw new IllegalStateException("员工id重复");
+                throw new IllegalStateException("员工 id 重复");
             }
             // 查找后续结点中合适的位置插入
             LinkNode tempNode = headNode;
@@ -106,7 +106,7 @@ public class Main {
                 } else if (tempNode.getNext().getEmployee().getId() > employee.getId()) {
                     break;
                 } else if (tempNode.getNext().getEmployee().getId() == employee.getId()) {
-                    throw new IllegalStateException("员工id重复");
+                    throw new IllegalStateException("员工 id 重复");
                 }
             }
             // tempNode 的下一个结点插入到 linkNode 的下一个结点

@@ -58,7 +58,7 @@ func calSuffixExpression(expr []string) int {
         }
         _, ok := opts[str]
         if !ok {
-            panic("无效的运算符:" + str)
+            panic("无效的运算符: " + str)
         }
         // 计算
         numStr1, _ := stack.Pop()
@@ -146,7 +146,7 @@ func infixToSuffix(infix []string) []string {
             // 直接入栈
             _ = stack.Push(str)
         } else {
-            panic("无法识别的字符:" + str)
+            panic("无法识别的字符: " + str)
         }
     }
     for !stack.IsEmpty() {
@@ -163,15 +163,15 @@ func main() {
     // 假设数和数或符号之间有空格
     expressions := strings.Split(expr, " ")
     result := calSuffixExpression(expressions)
-    fmt.Printf("后缀表达式 %s 的计算结果为:%d\n", expr, result)
+    fmt.Printf("后缀表达式 %s 的计算结果为: %d\n", expr, result)
 
     expr = "1+((2+3)*4)-5"
     expressions = exprToSlice(expr)
-    fmt.Printf("将中缀表达式放入切片, 结果为:%v\n", expressions)
+    fmt.Printf("将中缀表达式放入切片, 结果为: %v\n", expressions)
 
     expressions = infixToSuffix(expressions)
-    fmt.Printf("中缀表达式转换成后缀表达式, 结果为:%v\n", expressions)
+    fmt.Printf("中缀表达式转换成后缀表达式, 结果为: %v\n", expressions)
 
     result = calSuffixExpression(expressions)
-    fmt.Printf("计算表达式%s, 结果为:%v\n", expr, result)
+    fmt.Printf("计算表达式 %s, 结果为: %v\n", expr, result)
 }

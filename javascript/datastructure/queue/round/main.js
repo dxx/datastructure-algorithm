@@ -83,26 +83,26 @@ function main() {
   intQueue.put(4);
   intQueue.put(5); // 队列已满，无法放入数据，实际上只能放 4 个元素
 
-  console.log("intQueue:");
+  console.log("intQueue: ");
   intQueue.show();
 
   let num = intQueue.take();
-  console.log("取出一个元素:" + num);
+  console.log("取出一个元素: " + num);
   num = intQueue.take();
-  console.log("取出一个元素:" + num);
+  console.log("取出一个元素: " + num);
   num = intQueue.take();
-  console.log("取出一个元素:" + num);
+  console.log("取出一个元素: " + num);
   num = intQueue.take();
-  console.log("取出一个元素:" + num);
+  console.log("取出一个元素: " + num);
   num = intQueue.take();
-  console.log("取出一个元素:" + num);
+  console.log("取出一个元素: " + num);
   if (num == Number.MIN_VALUE) {
     console.log("出队失败!!!");
   }
 
   // 取出数据后可以继续放入数据
   intQueue.put(5);
-  console.log("intQueue:");
+  console.log("intQueue: ");
   intQueue.show();
 }
 

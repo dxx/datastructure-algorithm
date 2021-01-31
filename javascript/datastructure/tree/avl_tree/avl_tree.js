@@ -174,10 +174,10 @@ function testLeftRotate() {
 
   avlTree.infixOrder();
 
-  console.log("根节点=", avlTree.root.no);
+  console.log("根节点 = ", avlTree.root.no);
 
-  console.log("左子树的高度为:", avlTree._leftHeight());
-  console.log("右子树的高度为:", avlTree._rightHeight());
+  console.log("左子树的高度为: ", avlTree._leftHeight());
+  console.log("右子树的高度为: ", avlTree._rightHeight());
 }
 
 function testRightRotate() {
@@ -191,10 +191,10 @@ function testRightRotate() {
 
   avlTree.infixOrder();
 
-  console.log("根节点=", avlTree.root.no);
+  console.log("根节点 = ", avlTree.root.no);
 
-  console.log("左子树的高度为:", avlTree._leftHeight());
-  console.log("右子树的高度为:", avlTree._rightHeight());
+  console.log("左子树的高度为: ", avlTree._leftHeight());
+  console.log("右子树的高度为: ", avlTree._rightHeight());
 }
 
 function testDoubleRotate() {
@@ -208,10 +208,10 @@ function testDoubleRotate() {
 
   avlTree.infixOrder();
 
-  console.log("根节点=", avlTree.root.no);
+  console.log("根节点 = ", avlTree.root.no);
 
-  console.log("左子树的高度为:", avlTree._leftHeight());
-  console.log("右子树的高度为:", avlTree._rightHeight());
+  console.log("左子树的高度为: ", avlTree._leftHeight());
+  console.log("右子树的高度为: ", avlTree._rightHeight());
 }
 
 function main() {

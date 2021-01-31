@@ -64,7 +64,7 @@ impl Hashtable {
             link_array[index] = Some(link_node);
             return Ok(true);
         } else if head_node.employee.id == id {
-            return Err("员工id重复");
+            return Err("员工 id 重复");
         }
 
         // 查找后续结点中合适的位置插入
@@ -75,7 +75,7 @@ impl Hashtable {
             } else if temp_node.next.as_ref().unwrap().employee.id > id {
                 break;
             } else if temp_node.next.as_ref().unwrap().employee.id == id {
-                return Err("员工id重复");
+                return Err("员工 id 重复");
             }
             temp_node = temp_node.next.as_mut().unwrap();
         }

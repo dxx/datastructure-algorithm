@@ -48,7 +48,7 @@ Hashtable.prototype.add = function(employee) {
     this.linkArray[index] = linkNode;
     return;
   } else if (employee.id === headNode.employee.id) {
-    console.error("员工id重复");
+    console.error("员工 id 重复");
     return;
   }
   // 查找后续结点中合适的位置插入
@@ -59,7 +59,7 @@ Hashtable.prototype.add = function(employee) {
     } else if (tempNode.next.employee.id > employee.id) {
       break;
     } else if (tempNode.next.employee.id === employee.id) {
-      console.error("员工id重复");
+      console.error("员工 id 重复");
       return;
     }
   }

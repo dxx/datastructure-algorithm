@@ -207,15 +207,15 @@ fn test_reverse_poland() {
     // 假设数和数或符号之间有空格
     let expressions = expr.split(" ").collect();
     let result = reverse_poland.cal_suffix_expression(expressions);
-    println!("后缀表达式 {} 的计算结果为:{}", expr, result);
+    println!("后缀表达式 {} 的计算结果为: {}", expr, result);
 
     let expr = "1+((2+3)*4)-5";
     let expressions = reverse_poland.expr_to_vec(expr);
-    println!("将中缀表达式放入向量, 结果为:{:?}", expressions);
+    println!("将中缀表达式放入向量, 结果为: {:?}", expressions);
 
     let expressions = reverse_poland.infix_to_suffix(expressions);
-    println!("中缀表达式转换成后缀表达式, 结果为:{:?}", expressions);
+    println!("中缀表达式转换成后缀表达式, 结果为: {:?}", expressions);
 
     let result = reverse_poland.cal_suffix_expression(expressions.iter().map(|s| s as &str).collect());
-    println!("计算表达式{:?}, 结果为:{}", expr, result)
+    println!("计算表达式 {:?}, 结果为: {}", expr, result)
 }

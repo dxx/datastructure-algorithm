@@ -209,10 +209,10 @@ fn test_left_rotate() {
     println!("左旋转后");
     avl_tree.infix_order();
 
-    println!("根节点={:?}", avl_tree.root.as_ref().unwrap().borrow());
+    println!("根节点 = {:?}", avl_tree.root.as_ref().unwrap().borrow());
 
-    println!("左子树的高度为:{}", avl_tree.left_height());
-    println!("右子树的高度为:{}", avl_tree.right_height());
+    println!("左子树的高度为: {}", avl_tree.left_height());
+    println!("右子树的高度为: {}", avl_tree.right_height());
 }
 
 #[test]
@@ -226,10 +226,10 @@ fn test_right_rotate() {
     println!("右旋转后");
     avl_tree.infix_order();
 
-    println!("根节点={:?}", avl_tree.root.as_ref().unwrap().borrow());
+    println!("根节点 = {:?}", avl_tree.root.as_ref().unwrap().borrow());
 
-    println!("左子树的高度为:{}", avl_tree.left_height());
-    println!("右子树的高度为:{}", avl_tree.right_height());
+    println!("左子树的高度为: {}", avl_tree.left_height());
+    println!("右子树的高度为: {}", avl_tree.right_height());
 }
 
 #[test]
@@ -243,8 +243,8 @@ fn test_double_rotate() {
     println!("双旋转后");
     avl_tree.infix_order();
 
-    println!("根节点={:?}", avl_tree.root.as_ref().unwrap().borrow());
+    println!("根节点 = {:?}", avl_tree.root.as_ref().unwrap().borrow());
 
-    println!("左子树的高度为:{}", avl_tree.left_height());
-    println!("右子树的高度为:{}", avl_tree.right_height());
+    println!("左子树的高度为: {}", avl_tree.left_height());
+    println!("右子树的高度为: {}", avl_tree.right_height());
 }

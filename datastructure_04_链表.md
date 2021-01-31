@@ -881,11 +881,11 @@ func (personLinkedList *PersonLinkedList) ShowPersons() {
 ```go
 func (personLinkedList *PersonLinkedList) Count(start, num int) {
     if start < 1 || start > personLinkedList.length {
-        fmt.Printf("start 不能小于 1 或者不能大于%d\n", personLinkedList.length)
+        fmt.Printf("start 不能小于 1 或者不能大于 %d\n", personLinkedList.length)
         return
     }
     if num > personLinkedList.length {
-        fmt.Printf("num 不能大于元素个数:%d\n", personLinkedList.length)
+        fmt.Printf("num 不能大于元素个数: %d\n", personLinkedList.length)
         return
     }
 
@@ -910,10 +910,10 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
         current.previous.next = current.next
         current.next.prev = current.prev
 
-        fmt.Printf("出队人的编号:%d\n", current.no)
+        fmt.Printf("出队人的编号: %d\n", current.no)
         current = current.next
     }
-    fmt.Printf("最后留下人的编号:%d\n", current.no)
+    fmt.Printf("最后留下人的编号: %d\n", current.no)
 }
 ```
 
@@ -936,9 +936,9 @@ num:2
 num:3
 num:4
 num:5
-出队人的编号:3
-出队人的编号:1
-出队人的编号:5
-出队人的编号:2
-最后留下人的编号:4
+出队人的编号: 3
+出队人的编号: 1
+出队人的编号: 5
+出队人的编号: 2
+最后留下人的编号: 4
 ```

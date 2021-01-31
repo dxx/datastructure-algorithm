@@ -212,10 +212,10 @@ public class AVLTree {
 
         avlTree.infixOrder();
 
-        System.out.printf("根节点=%s\n", avlTree.root);
+        System.out.printf("根节点 = %s\n", avlTree.root);
 
-        System.out.printf("左子树的高度为:%d\n", avlTree.leftHeight());
-        System.out.printf("右子树的高度为:%d\n", avlTree.rightHeight());
+        System.out.printf("左子树的高度为: %d\n", avlTree.leftHeight());
+        System.out.printf("右子树的高度为: %d\n", avlTree.rightHeight());
     }
 
     public static void testRightRotate() {
@@ -229,10 +229,10 @@ public class AVLTree {
 
         avlTree.infixOrder();
 
-        System.out.printf("根节点=%s\n", avlTree.root);
+        System.out.printf("根节点 = %s\n", avlTree.root);
 
-        System.out.printf("左子树的高度为:%d\n", avlTree.leftHeight());
-        System.out.printf("右子树的高度为:%d\n", avlTree.rightHeight());
+        System.out.printf("左子树的高度为: %d\n", avlTree.leftHeight());
+        System.out.printf("右子树的高度为: %d\n", avlTree.rightHeight());
     }
 
     public static void testDoubleRotate() {
@@ -246,10 +246,10 @@ public class AVLTree {
 
         avlTree.infixOrder();
 
-        System.out.printf("根节点=%s\n", avlTree.root);
+        System.out.printf("根节点 = %s\n", avlTree.root);
 
-        System.out.printf("左子树的高度为:%d\n", avlTree.leftHeight());
-        System.out.printf("右子树的高度为:%d\n", avlTree.rightHeight());
+        System.out.printf("左子树的高度为: %d\n", avlTree.leftHeight());
+        System.out.printf("右子树的高度为: %d\n", avlTree.rightHeight());
     }
 
     public static void main(String[] args) {

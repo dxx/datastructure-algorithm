@@ -72,16 +72,16 @@ public class Main {
         intQueue.put(3);
         intQueue.put(4); // 队列已满，无法放入数据
 
-        System.out.println("intQueue:" + intQueue);
+        System.out.println("intQueue: " + intQueue);
 
         int num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         if (num == Integer.MIN_VALUE) {
             System.out.println("出队失败!!!");
         }
@@ -91,6 +91,6 @@ public class Main {
         if (!isSuccess) {
             System.out.println("入队失败!!!");
         }
-        System.out.println("intQueue:" + intQueue);
+        System.out.println("intQueue: " + intQueue);
     }
 }

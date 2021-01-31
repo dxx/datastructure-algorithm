@@ -96,7 +96,7 @@ public class ReversePoland {
             }
             Operation operation = ReversePoland.operations.get(str);
             if (operation == null) {
-                throw new IllegalStateException("无效的运算符:" + str);
+                throw new IllegalStateException("无效的运算符: " + str);
             }
             // 计算
             String numStr1 = stack.pop();
@@ -179,7 +179,7 @@ public class ReversePoland {
                 // 入栈
                 stack.push(str);
             } else {
-                throw new IllegalStateException("无法识别的字符:" + str);
+                throw new IllegalStateException("无法识别的字符: " + str);
             }
         }
         // 将 stack 中剩余的运算符依次添加到 suffixes
@@ -196,16 +196,16 @@ public class ReversePoland {
         // 假设数和数或符号之间有空格
         String[] expressions = expr.split(" ");
         int result = reversePoland.calSuffixExpression(expressions);
-        System.out.printf("后缀表达式 %s 的计算结果为:%d\n", expr, result);
+        System.out.printf("后缀表达式 %s 的计算结果为: %d\n", expr, result);
 
         expr = "1+((2+3)*4)-5";
         expressions = reversePoland.exprToArray(expr);
-        System.out.printf("将中缀表达式放入数组, 结果为:%s\n", Arrays.toString(expressions));
+        System.out.printf("将中缀表达式放入数组, 结果为: %s\n", Arrays.toString(expressions));
 
         expressions = reversePoland.infixToSuffix(expressions);
-        System.out.printf("中缀表达式转换成后缀表达式, 结果为:%s\n", Arrays.toString(expressions));
+        System.out.printf("中缀表达式转换成后缀表达式, 结果为: %s\n", Arrays.toString(expressions));
 
         result = reversePoland.calSuffixExpression(expressions);
-        System.out.printf("计算表达式%s, 结果为:%s\n", expr, result);
+        System.out.printf("计算表达式 %s, 结果为: %s\n", expr, result);
     }
 }

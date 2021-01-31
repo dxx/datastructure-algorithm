@@ -92,9 +92,9 @@ public class Stack {
         String elem2 = stack.pop();
         String elem3 = stack.pop();
 
-        System.out.println("出栈:" + elem1);
-        System.out.println("出栈:" + elem2);
-        System.out.println("出栈:" + elem3);
+        System.out.println("出栈: " + elem1);
+        System.out.println("出栈: " + elem2);
+        System.out.println("出栈: " + elem3);
 
         String elem = stack.pop();
         if (elem == null) {

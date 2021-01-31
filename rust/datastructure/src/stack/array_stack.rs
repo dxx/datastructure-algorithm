@@ -92,9 +92,9 @@ fn test_array_stack() {
     let elem2 = stack.pop().unwrap();
     let elem3 = stack.pop().unwrap();
 
-    println!("出栈:{}", elem1);
-    println!("出栈:{}", elem2);
-    println!("出栈:{}", elem3);
+    println!("出栈: {}", elem1);
+    println!("出栈: {}", elem2);
+    println!("出栈: {}", elem3);
 
     // 栈空无法出栈
     let o = stack.pop();

@@ -178,17 +178,17 @@ function main() {
 
   binarySortTree.delete(6);
 
-  console.log("======删除叶子节点6======");
+  console.log("======删除叶子节点 6======");
   binarySortTree.infixOrder();
 
   binarySortTree.delete(5);
 
-  console.log("======删除只有一颗子树的节点5======");
+  console.log("======删除只有一颗子树的节点 5======");
   binarySortTree.infixOrder();
 
   binarySortTree.delete(10);
 
-  console.log("======删除有两颗子树的节点10======");
+  console.log("======删除有两颗子树的节点 10======");
   binarySortTree.infixOrder();
 }
 

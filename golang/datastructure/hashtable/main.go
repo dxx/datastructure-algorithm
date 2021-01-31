@@ -50,7 +50,7 @@ func (h *Hashtable) Add(employee *Employee) error {
         h.linkArray[index] = linkNode
         return nil
     } else if headNode.employee.id == employee.id {
-        return errors.New("员工id重复")
+        return errors.New("员工 id 重复")
     }
 
     // 查找后续结点中合适的位置插入
@@ -61,7 +61,7 @@ func (h *Hashtable) Add(employee *Employee) error {
         } else if tempNode.next.employee.id > employee.id {
             break
         } else if tempNode.next.employee.id == employee.id {
-            return errors.New("员工id重复")
+            return errors.New("员工 id 重复")
         }
         tempNode = tempNode.next
     }

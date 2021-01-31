@@ -186,10 +186,10 @@ func testLeftRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 
 func testRightRotate() {
@@ -203,10 +203,10 @@ func testRightRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 
 func testDoubleRotate() {
@@ -220,10 +220,10 @@ func testDoubleRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 
 func main() {

@@ -62,11 +62,11 @@ PersonLinkedList.prototype.showPersons = function() {
 
 PersonLinkedList.prototype.count = function(start, num) {
   if (start < 1 || start > this.length) {
-    console.log("start 不能小于 1 或者不能大于" + this.length);
+    console.log("start 不能小于 1 或者不能大于 " + this.length);
     return;
   }
   if (num > this.length) {
-    console.log("num 不能大于元素个数:" + this.length);
+    console.log("num 不能大于元素个数: " + this.length);
     return;
   }
 
@@ -88,10 +88,10 @@ PersonLinkedList.prototype.count = function(start, num) {
     current.prev.next = current.next;
     current.next.prev = current.prev;
 
-    console.log("出队人的编号:" + current.no);
+    console.log("出队人的编号: " + current.no);
     current = current.next;
   }
-  console.log("最后留下人的编号:" + current.no);
+  console.log("最后留下人的编号: " + current.no);
 }
 
 function main() {

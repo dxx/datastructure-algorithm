@@ -217,17 +217,17 @@ public class BinarySortTree {
 
         binarySortTree.delete(6);
 
-        System.out.println("======删除叶子节点6======");
+        System.out.println("======删除叶子节点 6======");
         binarySortTree.infixOrder();
 
         binarySortTree.delete(5);
 
-        System.out.println("======删除只有一颗子树的节点5======");
+        System.out.println("======删除只有一颗子树的节点 5======");
         binarySortTree.infixOrder();
 
         binarySortTree.delete(10);
 
-        System.out.println("======删除有两颗子树的节点10======");
+        System.out.println("======删除有两颗子树的节点 10======");
         binarySortTree.infixOrder();
     }
 }

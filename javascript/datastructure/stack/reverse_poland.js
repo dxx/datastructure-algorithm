@@ -74,7 +74,7 @@ ReversePoland.prototype.calSuffixExpression = function(expr) {
     }
     let operation = operations[str];
     if (!operation) {
-      console.error("无效的运算符:" + str);
+      console.error("无效的运算符: " + str);
       return;
     }
     // 计算
@@ -157,7 +157,7 @@ ReversePoland.prototype.infixToSuffix = function(infix) {
       // 入栈
       stack.push(str);
     } else {
-      console.error("无法识别的字符:" + str);
+      console.error("无法识别的字符: " + str);
       return;
     }
   }
@@ -175,17 +175,17 @@ function main() {
   // 假设数和数或符号之间有空格
   let expressions = expr.split(" ");
   let result = reversePoland.calSuffixExpression(expressions);
-  console.log("后缀表达式 " + expr + " 的计算结果为:" + result);
+  console.log("后缀表达式 " + expr + " 的计算结果为: " + result);
 
   expr = "1+((2+3)*4)-5";
   expressions = reversePoland.exprToArray(expr);
-  console.log("将中缀表达式放入数组, 结果为:" + expressions);
+  console.log("将中缀表达式放入数组, 结果为: " + expressions);
 
   expressions = reversePoland.infixToSuffix(expressions);
-  console.log("中缀表达式转换成后缀表达式, 结果为:" + expressions);
+  console.log("中缀表达式转换成后缀表达式, 结果为: " + expressions);
 
   result = reversePoland.calSuffixExpression(expressions);
-  console.log("计算表达式" + expr + ", 结果为:" + result);
+  console.log("计算表达式 " + expr + ", 结果为: " + result);
 }
 
 main();

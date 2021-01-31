@@ -88,13 +88,13 @@ fn test_queue_round() {
     int_queue.show_queue();
 
     let num = int_queue.take().unwrap();
-    println!("取出一个元素:{}", num);
+    println!("取出一个元素: {}", num);
     let num = int_queue.take().unwrap();
-    println!("取出一个元素:{}", num);
+    println!("取出一个元素: {}", num);
     let num = int_queue.take().unwrap();
-    println!("取出一个元素:{}", num);
+    println!("取出一个元素: {}", num);
     let num = int_queue.take().unwrap();
-    println!("取出一个元素:{}", num);
+    println!("取出一个元素: {}", num);
     let o = int_queue.take();
     match o {
         Some(data) => {

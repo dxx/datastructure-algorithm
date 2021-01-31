@@ -1582,17 +1582,17 @@ func main() {
 
     binarySortTree.Delete(6)
 
-    fmt.Println("======删除叶子节点6======")
+    fmt.Println("======删除叶子节点 6======")
     binarySortTree.InfixOrder()
 
     binarySortTree.Delete(5)
 
-    fmt.Println("======删除只有一颗子树的节点5======")
+    fmt.Println("======删除只有一颗子树的节点 5======")
     binarySortTree.InfixOrder()
 
     binarySortTree.Delete(10)
 
-    fmt.Println("======删除有两颗子树的节点10======")
+    fmt.Println("======删除有两颗子树的节点 10======")
     binarySortTree.InfixOrder()
 }
 ```
@@ -1609,7 +1609,7 @@ no:8
 no:9
 no:10
 no:12
-======删除叶子节点6======
+======删除叶子节点 6======
 no:2
 no:3
 no:5
@@ -1617,14 +1617,14 @@ no:8
 no:9
 no:10
 no:12
-======删除只有一颗子树的节点5======
+======删除只有一颗子树的节点 5======
 no:2
 no:3
 no:8
 no:9
 no:10
 no:12
-======删除有两颗子树的节点10======
+======删除有两颗子树的节点 10======
 no:2
 no:3
 no:8
@@ -1721,16 +1721,16 @@ func main() {
         avlTree.Add(&BinaryTreeNode{no: no})
     }
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 ```
 
 输出：
 
 ```
-左子树的高度为:1
-右子树的高度为:3
+左子树的高度为: 1
+右子树的高度为: 3
 ```
 
 #### 左旋转
@@ -1807,10 +1807,10 @@ func testLeftRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 ```
 
@@ -1824,9 +1824,9 @@ no:4
 no:5
 no:6
 no:7
-根节点=no:5
-左子树的高度为:2
-右子树的高度为:2
+根节点 = no:5
+左子树的高度为: 2
+右子树的高度为: 2
 ```
 
 #### 右旋转
@@ -1908,10 +1908,10 @@ func testRightRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 ```
 
@@ -1925,9 +1925,9 @@ no:4
 no:5
 no:6
 no:7
-根节点=no:4
-左子树的高度为:2
-右子树的高度为:2
+根节点 = no:4
+左子树的高度为: 2
+右子树的高度为: 2
 ```
 
 #### 双旋转
@@ -2006,10 +2006,10 @@ func testDoubleRotate() {
 
     avlTree.InfixOrder()
 
-    fmt.Printf("根节点=%v\n", avlTree.root)
+    fmt.Printf("根节点 = %v\n", avlTree.root)
 
-    fmt.Printf("左子树的高度为:%d\n", avlTree.leftHeight())
-    fmt.Printf("右子树的高度为:%d\n", avlTree.rightHeight())
+    fmt.Printf("左子树的高度为: %d\n", avlTree.leftHeight())
+    fmt.Printf("右子树的高度为: %d\n", avlTree.rightHeight())
 }
 ```
 
@@ -2023,7 +2023,7 @@ no:4
 no:5
 no:6
 no:7
-根节点=no:4
-左子树的高度为:2
-右子树的高度为:2
+根节点 = no:4
+左子树的高度为: 2
+右子树的高度为: 2
 ```

@@ -92,24 +92,24 @@ public class Main {
         intQueue.put(4);
         intQueue.put(5); // 队列已满，无法放入数据，实际上只能放 4 个元素
 
-        System.out.println("intQueue:" + intQueue);
+        System.out.println("intQueue: " + intQueue);
 
         int num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         num = intQueue.take();
-        System.out.println("取出一个元素:" + num);
+        System.out.println("取出一个元素: " + num);
         if (num == Integer.MIN_VALUE) {
             System.out.println("出队失败!!!");
         }
 
         // 取出数据后可以继续放入数据
         intQueue.put(5);
-        System.out.println("intQueue:" + intQueue);
+        System.out.println("intQueue: " + intQueue);
     }
 }
