@@ -81,7 +81,7 @@ fn delete_node(head_node: Option<Rc<RefCell<HeroNode>>>, no: i32) -> Option<Rc<R
             Some(Rc::clone(borrow_deleted_node.next.as_ref().unwrap()));
         // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
         borrow_deleted_node.next.as_ref().unwrap().borrow_mut().prev =
-            Some(Rc::clone(&borrow_deleted_node.prev.as_ref().unwrap()));
+            Some(Rc::clone(borrow_deleted_node.prev.as_ref().unwrap()));
     } else {
         borrow_deleted_node.prev.as_ref().unwrap().borrow_mut().next = None;
     }
