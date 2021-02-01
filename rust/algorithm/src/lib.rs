@@ -32,3 +32,6 @@ mod sort_radix;
 
 #[path = "search/sequence.rs"]
 mod search_sequence;
+
+#[path = "search/binary.rs"]
+mod search_binary;
