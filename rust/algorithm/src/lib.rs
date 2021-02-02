@@ -35,3 +35,6 @@ mod search_sequence;
 
 #[path = "search/binary.rs"]
 mod search_binary;
+
+#[path = "search/insert_value.rs"]
+mod search_insert_value;
