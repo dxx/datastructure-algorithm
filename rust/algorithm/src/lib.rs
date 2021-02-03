@@ -38,3 +38,6 @@ mod search_binary;
 
 #[path = "search/insert_value.rs"]
 mod search_insert_value;
+
+#[path = "search/fibonacci.rs"]
+mod search_fibonacci;
