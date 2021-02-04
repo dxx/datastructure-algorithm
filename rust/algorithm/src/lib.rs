@@ -41,3 +41,7 @@ mod search_insert_value;
 
 #[path = "search/fibonacci.rs"]
 mod search_fibonacci;
+
+#[path = "binary_search/no_recursion.rs"]
+mod binary_search_no_recursion;
+
