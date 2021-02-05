@@ -45,3 +45,6 @@ mod search_fibonacci;
 #[path = "binary_search/no_recursion.rs"]
 mod binary_search_no_recursion;
 
+
+#[path = "divide/hanno_tower.rs"]
+mod divide_hanno_tower;
