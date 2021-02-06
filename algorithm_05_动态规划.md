@@ -52,7 +52,7 @@
 代码实现：
 
 ```go
-func findMaxValue(w, v []int, c int) {
+func findMaxValue(w, v []int, c int) int {
     n := len(w)
     // 二维数组比实际物品数多出一行一列
     value := make([][]int, n + 1)
@@ -63,11 +63,11 @@ func findMaxValue(w, v []int, c int) {
 
     //// 初始第一列，默认为 0，也可以不初始化
     //for i := 0; i < len(value); i++ {
-    //    value[i][0] = 0
+    //    value[i][0] = 1
     //}
     //// 初始第一行
     //for j := 0; j < len(value[0]); j++ {
-    //    value[0][j] = 0
+    //    value[0][j] = 1
     //}
 
     // 遍历所有物品
@@ -90,8 +90,23 @@ func findMaxValue(w, v []int, c int) {
         }
         fmt.Println()
     }
+	return value[n][c]
+}
 
-    fmt.Printf("最大价值总和为:%d", value[n][c])
+func findMaxValue2(w, v []int, c int) int {
+    // 数组比实际物品总数多出一列
+    value := make([]int, c + 1)
+
+    // 遍历所有物品
+    for i := 0; i < len(w); i++ {
+        // 遍历所有容量
+        // 因为每个物品只能使用一次，给每一行填表时，采用倒序遍历
+        for j := c; j >= w[i]; j-- {
+            // 滑动数组优化空间复杂度
+            value[j] = max(value[j], v[i] + value[j - w[i]])
+        }
+    }
+	return value[c]
 }
 
 func max(a, b int) int {
@@ -110,9 +125,10 @@ func main() {
     v := []int{
         500, 5000, 3000,
     }
-    // 背包容量
+	// 背包容量
     c := 3
-    findMaxValue(w, v, c)
+    max := findMaxValue(w, v, c)
+	fmt.Printf("最大价值总和为: %d", max)
 }
 ```
 
@@ -124,7 +140,7 @@ func main() {
     0   500   500   500
     0   500  5000  5500
     0  3000  5000  8000
-最大价值总和为:8000
+最大价值总和为: 8000
 ```
 
 **空间优化**
@@ -136,7 +152,7 @@ func main() {
 优化后的代码如下：
 
 ```go
-func findMaxValue(w, v []int, c int) {
+func findMaxValue(w, v []int, c int) int {
     // 数组比实际物品总数多出一列
     value := make([]int, c + 1)
 
@@ -149,7 +165,6 @@ func findMaxValue(w, v []int, c int) {
             value[j] = max(value[j], v[i] + value[j - w[i]])
         }
     }
-
-    fmt.Printf("最大价值总和为:%d", value[c])
+	return value[c]
 }
 ```

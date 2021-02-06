@@ -34,9 +34,9 @@ package com.mcx.dynamicprogramming;
  * 2. w[i] > j 时，value[i][j] = value[i -1][j]
  * 3. w[i] <= j 时，max{value[i -1][j], v[i] + value[i - 1][j - w[i]]}
  */
-public class KnapsackProblem {
+public class Backpack {
 
-    public static void findMaxValue(int[] w, int[] v, int c) {
+    public static int findMaxValue(int[] w, int[] v, int c) {
         int n = w.length;
         // 二维数组比实际物品数多出一行一列
         int[][] value = new int[n + 1][c + 1];
@@ -70,11 +70,10 @@ public class KnapsackProblem {
             }
             System.out.println();
         }
-
-        System.out.printf("最大价值总和为:%d", value[n][c]);
+        return value[n][c];
     }
 
-    public static void findMaxValue2(int[] w, int[] v, int c) {
+    public static int findMaxValue2(int[] w, int[] v, int c) {
         // 数组比实际物品总数多出一列
         int[] value = new int[c + 1];
 
@@ -87,8 +86,7 @@ public class KnapsackProblem {
                 value[j] = Math.max(value[j], v[i] + value[j - w[i]]);
             }
         }
-
-        System.out.printf("最大价值总和为:%d", value[c]);
+        return value[c];
     }
 
     public static void main(String[] args) {
@@ -102,7 +100,8 @@ public class KnapsackProblem {
         };
 		// 背包容量
         int c = 3;
-        // findMaxValue(w, v, c);
-        findMaxValue2(w, v, c);
+        // int max = findMaxValue(w, v, c);
+        int max = findMaxValue2(w, v, c);
+        System.out.printf("最大价值总和为: %d", max);
     }
 }

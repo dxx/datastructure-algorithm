@@ -35,7 +35,7 @@ import "fmt"
 // 2. w[i] > j 时，value[i][j] = value[i -1][j]
 // 3. w[i] <= j 时，max{value[i -1][j], v[i] + value[i - 1][j - w[i]]}
 
-func findMaxValue(w, v []int, c int) {
+func findMaxValue(w, v []int, c int) int {
     n := len(w)
     // 二维数组比实际物品数多出一行一列
     value := make([][]int, n + 1)
@@ -73,11 +73,10 @@ func findMaxValue(w, v []int, c int) {
         }
         fmt.Println()
     }
-
-    fmt.Printf("最大价值总和为:%d", value[n][c])
+	return value[n][c]
 }
 
-func findMaxValue2(w, v []int, c int) {
+func findMaxValue2(w, v []int, c int) int {
     // 数组比实际物品总数多出一列
     value := make([]int, c + 1)
 
@@ -90,8 +89,7 @@ func findMaxValue2(w, v []int, c int) {
             value[j] = max(value[j], v[i] + value[j - w[i]])
         }
     }
-
-    fmt.Printf("最大价值总和为:%d", value[c])
+	return value[c]
 }
 
 func max(a, b int) int {
@@ -112,6 +110,7 @@ func main() {
     }
 	// 背包容量
     c := 3
-    // findMaxValue(w, v, c)
-    findMaxValue2(w, v, c)
+    // max := findMaxValue(w, v, c)
+    max := findMaxValue2(w, v, c)
+	fmt.Printf("最大价值总和为: %d", max)
 }

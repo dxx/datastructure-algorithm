@@ -71,8 +71,7 @@ function findMaxValue(w, v, c) {
     }
     console.log(str);
   }
-
-  console.log("最大价值总和为:", value[n][c]);
+  return value[n][c];
 }
 
 function findMaxValue2(w, v, c) {
@@ -89,8 +88,7 @@ function findMaxValue2(w, v, c) {
         value[j] = Math.max(value[j], v[i] + value[j - w[i]]);
       }
   }
-
-  console.log("最大价值总和为:", value[c]);
+  return value[c];
 }
 
 function main() {
@@ -100,8 +98,9 @@ function main() {
   let v = [500, 5000, 3000];
   // 背包容量
   let c = 3;
-  // findMaxValue(w, v, c);
-  findMaxValue2(w, v, c);
+  // let max = findMaxValue(w, v, c);
+  let max = findMaxValue2(w, v, c);
+  console.log("最大价值总和为:", max);
 }
 
 main();
