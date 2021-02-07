@@ -52,3 +52,7 @@ mod divide_hanno_tower;
 
 #[path = "dynamic_programming/backpack.rs"]
 mod dynamic_programming_backpack;
+
+
+#[path = "string_match/violence_match.rs"]
+mod string_match_violence_match;
