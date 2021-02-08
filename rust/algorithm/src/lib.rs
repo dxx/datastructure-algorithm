@@ -56,3 +56,6 @@ mod dynamic_programming_backpack;
 
 #[path = "string_match/violence_match.rs"]
 mod string_match_violence_match;
+
+#[path = "string_match/kmp_match.rs"]
+mod string_match_kmp_match;
