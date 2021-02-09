@@ -29,7 +29,7 @@ public class SetCovering {
             }
         }
 
-        // 对切片进行排序，避免每次遍历 broadcasts 顺序不一致，导致求出电台结果不一致
+        // 对数组进行排序，避免每次遍历 broadcasts 顺序不一致，导致求出电台结果不一致
         Collections.sort(broadcastKeys);
 
         // 保存所有区域
@@ -46,18 +46,19 @@ public class SetCovering {
             maxBroadcast = "";
             for (String key : broadcastKeys) {
                 List<String> value = broadcasts.get(key);
+                int size = value.size();
                 // 求出交集
                 value.retainAll(allBroadcasts);
                 tempIntersection = value;
                 // 每次都选择覆盖最多的集合，体现出贪心算法的特点
                 if (tempIntersection.size() > 0 &&
-                        (maxBroadcast.equals("") || tempIntersection.size() > value.size())) {
+                        (maxBroadcast.equals("") || tempIntersection.size() > size)) {
                     // 修改覆盖区域最多的电台
                     maxBroadcast = key;
                 }
             }
             if (!maxBroadcast.equals("")) {
-                // 将电台添加到切片中
+                // 将电台添加到数组中
                 selectBroadcasts.add(maxBroadcast);
                 // 将已经覆盖的区域对应的电台移除，不参与下一次比较
                 broadcastKeys.remove(maxBroadcast);
