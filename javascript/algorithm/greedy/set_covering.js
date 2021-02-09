@@ -55,7 +55,7 @@ function getBroadcast(broadcasts) {
     }
     
     if (maxBroadcast != "") {
-      // 将电台添加到切片中
+      // 将电台添加到数组中
       selectBroadcasts.push(maxBroadcast);
       // 将已经覆盖的区域对应的电台移除，不参与下一次比较
       broadcastKeys = deleteElement(broadcastKeys, maxBroadcast)
