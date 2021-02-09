@@ -24,7 +24,7 @@ function getBroadcast(broadcasts) {
     }
   }
 
-  // 对切片进行排序，避免每次遍历 broadcasts 顺序不一致，导致求出电台结果不一致
+  // 对数组进行排序，避免每次遍历 broadcasts 顺序不一致，导致求出电台结果不一致
   broadcastKeys.sort();
 
   let allBroadcasts = [];
