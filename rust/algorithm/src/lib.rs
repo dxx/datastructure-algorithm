@@ -59,3 +59,7 @@ mod string_match_violence_match;
 
 #[path = "string_match/kmp_match.rs"]
 mod string_match_kmp_match;
+
+
+#[path = "greedy/set_covering.rs"]
+mod greedy_set_covering;
