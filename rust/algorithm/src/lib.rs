@@ -63,3 +63,7 @@ mod string_match_kmp_match;
 
 #[path = "greedy/set_covering.rs"]
 mod greedy_set_covering;
+
+
+#[path = "prim/repair_road.rs"]
+mod prim_repair_road;
