@@ -47,7 +47,8 @@ fn get_broadcast(broadcasts: HashMap<String, Vec<String>>) -> Vec<String> {
             // 交集
             let temp_intersection: Vec<String> = retain.clone();
             // 每次都选择覆盖最多的集合，体现出贪心算法的特点
-            if temp_intersection.len() > 0 && (max_broadcast == "" || temp_intersection.len() > len) {
+            if temp_intersection.len() > 0 && (max_broadcast == "" || temp_intersection.len() > len)
+            {
                 max_broadcast = key.clone();
             }
         }
@@ -79,12 +80,30 @@ fn delete_element(vec: &mut Vec<String>, delete_val: String) {
 #[test]
 fn test_get_broadcast() {
     let broadcast_map = [
-        ("B1".to_string(), vec!["北京".to_string(), "上海".to_string(), "天津".to_string()]),
-        ("B2".to_string(), vec!["广州".to_string(), "北京".to_string(), "深圳".to_string()]),
-        ("B3".to_string(), vec!["成都".to_string(), "上海".to_string(), "杭州".to_string()]),
-        ("B4".to_string(), vec!["上海".to_string(), "天津".to_string()]),
-        ("B5".to_string(), vec!["杭州".to_string(), "大连".to_string()])
-    ].iter().cloned().collect();
+        (
+            "B1".to_string(),
+            vec!["北京".to_string(), "上海".to_string(), "天津".to_string()],
+        ),
+        (
+            "B2".to_string(),
+            vec!["广州".to_string(), "北京".to_string(), "深圳".to_string()],
+        ),
+        (
+            "B3".to_string(),
+            vec!["成都".to_string(), "上海".to_string(), "杭州".to_string()],
+        ),
+        (
+            "B4".to_string(),
+            vec!["上海".to_string(), "天津".to_string()],
+        ),
+        (
+            "B5".to_string(),
+            vec!["杭州".to_string(), "大连".to_string()],
+        ),
+    ]
+    .iter()
+    .cloned()
+    .collect();
 
     let broadcasts = get_broadcast(broadcast_map);
     println!("最少选择的广播电台: {:?}", broadcasts);
