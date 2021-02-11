@@ -17,30 +17,6 @@ public class BinaryTree {
             this.no = no;
         }
 
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public BinaryTreeNode getLeft() {
-            return left;
-        }
-
-        public void setLeft(BinaryTreeNode left) {
-            this.left = left;
-        }
-
-        public BinaryTreeNode getRight() {
-            return right;
-        }
-
-        public void setRight(BinaryTreeNode right) {
-            this.right = right;
-        }
-
         @Override
         public String toString() {
             return "no:" + no;
@@ -57,9 +33,9 @@ public class BinaryTree {
         // 当前节点
         System.out.println(node);
         // 遍历左子树
-        preOrder(node.getLeft());
+        preOrder(node.left);
         // 遍历右子树
-        preOrder(node.getRight());
+        preOrder(node.right);
     }
 
     /**
@@ -70,11 +46,11 @@ public class BinaryTree {
             return;
         }
         // 遍历左子树
-        infixOrder(node.getLeft());
+        infixOrder(node.left);
         // 当前节点
         System.out.println(node);
         // 遍历右子树
-        infixOrder(node.getRight());
+        infixOrder(node.right);
     }
 
     /**
@@ -85,9 +61,9 @@ public class BinaryTree {
             return;
         }
         // 遍历左子树
-        postOrder(node.getLeft());
+        postOrder(node.left);
         // 遍历右子树
-        postOrder(node.getRight());
+        postOrder(node.right);
         // 当前节点
         System.out.println(node);
     }
@@ -100,17 +76,17 @@ public class BinaryTree {
             return null;
         }
         System.out.println("进入查找");
-        if (node.getNo() == no) {
+        if (node.no == no) {
             return node;
         }
         // 左边查找
-        BinaryTreeNode returnNode = preOrderSearch(node.getLeft(), no);
+        BinaryTreeNode returnNode = preOrderSearch(node.left, no);
         if (returnNode != null) {
             // 左边找到了节点，返回
             return returnNode;
         }
         // 右边查找
-        return preOrderSearch(node.getRight(), no);
+        return preOrderSearch(node.right, no);
     }
 
     /**
@@ -121,17 +97,17 @@ public class BinaryTree {
             return null;
         }
         // 左边查找
-        BinaryTreeNode returnNode = infixOrderSearch(node.getLeft(), no);
+        BinaryTreeNode returnNode = infixOrderSearch(node.left, no);
         if (returnNode != null) {
             // 左边找到了节点，返回
             return returnNode;
         }
         System.out.println("进入查找");
-        if (node.getNo() == no) {
+        if (node.no == no) {
             return node;
         }
         // 右边查找
-        return infixOrderSearch(node.getRight(), no);
+        return infixOrderSearch(node.right, no);
     }
 
     /**
@@ -142,19 +118,19 @@ public class BinaryTree {
             return null;
         }
         // 左边查找
-        BinaryTreeNode returnNode = postOrderSearch(node.getLeft(), no);
+        BinaryTreeNode returnNode = postOrderSearch(node.left, no);
         if (returnNode != null) {
             // 左边找到了节点，返回
             return returnNode;
         }
         // 右边查找
-        returnNode = postOrderSearch(node.getRight(), no);
+        returnNode = postOrderSearch(node.right, no);
         if (returnNode != null) {
             // 右边找到了节点，返回
             return returnNode;
         }
         System.out.println("进入查找");
-        if (node.getNo() == no) {
+        if (node.no == no) {
             returnNode = node;
         }
         return returnNode;
@@ -168,10 +144,10 @@ public class BinaryTree {
         BinaryTreeNode node5 = new BinaryTreeNode(5);
 
         // 手动建立树的关系
-        root.setLeft(node2);
-        root.setRight(node5);
-        node2.setLeft(node3);
-        node2.setRight(node4);
+        root.left = node2;
+        root.right = node5;
+        node2.left = node3;
+        node2.right = node4;
 
         return root;
     }
@@ -197,19 +173,19 @@ public class BinaryTree {
         System.out.println("======前序查找======");
         System.out.printf("查找no=%d\n", no);
         BinaryTreeNode node = preOrderSearch(root, no);
-        System.out.printf("查找结果: no=%d\n", node.getNo());
+        System.out.printf("查找结果: no=%d\n", node.no);
 
         no = 4;
         System.out.println("======中序查找======");
         System.out.printf("查找no=%d\n", no);
         node = infixOrderSearch(root, no);
-        System.out.printf("查找结果: no=%d\n", node.getNo());
+        System.out.printf("查找结果: no=%d\n", node.no);
 
         no = 4;
         System.out.println("======后序查找======");
         System.out.printf("查找no=%d\n", no);
         node = postOrderSearch(root, no);
-        System.out.printf("查找结果: no=%d\n", node.getNo());
+        System.out.printf("查找结果: no=%d\n", node.no);
     }
 
     public static void main(String[] args) {

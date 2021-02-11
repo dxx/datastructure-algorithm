@@ -19,33 +19,9 @@ public class AVLTree {
             this.no = no;
         }
 
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public BinaryTreeNode getLeft() {
-            return left;
-        }
-
-        public void setLeft(BinaryTreeNode left) {
-            this.left = left;
-        }
-
-        public BinaryTreeNode getRight() {
-            return right;
-        }
-
-        public void setRight(BinaryTreeNode right) {
-            this.right = right;
-        }
-
         @Override
         public String toString() {
-            return "no:" + this.getNo();
+            return "no:" + this.no;
         }
     }
 
@@ -68,7 +44,7 @@ public class AVLTree {
         // 右边高度超过左边 1 个高度以上，进行左旋转
         if (this.rightHeight() - this.leftHeight() > 1) {
 
-            BinaryTreeNode rightNode = this.root.getRight();
+            BinaryTreeNode rightNode = this.root.right;
             // 右子节点不为 null，并且右子节点的左子树高度大于右子节点的右子树高度
             if (rightNode != null &&
                     this.height(rightNode.left) > this.height(rightNode.right)) {
@@ -83,7 +59,7 @@ public class AVLTree {
         // 左边高度超过右边 1 个高度以上，进行右旋转
         if (this.leftHeight() - this.rightHeight() > 1) {
 
-            BinaryTreeNode leftNode = this.root.getLeft();
+            BinaryTreeNode leftNode = this.root.left;
             // 左子节点不为 nil, 并且左子节点的右子树高度大于左子节点的左子树高度
             if (leftNode != null &&
                     this.height(leftNode.right) > this.height(leftNode.left)) {
@@ -134,15 +110,15 @@ public class AVLTree {
             return;
         }
         // 以当前节点为基础，创建一个新的节点，新节点的值等于当前节点的值
-        BinaryTreeNode newNode = new BinaryTreeNode(node.getNo());
+        BinaryTreeNode newNode = new BinaryTreeNode(node.no);
         // 让新节点的左子节点指向当前节点的左子节点，右子节点指向当前节点的右子节点的左子节点
-        newNode.setLeft(node.getLeft());
-        newNode.setRight(node.getRight().getLeft());
+        newNode.left = node.left;
+        newNode.right = node.right.left;
         // 把当前节点的值替换为右子节点的值，并把当前节点右子节点指向其右子节点的右子节点
-        node.setNo(node.getRight().getNo());
-        node.setRight(node.getRight().getRight());
+        node.no = node.right.no;
+        node.right = node.right.right;
         // 让当前节点的左子节点指向新创建的节点
-        node.setLeft(newNode);
+        node.left = newNode;
     }
 
     /**
@@ -153,35 +129,35 @@ public class AVLTree {
             return;
         }
         // 以当前节点为基础，创建一个新的节点，新节点的值等于根节点的值
-        BinaryTreeNode newNode = new BinaryTreeNode(node.getNo());
+        BinaryTreeNode newNode = new BinaryTreeNode(node.no);
         // 让新节点的右子节点指向当前节点的右子节点，左子节点指向当前节点的左子节点的右子节点
-        newNode.setRight(node.getRight());
-        newNode.setLeft(node.getLeft().getRight());
+        newNode.right = node.right;
+        newNode.left = node.left.right;
         // 把当前节点的值替换为左子节点的值，并把当前节点左子节点指向其左子节点的左子节点
-        node.setNo(node.getLeft().getNo());
-        node.setLeft(node.getLeft().getLeft());
+        node.no = node.left.no;
+        node.left = node.left.left;
         // 让当前节点的右子节点指向新创建的节点
-        node.setRight(newNode);
+        node.right = newNode;
     }
 
     private void add(BinaryTreeNode root, BinaryTreeNode node) {
         // 要添加的节点小于根节点
-        if (node.getNo() < root.getNo()) {
+        if (node.no < root.no) {
             // 左子节点为 null，直接添加为左子节点
-            if (root.getLeft() == null) {
-                root.setLeft(node);
+            if (root.left == null) {
+                root.left = node;
                 return;
             }
             // 左递归
-            this.add(root.getLeft(), node);
+            this.add(root.left, node);
         } else {
             // 右子节点为 null，直接添加为右子节点
-            if (root.getRight() == null) {
-                root.setRight(node);
+            if (root.right == null) {
+                root.right = node;
                 return;
             }
             // 右递归
-            this.add(root.getRight(), node);
+            this.add(root.right, node);
         }
     }
 
@@ -196,9 +172,9 @@ public class AVLTree {
         if (node == null) {
             return;
         }
-        this.infixOrder(node.getLeft());
+        this.infixOrder(node.left);
         System.out.println(node);
-        this.infixOrder(node.getRight());
+        this.infixOrder(node.right);
     }
 
     public static void testLeftRotate() {

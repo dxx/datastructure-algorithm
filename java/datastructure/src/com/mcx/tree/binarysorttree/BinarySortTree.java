@@ -19,33 +19,9 @@ public class BinarySortTree {
             this.no = no;
         }
 
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public BinaryTreeNode getLeft() {
-            return left;
-        }
-
-        public void setLeft(BinaryTreeNode left) {
-            this.left = left;
-        }
-
-        public BinaryTreeNode getRight() {
-            return right;
-        }
-
-        public void setRight(BinaryTreeNode right) {
-            this.right = right;
-        }
-
         @Override
         public String toString() {
-            return "no:" + this.getNo();
+            return "no:" + this.no;
         }
     }
 
@@ -66,22 +42,22 @@ public class BinarySortTree {
 
     private void add(BinaryTreeNode root, BinaryTreeNode node) {
         // 要添加的节点小于根节点
-        if (node.getNo() < root.getNo()) {
+        if (node.no < root.no) {
             // 左子节点为 null，直接添加为左子节点
-            if (root.getLeft() == null) {
-                root.setLeft(node);
+            if (root.left == null) {
+                root.left = node;
                 return;
             }
             // 左递归
-            this.add(root.getLeft(), node);
+            this.add(root.left, node);
         } else {
             // 右子节点为 null，直接添加为右子节点
-            if (root.getRight() == null) {
-                root.setRight(node);
+            if (root.right == null) {
+                root.right = node;
                 return;
             }
             // 右递归
-            this.add(root.getRight(), node);
+            this.add(root.right, node);
         }
     }
 
@@ -90,7 +66,7 @@ public class BinarySortTree {
             return null;
         }
         // 查找的节点就是根节点
-        if (this.root.getNo() == no) {
+        if (this.root.no == no) {
             return new BinaryTreeNode[]{null, this.root};
         }
         return this.recursionSearch(this.root, no);
@@ -104,17 +80,17 @@ public class BinarySortTree {
         if (node == null) {
             return null;
         }
-        if (node.getLeft() != null && node.getLeft().getNo() == no) {
-            return new BinaryTreeNode[]{node, node.getLeft()};
+        if (node.left != null && node.left.no == no) {
+            return new BinaryTreeNode[]{node, node.left};
         }
-        if (node.getRight() != null && node.getRight().getNo() == no) {
-            return new BinaryTreeNode[]{node, node.getRight()};
+        if (node.right != null && node.right.no == no) {
+            return new BinaryTreeNode[]{node, node.right};
         }
         // 判断是往左边还是往右边查找
-        if (no < node.getNo()) {
-            return this.recursionSearch(node.getLeft(), no);
+        if (no < node.no) {
+            return this.recursionSearch(node.left, no);
         } else {
-            return this.recursionSearch(node.getRight(), no);
+            return this.recursionSearch(node.right, no);
         }
     }
 
@@ -136,41 +112,41 @@ public class BinarySortTree {
         BinaryTreeNode parentNode = binaryTreeNodes[0];
         BinaryTreeNode node = binaryTreeNodes[1];
         // 当前节点为叶子节点
-        if (node.getLeft() == null && node.getRight() == null) {
+        if (node.left == null && node.right == null) {
             // 被删除的节点为根节点
             if (parentNode == null) {
                 this.root = null;
                 return;
             }
             // 当前节点为父节点的左子节点
-            if (parentNode.getLeft() != null && parentNode.getLeft().getNo() == no) {
-                parentNode.setLeft(null);
+            if (parentNode.left != null && parentNode.left.no == no) {
+                parentNode.left = null;
             }
             // 当前节点为父节点的右子节点
-            if (parentNode.getRight() != null && parentNode.getRight().getNo() == no) {
-                parentNode.setRight(null);
+            if (parentNode.right != null && parentNode.right.no == no) {
+                parentNode.right = null;
             }
             return;
         }
         // 当前节点有两颗子树
-        if (node.getLeft() != null && node.getRight() != null) {
+        if (node.left != null && node.right != null) {
             // 把右子节点作为根节点，从左边开始遍历到最后一个叶子节点
-            BinaryTreeNode leftChildNode = node.getRight();
-            while (leftChildNode.getLeft() != null) {
-                leftChildNode = leftChildNode.getLeft();
+            BinaryTreeNode leftChildNode = node.right;
+            while (leftChildNode.left != null) {
+                leftChildNode = leftChildNode.left;
             }
             // 删除最小的叶子节点
-            this.delete(leftChildNode.getNo());
+            this.delete(leftChildNode.no);
 
             // 替换掉被删除节点的值
-            node.setNo(leftChildNode.getNo());
+            node.no = leftChildNode.no;
         } else { // 当前节点只有一颗子树
             BinaryTreeNode replaceNode = null;
-            if (node.getLeft() != null) {
-                replaceNode = node.getLeft();
+            if (node.left != null) {
+                replaceNode = node.left;
             }
-            if (node.getRight() != null) {
-                replaceNode = node.getRight();
+            if (node.right != null) {
+                replaceNode = node.right;
             }
 
             // 父节点为 null，表示根节点
@@ -179,12 +155,12 @@ public class BinarySortTree {
                 return;
             }
             // 当前节点为父节点的左子节点
-            if (parentNode.getLeft() != null && parentNode.getLeft().getNo() == no) {
-                parentNode.setLeft(replaceNode);
+            if (parentNode.left != null && parentNode.left.no == no) {
+                parentNode.left = replaceNode;
             }
             // 当前节点为父节点的右子节点
-            if (parentNode.getRight() != null && parentNode.getRight().getNo() == no) {
-                parentNode.setRight(replaceNode);
+            if (parentNode.right != null && parentNode.right.no == no) {
+                parentNode.right = replaceNode;
             }
         }
     }
@@ -200,9 +176,9 @@ public class BinarySortTree {
         if (node == null) {
             return;
         }
-        this.infixOrder(node.getLeft());
+        this.infixOrder(node.left);
         System.out.println(node);
-        this.infixOrder(node.getRight());
+        this.infixOrder(node.right);
     }
 
     public static void main(String[] args) {

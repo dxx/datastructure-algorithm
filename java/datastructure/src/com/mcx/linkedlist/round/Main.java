@@ -14,39 +14,8 @@ public class Main {
         private PersonNode prev;
         private PersonNode next;
 
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public PersonNode getPrev() {
-            return prev;
-        }
-
-        public void setPrev(PersonNode prev) {
-            this.prev = prev;
-        }
-
-        public PersonNode getNext() {
-            return next;
-        }
-
-        public void setNext(PersonNode next) {
-            this.next = next;
-        }
-
         public PersonNode() {}
+
         public PersonNode(int no, String name) {
             this.no = no;
             this.name = name;
@@ -58,24 +27,24 @@ public class Main {
      */
     public static void insertNode(PersonNode headNode, PersonNode newNode) {
         // 判断是否是第一次插入
-        if (headNode.getNext() == null) {
-            headNode.setNo(newNode.getNo());
-            headNode.setName(newNode.getName());
-            headNode.setPrev(headNode);
-            headNode.setNext(headNode);
+        if (headNode.next == null) {
+            headNode.no = newNode.no;
+            headNode.name = newNode.name;
+            headNode.prev = headNode;
+            headNode.next = headNode;
             return;
         }
         PersonNode lastNode = headNode;
         // 下一个结点不等于头结点继续循环
-        while (lastNode.getNext() != headNode) {
-            lastNode = lastNode.getNext();
+        while (lastNode.next != headNode) {
+            lastNode = lastNode.next;
         }
         // 将新结点添加到链表末尾
-        lastNode.setNext(newNode);
-        newNode.setPrev(lastNode);
+        lastNode.next = newNode;
+        newNode.prev = lastNode;
         // 将新结点下一个结点指针指向头结点
-        newNode.setNext(headNode);
-        headNode.setPrev(newNode);
+        newNode.next = headNode;
+        headNode.prev = newNode;
     }
 
     /**
@@ -83,37 +52,37 @@ public class Main {
      */
     public static PersonNode deleteNode(PersonNode headNode, PersonNode node) {
         // 没有结点 或者 只有一个头结点
-        if (headNode.getNext() == null || headNode.getNext() == headNode) {
+        if (headNode.next == null || headNode.next == headNode) {
             // 头结点就是要删除的结点
-            if (headNode.getNo() == node.getNo()) {
-                headNode.setNext(null);
-                headNode.setPrev(null);
+            if (headNode.no == node.no) {
+                headNode.next = null;
+                headNode.prev = null;
             }
             return headNode;
         }
 
-        PersonNode tempNode = headNode.getNext();
+        PersonNode tempNode = headNode.next;
         boolean isExist = false;
         while (true) {
             if (tempNode == headNode) { // 最后一个结点
-                if (tempNode.getNo() == node.getNo()) {
+                if (tempNode.no == node.no) {
                     isExist = true;
                     // 头结点删除了，将头结点的下一个结点作为头结点
-                    headNode = tempNode.getNext();
+                    headNode = tempNode.next;
                 }
                 break;
-            } else if (tempNode.getNo() == node.getNo()) {
+            } else if (tempNode.no == node.no) {
                 isExist = true;
                 break;
             }
-            tempNode = tempNode.getNext();
+            tempNode = tempNode.next;
         }
         // 存在需要删除的结点
         if (isExist) {
             // 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-            tempNode.getPrev().setNext(tempNode.getNext());
+            tempNode.prev.next = tempNode.next;
             // 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
-            tempNode.getNext().setPrev(tempNode.getPrev());
+            tempNode.next.prev = tempNode.prev;
         }
         return headNode;
     }
@@ -122,7 +91,7 @@ public class Main {
      * 打印循环链表的信息
      */
     public static void printRoundNodeInfo(PersonNode headNode) {
-        if (headNode.getNext() == null) {
+        if (headNode.next == null) {
             System.out.println("该循环链表没有节点");
             return;
         }
@@ -130,12 +99,12 @@ public class Main {
         PersonNode tempNode = headNode;
         while (true) {
             sb.append(String.format("{no:%d, name:%s}",
-                    tempNode.getNo(), tempNode.getName()));
+                    tempNode.no, tempNode.name));
             // 表示最后一个结点
-            if (tempNode.getNext() == headNode) {
+            if (tempNode.next == headNode) {
                 break;
             }
-            tempNode = tempNode.getNext();
+            tempNode = tempNode.next;
         }
         sb.append("]");
         System.out.println(sb.toString());

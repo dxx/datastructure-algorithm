@@ -20,37 +20,6 @@ public class Main {
             this.nickname = nickname;
         }
 
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public HeroNode getNext() {
-            return next;
-        }
-
-        public void setNext(HeroNode next) {
-            this.next = next;
-        }
     }
 
     /**
@@ -59,12 +28,12 @@ public class Main {
     public static void insertAtTail(HeroNode headNode, HeroNode newNode) {
         HeroNode lastNode = headNode;
         // 下一个结点不为空继续循环
-        while (lastNode.getNext() != null) {
+        while (lastNode.next != null) {
             // 将下一个结点赋值给当前结点
-            lastNode = lastNode.getNext();
+            lastNode = lastNode.next;
         }
         // 将当前结点插入到链表的最后一个结点
-        lastNode.setNext(newNode);
+        lastNode.next = newNode;
     }
 
     /**
@@ -73,19 +42,19 @@ public class Main {
     public static void sortInsertByNo(HeroNode headNode, HeroNode newNode) {
         HeroNode tempNode = headNode;
         while (true) {
-            if (tempNode.getNext() == null) {
+            if (tempNode.next == null) {
                 break;
-            } else if (tempNode.getNext().getNo() > newNode.getNo()) {
+            } else if (tempNode.next.no > newNode.no) {
                 break;
-            } else if (tempNode.getNext().getNo() == newNode.getNo()) {
+            } else if (tempNode.next.no == newNode.no) {
                 throw new IllegalStateException("no 相等不能插入");
             }
-            tempNode = tempNode.getNext();
+            tempNode = tempNode.next;
         }
         // tempNode 的下一个结点插入到 newNode 的下一个结点
-        newNode.setNext(tempNode.getNext());
+        newNode.next = tempNode.next;
         // newNode 结点插入到 tempNode 的下一个结点
-        tempNode.setNext(newNode);
+        tempNode.next = newNode;
     }
 
     /**
@@ -93,13 +62,13 @@ public class Main {
      */
     public static void deleteNode(HeroNode headNode, HeroNode node) {
         HeroNode tempNode = headNode;
-        while (tempNode.getNext() != null) {
-            if (tempNode.getNext().getNo() == node.getNo()) {
+        while (tempNode.next != null) {
+            if (tempNode.next.no == node.no) {
                 // 将下一个结点的下一个结点，链接到被删除结点的上一个结点
-                tempNode.setNext(tempNode.getNext().getNext());
+                tempNode.next = tempNode.next.next;
                 return;
             }
-            tempNode = tempNode.getNext();
+            tempNode = tempNode.next;
         }
     }
 
@@ -107,16 +76,16 @@ public class Main {
      * 打印单链表结点内容
      */
     public static void printHeadNodeInfo(HeroNode headNode) {
-        if (headNode.getNext() == null) {
+        if (headNode.next == null) {
             System.out.println("该链表没有节点");
             return;
         }
         StringBuilder sb = new StringBuilder("[");
-        HeroNode tempNode = headNode.getNext();
+        HeroNode tempNode = headNode.next;
         while (tempNode != null) {
             sb.append(String.format("{no:%d, name:%s, nickname:%s}",
-                    tempNode.getNo(), tempNode.getName(), tempNode.getNickname()));
-            tempNode = tempNode.getNext();
+                    tempNode.no, tempNode.name, tempNode.nickname));
+            tempNode = tempNode.next;
         }
         sb.append("]");
         System.out.println(sb.toString());

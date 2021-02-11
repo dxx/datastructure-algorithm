@@ -16,10 +16,10 @@ public class Main {
             return 0;
         }
         int length = 0;
-        Node node = headNode.getNext();
+        Node node = headNode.next;
         while (node != null) {
             length++;
-            node = node.getNext();
+            node = node.next;
         }
         return length;
     }
@@ -46,13 +46,13 @@ public class Main {
         while (fast != null) {
 			length++;
             if (i > 0) {
-                fast = fast.getNext();
+                fast = fast.next;
                 i--;
                 continue;
             }
             // 快慢指针同时走
-            fast = fast.getNext();
-            slow = slow.getNext();
+            fast = fast.next;
+            slow = slow.next;
         }
         // index 超过了链表的长度
         if (index > length) {
@@ -78,9 +78,9 @@ public class Main {
         if (index <= 0 || index > length) {
             return null;
         }
-        Node lastNode = headNode.getNext();
+        Node lastNode = headNode.next;
         for (int i = 0; i < length - index; i++) {
-            lastNode = lastNode.getNext();
+            lastNode = lastNode.next;
         }
         return lastNode;
     }
@@ -92,24 +92,24 @@ public class Main {
      * 3.最后将头结点的 next 结点指向 reverseHead 的 next 结点
      */
     public static void reverseNode(Node headNode) {
-        if (headNode == null || headNode.getNext() == null) {
+        if (headNode == null || headNode.next == null) {
             return;
         }
         Node reverseHead = new Node();
-        Node current = headNode.getNext();
+        Node current = headNode.next;
         Node next;
         while (current != null) {
             // 保存当前结点的下一个结点
-            next = current.getNext();
+            next = current.next;
             // 将 reverseHead 结点的下一个结点放在当前结点的下一个结点
-            current.setNext(reverseHead.getNext());
+            current.next = reverseHead.next;
             // 当前结点放在 reverseHead 后面
-            reverseHead.setNext(current);
+            reverseHead.next = current;
             // 移动当前结点
             current = next;
         }
         // 将头结点的 next 结点指向 reverseHead 的 next 结点
-        headNode.setNext(reverseHead.getNext());
+        headNode.next = reverseHead.next;
     }
 
     public static void testGetLength() {
@@ -117,9 +117,9 @@ public class Main {
         Node node1 = new Node("node1");
         Node node2 = new Node("node2");
         Node node3 = new Node("node3");
-        headNode.setNext(node1);
-        node1.setNext(node2);
-        node2.setNext(node3);
+        headNode.next = node1;
+        node1.next = node2;
+        node2.next = node3;
 
         int length = getNodeLength(headNode);
         System.out.printf("单链表结点个数为: %d\n", length);
@@ -130,12 +130,12 @@ public class Main {
         Node node1 = new Node("node1");
         Node node2 = new Node("node2");
         Node node3 = new Node("node3");
-        headNode.setNext(node1);
-        node1.setNext(node2);
-        node2.setNext(node3);
+        headNode.next = node1;
+        node1.next = node2;
+        node2.next = node3;
         int index = 2;
         Node lastNode = getLastIndexNode(headNode, index);
-        System.out.printf("单链表结点中倒数第 %d 个结点为: %s\n", index, lastNode.getName());
+        System.out.printf("单链表结点中倒数第 %d 个结点为: %s\n", index, lastNode.name);
     }
 
     public static void testReverseNode() {
@@ -143,9 +143,9 @@ public class Main {
         Node node1 = new Node("node1");
         Node node2 = new Node("node2");
         Node node3 = new Node("node3");
-        headNode.setNext(node1);
-        node1.setNext(node2);
-        node2.setNext(node3);
+        headNode.next = node1;
+        node1.next = node2;
+        node2.next = node3;
 
         System.out.println("反转前:");
         headNode.printNodeInfo();

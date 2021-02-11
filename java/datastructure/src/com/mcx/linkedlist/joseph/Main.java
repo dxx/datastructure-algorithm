@@ -17,30 +17,6 @@ public class Main {
         public Person(int no) {
             this.no = no;
         }
-
-        public int getNo() {
-            return no;
-        }
-
-        public void setNo(int no) {
-            this.no = no;
-        }
-
-        public Person getPrev() {
-            return prev;
-        }
-
-        public void setPrev(Person prev) {
-            this.prev = prev;
-        }
-
-        public Person getNext() {
-            return next;
-        }
-
-        public void setNext(Person next) {
-            this.next = next;
-        }
     }
 
     public static class PersonLinkedList {
@@ -81,76 +57,60 @@ public class Main {
         }
 
         public void showPersons() {
-            if (this.getFirst() == null) {
+            if (this.first == null) {
                 return;
             }
-            if (this.getFirst().getNext() == this.getFirst()) {
-                System.out.printf("num:%d\n", this.getFirst().getNo());
+            if (this.first.next == this.first) {
+                System.out.printf("num:%d\n", this.first.no);
                 return;
             }
-            Person current = this.getFirst();
+            Person current = this.first;
             while (true) {
-                System.out.printf("num:%d\n", current.getNo());
-                current = current.getNext();
+                System.out.printf("num:%d\n", current.no);
+                current = current.next;
 
-                if (current == this.getFirst()) {
+                if (current == this.first) {
                     break;
                 }
             }
         }
 
         public void count(int start, int num) {
-            if (start < 1 || start > this.getLength()) {
-                System.out.printf("start 不能小于 1 或者不能大于 %d\n", this.getLength());
+            if (start < 1 || start > this.length) {
+                System.out.printf("start 不能小于 1 或者不能大于 %d\n", this.length);
                 return;
             }
-            if (num > this.getLength()) {
-                System.out.printf("num 不能大于元素个数: %d\n", this.getLength());
+            if (num > this.length) {
+                System.out.printf("num 不能大于元素个数: %d\n", this.length);
                 return;
             }
 
-            Person current = this.getFirst();
+            Person current = this.first;
 
             // 循环 start - 1 次
             for (int i = 1; i <= start - 1; i++) {
-                current = current.getNext();
+                current = current.next;
             }
 
             while (true) {
                 // 表示只有一个节点
-                if (current.getPrev() == current && current.getNext() == current) {
+                if (current.prev == current && current.next == current) {
                     break;
                 }
 
                 // 循环 num - 1 次
                 for (int i = 1; i <= num - 1; i++) {
-                    current = current.getNext();
+                    current = current.next;
                 }
 
                 // 删除元素
-                current.getPrev().setNext(current.getNext());
-                current.getNext().setPrev(current.getPrev());
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
 
-                System.out.printf("出队人的编号: %d\n", current.getNo());
-                current = current.getNext();
+                System.out.printf("出队人的编号: %d\n", current.no);
+                current = current.next;
             }
-            System.out.printf("最后留下人的编号: %d\n", current.getNo());
-        }
-
-        public Person getFirst() {
-            return first;
-        }
-
-        public void setFirst(Person first) {
-            this.first = first;
-        }
-
-        public int getLength() {
-            return length;
-        }
-
-        public void setLength(int length) {
-            this.length = length;
+            System.out.printf("最后留下人的编号: %d\n", current.no);
         }
     }
 
