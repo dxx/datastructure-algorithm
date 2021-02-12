@@ -67,3 +67,7 @@ mod greedy_set_covering;
 
 #[path = "prim/repair_road.rs"]
 mod prim_repair_road;
+
+
+#[path = "kruskal/build_bus_station.rs"]
+mod kruskal_build_bus_station;
