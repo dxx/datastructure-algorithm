@@ -16,7 +16,7 @@ pub struct MinTree {
 
 pub struct Graph {
     vertexes: Vec<String>, // 顶点
-    matrix: Vec<Vec<u32>>, // 领接矩阵，代表边的值
+    matrix: Vec<Vec<u32>>, // 邻接矩阵，代表边的值
 }
 
 impl MinTree {
