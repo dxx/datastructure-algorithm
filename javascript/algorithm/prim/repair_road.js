@@ -29,7 +29,7 @@ function MinTree(vertexes, edges) {
 
 function Graph(vertexes, matrix) {
   this.vertexes = vertexes; // 顶点
-  this.matrix = matrix; // 领接矩阵，代表边的值
+  this.matrix = matrix; // 邻接矩阵，代表边的值
 }
 
 MinTree.prototype.prim = function(v) {

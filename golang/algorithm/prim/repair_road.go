@@ -17,8 +17,8 @@ type MinTree struct {
 }
 
 type Graph struct {
-    vertexes []string // 顶点
-    matrix    [][]int  // 领接矩阵，代表边的值
+    vertexes []string  // 顶点
+    matrix    [][]int  // 邻接矩阵，代表边的值
 }
 
 // 创建图

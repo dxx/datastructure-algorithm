@@ -93,7 +93,7 @@ public class RepairRoad {
 
         public String[] vertexes; // 顶点
 
-        public int[][] matrix; // 领接矩阵，代表边的值
+        public int[][] matrix; // 邻接矩阵，代表边的值
 
     }
 
