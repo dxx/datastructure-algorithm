@@ -1,7 +1,6 @@
-extern crate regex;
-
-use array_stack::Stack;
+use crate::array_stack::Stack;
 use std::collections::HashMap;
+use regex::Regex;
 
 /// 综合计算器
 
@@ -72,7 +71,7 @@ impl Calculator {
 
     /// 判断是否为数字
     fn is_num(&self, char: &str) -> bool {
-        let num_regex = regex::Regex::new("\\d+").unwrap();
+        let num_regex = Regex::new("\\d+").unwrap();
         return num_regex.is_match(char);
     }
 
