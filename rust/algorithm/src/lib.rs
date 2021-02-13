@@ -71,3 +71,7 @@ mod prim_repair_road;
 
 #[path = "kruskal/build_bus_station.rs"]
 mod kruskal_build_bus_station;
+
+
+#[path = "horse_treads/chessboard.rs"]
+mod horse_treads_chessboard;
