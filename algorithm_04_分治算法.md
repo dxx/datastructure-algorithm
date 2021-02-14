@@ -1,6 +1,6 @@
 ## 分治算法
 
->各种语言实现代码：[Go](./golang/algorithm/divide)   [Java](./java/algorithm/src/com/mcx/divide)   [JavaScript](./javascript/algorithm/divide)
+>各种语言实现代码：[Go](./golang/algorithm/divide)   [Java](./java/algorithm/src/com/mcx/divide)   [JavaScript](./javascript/algorithm/divide)   [Rust](./rust/algorithm/src/divide)
 >
 >默认使用 **Go** 语言实现。
 

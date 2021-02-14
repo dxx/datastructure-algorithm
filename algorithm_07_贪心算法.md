@@ -1,6 +1,6 @@
 ## 贪心算法
 
->各种语言实现代码：[Go](./golang/algorithm/greedy)   [Java](./java/algorithm/src/com/mcx/greedy)   [JavaScript](./javascript/algorithm/greedy)
+>各种语言实现代码：[Go](./golang/algorithm/greedy)   [Java](./java/algorithm/src/com/mcx/greedy)   [JavaScript](./javascript/algorithm/greedy)   [Rust](./rust/algorithm/src/greedy)
 >
 >默认使用 **Go** 语言实现。
 

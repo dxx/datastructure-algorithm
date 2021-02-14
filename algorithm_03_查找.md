@@ -1,6 +1,6 @@
 ## 查找
 
->各种语言实现代码：[Go](./golang/algorithm/search)   [Java](./java/algorithm/src/com/mcx/search)   [JavaScript](./javascript/algorithm/search)
+>各种语言实现代码：[Go](./golang/algorithm/search)   [Java](./java/algorithm/src/com/mcx/search)   [JavaScript](./javascript/algorithm/search)   [Rust](./rust/algorithm/src/search)
 >
 >默认使用 **Go** 语言实现。
 

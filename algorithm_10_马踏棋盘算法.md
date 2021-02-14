@@ -1,6 +1,6 @@
 ## 马踏棋盘算法
 
->各种语言实现代码：[Go](./golang/algorithm/horsetreads)   [Java](./java/algorithm/src/com/mcx/horsetreads)   [JavaScript](./javascript/algorithm/horsetreads)
+>各种语言实现代码：[Go](./golang/algorithm/horsetreads)   [Java](./java/algorithm/src/com/mcx/horsetreads)   [JavaScript](./javascript/algorithm/horsetreads)   [Rust](./rust/algorithm/src/horse_treads)
 >
 >默认使用 **Go** 语言实现。
 
