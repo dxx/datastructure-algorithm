@@ -1,11 +1,12 @@
-package main
+package stack
 
 import (
     "datastructure/stack/array"
     "fmt"
+    "testing"
 )
 
-func main() {
+func TestStack(t *testing.T) {
     // 创建一个栈
     stack := array.NewStack(3)
     // 入栈

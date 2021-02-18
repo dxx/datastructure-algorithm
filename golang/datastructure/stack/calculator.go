@@ -1,4 +1,4 @@
-package main
+package stack
 
 import (
     "datastructure/stack/array"
@@ -141,12 +141,4 @@ func (cal *Calculator) Calculate(expression string) {
     // 弹出最终结果
     result, _ := cal.numStack.Pop()
     fmt.Printf("表达式执行结果: %s=%s\n", expression, result)
-}
-
-func main() {
-    calculator := NewCalculator()
-
-    calculator.Calculate("3+5*3-6")
-    calculator.Calculate("30+5*3-6")
-    calculator.Calculate("130+5*3-6")
 }

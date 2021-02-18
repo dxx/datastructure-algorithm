@@ -82,7 +82,7 @@ func (s *Stack) String() string {
 测试代码：
 
 ```go
-func main() {
+func TestStack(t *testing.T) {
     // 创建一个栈
     stack := array.NewStack(3)
     // 入栈
@@ -114,9 +114,11 @@ func main() {
 }
 ```
 
-运行输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestStack$ ./stack
+=== RUN   TestStack
 stack is full
 [three two one ]
 出栈: three
@@ -330,7 +332,7 @@ func (cal *Calculator) Calculate(expression string) {
 测试代码：
 
 ```go
-func main() {
+func TestCalculator(t *testing.T) {
     calculator := NewCalculator()
 
     calculator.Calculate("3+5*3-6")
@@ -339,9 +341,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestCalculator$ ./stack
+=== RUN   TestCalculator
 表达式执行结果: 3+5*3-6=12
 表达式执行结果: 30+5*3-6=39
 表达式执行结果: 130+5*3-6=139
@@ -450,7 +454,7 @@ func calSuffixExpression(expr []string) int {
 测试代码如下：
 
 ```go
-func main() {
+func TestReversePoland(t *testing.T) {
     expr := "3 5 3 * + 2 -"
     // 假设数和数或符号之间有空格
     expressions := strings.Split(expr, " ")
@@ -459,9 +463,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestReversePoland$ ./stack
+=== RUN   TestReversePoland
 后缀表达式 3 5 3 * + 2 - 的计算结果为: 16
 ```
 
@@ -580,7 +586,7 @@ func infixToSuffix(infix []string) []string {
 测试代码如下：
 
 ```go
-func main() {
+func TestReversePoland(t *testing.T) {
     expr := "1+((2+3)*4)-5"
     expressions := exprToSlice(expr)
     fmt.Printf("将中缀表达式放入切片, 结果为: %v\n", expressions)
@@ -593,9 +599,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestReversePoland$ ./stack
+=== RUN   TestReversePoland
 将中缀表达式放入切片, 结果为: [1 + ( ( 2 + 3 ) * 4 ) - 5]
 中缀表达式转换成后缀表达式, 结果为: [1 2 3 + 4 * + 5 -]
 计算表达式 1+((2+3)*4)-5, 结果为: 16
