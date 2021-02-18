@@ -90,7 +90,7 @@ func (q *IntQueue) String() string {
 测试代码如下：
 
 ```go
-func main() {
+func TestSequenceQueue(t *testing.T) {
     intQueue := NewQueue(3)
     _ = intQueue.Put(1)
     _ = intQueue.Put(2)
@@ -120,9 +120,11 @@ func main() {
 }
 ```
 
-测试以上代码，输出：
+测试以上代码，运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSequenceQueue$ ./queue/sequence
+=== RUN   TestSequenceQueue
 intQueue: [1 2 3 ]
 取出一个元素: 1
 取出一个元素: 2
@@ -242,7 +244,7 @@ func (q *IntQueue) String() string {
 测试代码如下：
 
 ```go
-func main() {
+func TestRoundQueue(t *testing.T) {
     intQueue := NewQueue(5)
     _ = intQueue.Put(1)
     _ = intQueue.Put(2)
@@ -272,9 +274,11 @@ func main() {
 }
 ```
 
-测试以上代码，输出：
+测试以上代码，运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestRoundQueue$ ./queue/round
+=== RUN   TestRoundQueue
 intQueue: [1 2 3 4 ]
 取出一个元素: 1
 取出一个元素: 2
