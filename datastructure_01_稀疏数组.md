@@ -10,7 +10,7 @@
 
 下图是一个 0 值远大于非 0 值的二维数组
 
-![data_structure_sparsearray_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_01.png)
+![data_structure_sparsearray_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_01.png)
 
 稀疏数组可以看做是一个压缩的数组，稀疏数组的好处有：
 
@@ -19,7 +19,7 @@
 
 采用稀疏数组的存储方式为第一行存储原始数据总行数，总列数，默认值 0，接下来每一行都存储非0数所在行，所在列，和具体值。上图中的二维数组转成稀疏数组后如下：
 
-![data_structure_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_02.png)
+![data_structure_sparsearray_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_sparsearray_02.png)
 
 
 
@@ -36,8 +36,10 @@ func printArray(array [5][5]int) {
         fmt.Print("\n")
     }
 }
+```
 
-func main() {
+```go
+func TestSparseArray(t *testing.T) {
     // 定义一个二维数组
     var array [5][5]int
     // 初始化 3，6， 1，5
@@ -51,15 +53,17 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSparseArray$ ./sparsearray
+=== RUN   TestSparseArray
 原二维数组：
-0	0	3	0	0	
-0	0	0	6	0	
-0	1	0	0	0	
-0	0	0	5	0	
-0	0	0	0	0
+0       0       3       0       0
+0       0       0       6       0
+0       1       0       0       0
+0       0       0       5       0
+0       0       0       0       0
 ```
 
 ### 二维数组转稀疏数组
@@ -102,8 +106,10 @@ func printSparseArray(sparseArray [][3]int) {
         fmt.Print("\n")
     }
 }
+```
 
-func main() {
+```go
+func TestSparseArray(t *testing.T) {
     // 定义一个二维数组
     var array [5][5]int
     // 初始化 3，6， 1，5
@@ -123,21 +129,23 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSparseArray$ ./sparsearray
+=== RUN   TestSparseArray
 原二维数组：
-0	0	3	0	0	
-0	0	0	6	0	
-0	1	0	0	0	
-0	0	0	5	0	
-0	0	0	0	0	
+0       0       3       0       0
+0       0       0       6       0
+0       1       0       0       0
+0       0       0       5       0
+0       0       0       0       0
 转换后的稀疏数组：
-5	5	0	
-0	2	3	
-1	3	6	
-2	1	1	
-3	3	5	
+5       5       0
+0       2       3
+1       3       6
+2       1       1
+3       3       5
 ```
 
 ### 存储和读取稀疏数组
@@ -193,9 +201,10 @@ func readSparseArray() [][3]int {
     }
     return sparseArray
 }
+```
 
-
-func main() {
+```go
+func TestSparseArray(t *testing.T) {
     // 定义一个二维数组
     var array [5][5]int
     // 初始化 3，6， 1，5
@@ -223,22 +232,23 @@ func main() {
 }
 ```
 
+运行：
+
+```shell
+golang/datastructure>go test -v -run ^TestSparseArray$ ./sparsearray
+=== RUN   TestSparseArray
+...
+读取的稀疏数组：
+5       5       0
+0       2       3
+1       3       6
+2       1       1
+3       3       5
+```
+
 运行以上代码后，打开 `sparse.data` 文件，内容如下：
 
 ```
-5	5	0	
-0	2	3	
-1	3	6	
-2	1	1	
-3	3	5	
-```
-
-输出：
-
-```
-...
-
-读取的稀疏数组：
 5	5	0	
 0	2	3	
 1	3	6	
@@ -264,7 +274,7 @@ func toArray(sparseArray [][3]int) [5][5]int {
     return array
 }
 
-func main() {
+func TestSparseArray(t *testing.T) {
     // 定义一个二维数组
     var array [5][5]int
     // 初始化 3，6， 1，5
@@ -297,16 +307,16 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSparseArray$ ./sparsearray
+=== RUN   TestSparseArray
 ...
-
 转换后的二维数组：
-0	0	3	0	0	
-0	0	0	6	0	
-0	1	0	0	0	
-0	0	0	5	0	
-0	0	0	0	0	
+0       0       3       0       0
+0       0       0       6       0
+0       1       0       0       0
+0       0       0       5       0
+0       0       0       0       0
 ```
-
