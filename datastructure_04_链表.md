@@ -83,7 +83,7 @@ func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
 编写测试方法，然后运行：
 
 ```go
-func testInsertAtTail() {
+func TestInsertAtTail(t *testing.T) {
     // 创建 head 结点，head 结点不包含数据
     headNode := new(HeroNode)
     // 创建第一个结点
@@ -100,15 +100,13 @@ func testInsertAtTail() {
 
     printHeadNodeInfo(headNode)
 }
-
-func main() {
-    testInsertAtTail()
-}
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang\datastructure>go test -v -run ^TestInsertAtTail$ ./linkedlist/single
+=== RUN   TestInsertAtTail
 [{no:1, name:宋江, nickname:呼保义}{no:2, name:卢俊义, nickname:玉麒麟}{no:3, name:吴用, nickname:智多星}]
 ```
 
@@ -140,7 +138,7 @@ func sortInsertByNo(headNode *HeroNode, newNode *HeroNode) {
 对比尾部插入，测试代码如下：
 
 ```go
-func testSortInsertByNo() {
+func TestSortInsertByNo(t *testing.T) {
     // 创建结点，用来做尾部插入
     head := new(HeroNode)
     node1 := NewHeroNode(1, "宋江", "呼保义")
@@ -171,15 +169,13 @@ func testSortInsertByNo() {
     fmt.Println("按照 no 升序插入的结果:")
     printHeadNodeInfo(headNode)
 }
-
-func main() {
-    testSortInsertByNo()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSortInsertByNo$ ./linkedlist/single
+=== RUN   TestSortInsertByNo
 尾部插入的结果:
 [{no:1, name:宋江, nickname:呼保义}{no:3, name:吴用, nickname:智多星}{no:2, name:卢俊义, nickname:玉麒麟}]
 按照 no 升序插入的结果:
@@ -212,7 +208,7 @@ func deleteNode(headNode *HeroNode, node *HeroNode) {
 编写测试方法：
 
 ```go
-func testDeleteNode() {
+func TestDeleteNode(t *testing.T) {
     // 创建结点
     headNode := new(HeroNode)
     heroNode1 := NewHeroNode(1, "宋江", "呼保义")
@@ -242,15 +238,13 @@ func testDeleteNode() {
     fmt.Println("删除 no 为 3,4 的结点后:")
     printHeadNodeInfo(headNode)
 }
-
-func main() {
-    testDeleteNode()
-}
 ```
 
-运行输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDeleteNode$ ./linkedlist/single
+=== RUN   TestDeleteNode
 删除前:
 [{no:1, name:宋江, nickname:呼保义}{no:2, name:卢俊义, nickname:玉麒麟}{no:3, name:吴用, nickname:智多星}{no:4, name:公孙胜, nickname:入云龙}{no:5, name:关胜, nickname:大刀}]
 删除 no 为 2 的结点后:
@@ -474,7 +468,7 @@ func insertAtTail(headNode *HeroNode, newNode *HeroNode) {
 编写测试函数：
 
 ```go
-func testInsertAtTail() {
+func TestInsertAtTail(t *testing.T) {
     // 创建 head 结点，head 结点不包含数据
     headNode := new(HeroNode)
     // 创建第一个结点
@@ -491,15 +485,13 @@ func testInsertAtTail() {
 
     printHeadNodeInfo(headNode)
 }
-
-func main() {
-    testInsertAtTail()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestInsertAtTail$ ./linkedlist/double
+=== RUN   TestInsertAtTail
 [{no:3, name:吴用, nickname:智多星}{no:6, name:林冲, nickname:豹子头}{no:7, name:秦明, nickname:霹雳火}]
 ```
 
@@ -530,7 +522,7 @@ func deleteNode(headNode *HeroNode, node *HeroNode) {
 编写测试代码：
 
 ```go
-func testDeleteNode() {
+func TestDeleteNode(t *testing.T) {
     // 创建结点
     headNode := new(HeroNode)
     heroNode1 := NewHeroNode(1, "宋江", "呼保义")
@@ -560,15 +552,13 @@ func testDeleteNode() {
     fmt.Println("删除 no 为 3,4 的结点后:")
     printHeadNodeInfo(headNode)
 }
-
-func main() {
-    testDeleteNode()
-}
 ```
 
-运行测试，输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDeleteNode$ ./linkedlist/double
+=== RUN   TestDeleteNode
 删除前:
 [{no:1, name:宋江, nickname:呼保义}{no:2, name:卢俊义, nickname:玉麒麟}{no:3, name:吴用, nickname:智多星}{no:4, name:公孙胜, nickname:入云龙}{no:5, name:关胜, nickname:大刀}]
 删除 no 为 2 的结点后:
@@ -651,7 +641,7 @@ func insertNode(headNode *PersonNode, newNode *PersonNode) {
 编写测试函数代码：
 
 ```go
-func testInsertNode() {
+func TestInsertNode(t *testing.T) {
     // 创建 head 结点，head 结点不初始化数据，等到添加了第一个结点后才初始化数据
     headNode := &PersonNode{}
     // 创建第一个结点
@@ -668,15 +658,13 @@ func testInsertNode() {
 
     printRoundNodeInfo(headNode)
 }
-
-func main() {
-    testInsertNode()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestInsertNode$ ./linkedlist/round
+=== RUN   TestInsertNode
 [{no:1, name:张三}{no:2, name:李四}{no:3, name:王五}]
 ```
 
@@ -726,7 +714,7 @@ func deleteNode(headNode *PersonNode, node *PersonNode) *PersonNode {
 编写测试删除结点的函数：
 
 ```go
-func testDeleteNode() {
+func TestDeleteNode(t *testing.T) {
     // 创建结点
     headNode := &PersonNode{}
     personNode1 := &PersonNode{no: 1, name: "张三"}
@@ -761,15 +749,13 @@ func testDeleteNode() {
     fmt.Println("删除 no 为 1,3 的结点后:")
     printRoundNodeInfo(headNode)
 }
-
-func main() {
-    testDeleteNode()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDeleteNode$ ./linkedlist/round
+=== RUN   TestDeleteNode
 删除前:
 [{no:1, name:张三}{no:2, name:李四}{no:3, name:王五}{no:4, name:赵六}{no:5, name:孙七}]
 删除 no 为 2 的结点后:
@@ -920,7 +906,7 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
 测试代码如下：
 
 ```go
-func main() {
+func TestJoseph(t *testing.T) {
     personLinkedList := NewBoyLinkedList(5)
     personLinkedList.ShowPersons()
 
@@ -928,9 +914,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestJoseph$ ./linkedlist/joseph
+=== RUN   TestJoseph
 num:1
 num:2
 num:3

@@ -1,8 +1,11 @@
-package main
+package interview
 
-import "fmt"
+import (
+    "fmt"
+    "testing"
+)
 
-func testGetLength() {
+func TestGetLength(t *testing.T) {
     headNode := &Node{}
     node1 := &Node{"node1", nil}
     node2 := &Node{"node2", nil}
@@ -15,7 +18,7 @@ func testGetLength() {
     fmt.Printf("单链表结点个数为: %v\n", length)
 }
 
-func testGetLastIndexNode() {
+func TestGetLastIndexNode(t *testing.T) {
     headNode := &Node{}
     node1 := &Node{"node1", nil}
     node2 := &Node{"node2", nil}
@@ -28,7 +31,7 @@ func testGetLastIndexNode() {
     fmt.Printf("单链表结点中倒数第 %d 个结点为: %s\n", index, lastNode.name)
 }
 
-func testReverseNode() {
+func TestReverseNode(t *testing.T) {
     headNode := &Node{}
     node1 := &Node{"node1", nil}
     node2 := &Node{"node2", nil}
@@ -44,10 +47,4 @@ func testReverseNode() {
 
     fmt.Println("反转后:")
     printNodeInfo(headNode)
-}
-
-func main() {
-    // testGetLength()
-    // testGetLastIndexNode()
-    // testReverseNode()
 }

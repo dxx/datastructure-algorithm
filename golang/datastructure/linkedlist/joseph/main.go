@@ -1,4 +1,4 @@
-package main
+package joseph
 
 import "fmt"
 
@@ -108,11 +108,4 @@ func (personLinkedList *PersonLinkedList) Count(start, num int) {
         current = current.next
     }
     fmt.Printf("最后留下人的编号: %d\n", current.no)
-}
-
-func main() {
-    personLinkedList := NewBoyLinkedList(5)
-    personLinkedList.ShowPersons()
-
-    personLinkedList.Count(1, 3)
 }
