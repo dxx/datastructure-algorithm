@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package search
 
 // 二分查找
 // 1.先找到中间值
@@ -25,15 +23,4 @@ func binarySearch(nums[] int, start, end int, findVal int) int {
     }
     // 查找值和中间值相等，返回下标
     return mid
-}
-
-func main() {
-    value := 100
-    nums := []int{1, 8, 10, 89, 100, 100, 123}
-    index := binarySearch(nums, 0, len(nums) - 1, value)
-    if index != -1 {
-        fmt.Printf("找到 %d, 下标为 %d\n", value, index)
-    } else {
-        fmt.Printf("未找到 %d\n", value)
-    }
 }

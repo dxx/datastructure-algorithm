@@ -35,19 +35,21 @@ func sequenceSearch(nums[] int, num int) int {
 测试代码：
 
 ```go
-func main() {
+func TestSequenceSearch(t *testing.T) {
     value := 8
     nums := []int{2, 5, 1, 7, 8, 16}
     index := sequenceSearch(nums, value)
     if index != -1 {
-        fmt.Printf("%d 在 nums 中的下标为: %d", value, index)
+        fmt.Printf("%d 在 nums 中的下标为: %d\n", value, index)
     }
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestSequenceSearch$ ./search
+=== RUN   TestSequenceSearch
 8 在 nums 中的下标为: 4
 ```
 
@@ -77,7 +79,7 @@ func main() {
 
 画图分析：
 
-![algorithm_sort_08](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_08.png)
+![algorithm_search_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_search_01.png)
 
 代码实现：
 
@@ -103,7 +105,7 @@ func binarySearch(nums[] int, start, end int, findVal int) int {
 测试代码：
 
 ```go
-func main() {
+func TestBinarySearch(t *testing.T) {
     value := 100
     nums := []int{1, 8, 10, 89, 100, 100, 123}
     index := binarySearch(nums, 0, len(nums) - 1, value)
@@ -115,9 +117,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestBinarySearch$ ./search
+=== RUN   TestBinarySearch
 找到 100, 下标为 5
 ```
 
@@ -175,7 +179,7 @@ func insertValSearch(nums[] int, start, end int, findVal int) int {
 测试代码：
 
 ```go
-func main() {
+func TestInsertValSearch(t *testing.T) {
     var nums []int
     // 填充 1 - 100
     for i := 1; i <= 100; i++ {
@@ -191,9 +195,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestInsertValSearch$ ./search
+=== RUN   TestInsertValSearch
 mid: 57
 找到 58, 下标为 57
 ```
@@ -288,7 +294,7 @@ func fibonacciSearch(nums[] int, findVal int) int {
 测试代码：
 
 ```go
-func main() {
+func TestFibonacciSearch(t *testing.T) {
     value := 100
     nums := []int{1, 8, 10, 89, 100, 100, 123}
     index := fibonacciSearch(nums, value)
@@ -300,9 +306,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestFibonacciSearch$ ./search
+=== RUN   TestFibonacciSearch
 找到 100, 下标为 4
 ```
 
@@ -344,7 +352,7 @@ func binarySearchNoRecursion(nums []int, findVal int) int {
 测试代码：
 
 ```go
-func main() {
+func TestBinarySearchNoRecursion(t *testing.T) {
     value := 100
     nums := []int{1, 8, 10, 89, 100, 100, 123}
     index := binarySearchNoRecursion(nums, value)
@@ -356,8 +364,10 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestBinarySearchNoRecursion$ ./binarysearch
+=== RUN   TestBinarySearchNoRecursion
 找到 100, 下标为 5
 ```

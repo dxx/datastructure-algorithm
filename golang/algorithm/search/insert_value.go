@@ -1,4 +1,4 @@
-package main
+package search
 
 import "fmt"
 
@@ -21,20 +21,5 @@ func insertValSearch(nums[] int, start, end int, findVal int) int {
     } else {
         // 查找值和中间值相等，返回下标
         return mid
-    }
-}
-
-func main() {
-    var nums []int
-    // 填充 1 - 100
-    for i := 1; i <= 100; i++ {
-        nums = append(nums, i)
-    }
-    value := 58
-    index := insertValSearch(nums, 0, len(nums) - 1, value)
-    if index != -1 {
-        fmt.Printf("找到 %d, 下标为 %d\n", value, index)
-    } else {
-        fmt.Printf("未找到 %d\n", value)
     }
 }

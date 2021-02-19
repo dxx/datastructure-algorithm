@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package search
 
 // 线性查找
 func sequenceSearch(nums[] int, num int) int {
@@ -13,13 +11,4 @@ func sequenceSearch(nums[] int, num int) int {
         }
     }
     return -1
-}
-
-func main() {
-    value := 8
-    nums := []int{2, 5, 1, 7, 8, 16}
-    index := sequenceSearch(nums, value)
-    if index != -1 {
-        fmt.Printf("%d 在 nums 中的下标为: %d", value, index)
-    }
 }
