@@ -93,30 +93,16 @@ func findMaxValue(w, v []int, c int) int {
 	return value[n][c]
 }
 
-func findMaxValue2(w, v []int, c int) int {
-    // 数组比实际物品总数多出一列
-    value := make([]int, c + 1)
-
-    // 遍历所有物品
-    for i := 0; i < len(w); i++ {
-        // 遍历所有容量
-        // 因为每个物品只能使用一次，给每一行填表时，采用倒序遍历
-        for j := c; j >= w[i]; j-- {
-            // 滑动数组优化空间复杂度
-            value[j] = max(value[j], v[i] + value[j - w[i]])
-        }
-    }
-	return value[c]
-}
-
 func max(a, b int) int {
     if a > b {
         return a
     }
     return b
 }
+```
 
-func main() {
+```go
+func TestMaxValue(t *testing.T) {
     // 物品重量(kg)
     w := []int{
         1, 2, 1,
@@ -125,16 +111,18 @@ func main() {
     v := []int{
         500, 5000, 3000,
     }
-	// 背包容量
+    // 背包容量
     c := 3
     max := findMaxValue(w, v, c)
-	fmt.Printf("最大价值总和为: %d", max)
+    fmt.Printf("最大价值总和为: %d\n", max)
 }
 ```
 
-输出：
+运行：
 
-```go
+```shell
+golang/algorithm>go test -v -run ^TestMaxValue$ ./dynamicprogramming
+=== RUN   TestMaxValue
 填表如下:
     0     0     0     0
     0   500   500   500
@@ -152,7 +140,7 @@ func main() {
 优化后的代码如下：
 
 ```go
-func findMaxValue(w, v []int, c int) int {
+func findMaxValue2(w, v []int, c int) int {
     // 数组比实际物品总数多出一列
     value := make([]int, c + 1)
 
