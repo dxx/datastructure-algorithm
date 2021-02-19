@@ -1458,7 +1458,7 @@ func (sortTree *BinarySortTree) infixOrder(node *BinaryTreeNode) {
 测试代码：
 
 ```go
-func main() {
+func TestBinarySortTree(t *testing.T) {
     nos := []int{8, 5, 10, 3, 6, 9, 12, 2}
     binarySortTree := NewBinarySortTree()
     for _, no := range nos {
@@ -1470,9 +1470,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestBinarySortTree$ ./tree/binary_sort_tree
+=== RUN   TestBinarySortTree
 ======中序遍历======
 no:2
 no:3
@@ -1593,7 +1595,7 @@ func (sortTree *BinarySortTree) Delete(no int) {
 测试代码：
 
 ```go
-func main() {
+func TestBinarySortTree(t *testing.T) {
     nos := []int{8, 5, 10, 3, 6, 9, 12, 2}
     binarySortTree := NewBinarySortTree()
     for _, no := range nos {
@@ -1620,9 +1622,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestBinarySortTree$ ./tree/binary_sort_tree
+=== RUN   TestBinarySortTree
 ======中序遍历======
 no:2
 no:3
