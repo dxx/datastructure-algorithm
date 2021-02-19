@@ -177,6 +177,9 @@ func (minTree *MinTree) getEndPosit(posits []int, i int) int {
     return i
 }
 
+// int32 位最大值，使用最大值表示两个顶点不连通
+const intMax = 1 << 31 - 1
+
 // 获取所有边
 func (minTree *MinTree) getEdges() []*Edge {
     edges := make([]*Edge, 0)
@@ -215,11 +218,10 @@ func (minTree *MinTree) sortEdges(edges []*Edge) {
         }
     }
 }
+```
 
-// int32 位最大值，使用最大值表示两个顶点不连通
-const intMax = 1 << 31 - 1
-
-func main() {
+```go
+func TestMinTree(t *testing.T) {
     vertexes := []string{"A", "B", "C", "D", "E", "F", "G"}
     // 0-表示自己跟自己不连通，intMax-表示跟其它顶点不连通
     edges := [][]int{
@@ -239,9 +241,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestMinTree$ ./kruskal
+=== RUN   TestMinTree
 ======边排序前======
 [A-B:12 A-F:16 A-G:14 B-C:10 B-F:7 C-D:3 C-E:5 C-F:6 D-E:4 E-F:2 E-G:8 F-G:9]
 ======边排序后======

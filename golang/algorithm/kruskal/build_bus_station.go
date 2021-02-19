@@ -1,4 +1,4 @@
-package main
+package kruskal
 
 import "fmt"
 
@@ -132,6 +132,9 @@ func (minTree *MinTree) getEndPosit(posits []int, i int) int {
     return i
 }
 
+// int32 位最大值，使用最大值表示两个顶点不连通
+const intMax = 1 << 31 - 1
+
 // 获取所有边
 func (minTree *MinTree) getEdges() []*Edge {
     edges := make([]*Edge, 0)
@@ -169,26 +172,4 @@ func (minTree *MinTree) sortEdges(edges []*Edge) {
             edges[insertIndex + 1] = insertValue
         }
     }
-}
-
-// int32 位最大值，使用最大值表示两个顶点不连通
-const intMax = 1 << 31 - 1
-
-func main() {
-    vertexes := []string{"A", "B", "C", "D", "E", "F", "G"}
-    // 0-表示自己跟自己不连通，intMax-表示跟其它顶点不连通
-    edges := [][]int{
-        {0, 12, intMax, intMax, intMax, 16, 14},
-        {12, 0, 10, intMax, intMax, 7, intMax},
-        {intMax, 10, 0, 3, 5, 6, intMax},
-        {intMax, intMax, 3, 0, 4, intMax, intMax},
-        {intMax, intMax, 5, 4, 0, 2, 8},
-        {16, 7, 6, intMax, 2, 0, 9},
-        {14, intMax, intMax, intMax, 8, 9, 0},
-    }
-    minTree := NewMinTree(vertexes, edges)
-
-    // minTree.ShowGraph()
-
-    minTree.Kruskal()
 }
