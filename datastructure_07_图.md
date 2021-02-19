@@ -112,7 +112,7 @@ func (graph *Graph) ShowEdges() {
 测试代码：
 
 ```go
-func main() {
+func TestGraph(t *testing.T) {
     vertexes := []string{"A", "B", "C", "D", "E"}
     graph := NewGraph(5)
 
@@ -135,9 +135,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestGraph$ ./graph
+=== RUN   TestGraph
 [ 0  1  1  0  0 ]
 [ 1  0  1  0  1 ]
 [ 1  1  0  1  0 ]
@@ -239,8 +241,6 @@ func TestGraph(t *testing.T) {
     // C-D
     graph.AddEdge(2, 3, 1)
 
-    graph.ShowEdges()
-
     fmt.Println("======深度优先遍历======")
     graph.DFS()
 }
@@ -251,11 +251,6 @@ func TestGraph(t *testing.T) {
 ```shell
 golang/datastructure>go test -v -run ^TestGraph$ ./graph
 === RUN   TestGraph
-[ 0  1  1  0  0 ]
-[ 1  0  1  0  1 ]
-[ 1  1  0  1  0 ]
-[ 0  0  1  0  0 ]
-[ 0  1  0  0  0 ]
 ======深度优先遍历======
 A->B->C->D->E->
 ```
@@ -345,8 +340,6 @@ func TestGraph(t *testing.T) {
     // C-D
     graph.AddEdge(2, 3, 1)
 
-    graph.ShowEdges()
-
     fmt.Println("======广度优先遍历======")
     graph.BFS()
 }
@@ -357,11 +350,6 @@ func TestGraph(t *testing.T) {
 ```shell
 golang/datastructure>go test -v -run ^TestGraph$ ./graph
 === RUN   TestGraph
-[ 0  1  1  0  0 ]
-[ 1  0  1  0  1 ]
-[ 1  1  0  1  0 ]
-[ 0  0  1  0  0 ]
-[ 0  1  0  0  0 ]
 ======广度优先遍历======
 A->B->C->E->D->
 ```
