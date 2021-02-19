@@ -191,16 +191,18 @@ func (chessboard *Chessboard) Move(startX, startY int) {
 测试代码：
 
 ```go
-func main() {
+func TestChessboard(t *testing.T) {
     chessboard := NewChessboard(8, 8)
     // 从 4,4 的位置开始走
     chessboard.Move(4, 4)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestChessboard$ ./horsetreads
+=== RUN   TestChessboard
 开始走马踏棋
 马踏棋结束
 耗时:0.000998s
@@ -221,7 +223,7 @@ func main() {
 使用上述代码将 8, 8 改成 6, 6：
 
 ```go
-func main() {
+func TestChessboard(t *testing.T) {
     chessboard := NewChessboard(6, 6)
     chessboard.Move(0, 0)
 }
@@ -229,7 +231,7 @@ func main() {
 
 结果：
 
-```go
+```
  1 22  9 26  3 24
 10 35  2 23 16 27
 21  8 31 36 25  4

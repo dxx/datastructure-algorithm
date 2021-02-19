@@ -1,4 +1,4 @@
-package main
+package horsetreads
 
 import (
     "fmt"
@@ -151,10 +151,4 @@ func (chessboard *Chessboard) sort(points []*Point) {
             points[insertIndex+1] = insertValue
         }
     }
-}
-
-func main() {
-    chessboard := NewChessboard(8, 8)
-    // 从 4,4 的位置开始走
-    chessboard.Move(4, 4)
 }
