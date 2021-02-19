@@ -61,15 +61,19 @@ func hannotower(num int, a, b, c byte) {
     // 再将 b 柱子上的所有盘移动到 c 柱子上
     hannotower(num - 1, b, a, c)
 }
+```
 
-func main() {
+```go
+func TestHannotower(t *testing.T) {
     hannotower(3, 'A', 'B', 'C')
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestHannotower$ ./divide
+=== RUN   TestHannotower
 第 1 个盘从 A 到 C
 第 2 个盘从 A 到 B
 第 1 个盘从 C 到 B

@@ -1,4 +1,4 @@
-package main
+package divide
 
 import "fmt"
 
@@ -26,8 +26,4 @@ func hannotower(num int, a, b, c byte) {
     fmt.Printf("第 %d 个盘从 %s 到 %s\n", num, string(a), string(c))
     // 再将 b 柱子上的所有盘移动到 c 柱子上
     hannotower(num - 1, b, a, c)
-}
-
-func main() {
-    hannotower(3, 'A', 'B', 'C')
 }
