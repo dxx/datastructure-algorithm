@@ -120,7 +120,7 @@ func (h *Hashtable) Add(employee *Employee) error {
 编写测试代码：
 
 ```go
-func testAddEmployee() {
+func TestAddEmployee(t *testing.T) {
     // 创建一个哈希表
     hashtable := NewHashtable()
     // 创建员工
@@ -136,15 +136,13 @@ func testAddEmployee() {
     // 显示哈希表内容
     hashtable.List()
 }
-
-func main() {
-    testAddEmployee()
-}
 ```
 
-运行输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestAddEmployee$ ./hashtable
+=== RUN   TestAddEmployee
 添加员工后:
 linkArray[0]=[{id=5, name=孙七}]
 linkArray[1]=[{id=1, name=张三}]
@@ -192,7 +190,7 @@ func (h *Hashtable) Update(employee *Employee) {
 编写测试修改的函数：
 
 ```go
-func testUpdateEmployee() {
+func TestUpdateEmployee(t *testing.T) {
     hashtable := NewHashtable()
     employee1 := &Employee{1, "张三"}
     employee2 := &Employee{2, "李四"}
@@ -212,15 +210,13 @@ func testUpdateEmployee() {
     fmt.Println("修改员工后:")
     hashtable.List()
 }
-
-func main() {
-    testUpdateEmployee()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestUpdateEmployee$ ./hashtable
+=== RUN   TestUpdateEmployee
 修改员工前:
 linkArray[0]=
 linkArray[1]=[{id=1, name=张三}{id=6, name=周八}]
@@ -269,7 +265,7 @@ func (h *Hashtable) Delete(id int) {
 编写测试删除的函数：
 
 ```go
-func testDeleteEmployee() {
+func TestDeleteEmployee(t *testing.T) {
     hashtable := NewHashtable()
     employee1 := &Employee{2, "李四"}
     employee2 := &Employee{5, "孙七"}
@@ -279,21 +275,19 @@ func testDeleteEmployee() {
     fmt.Println("删除员工前:")
     hashtable.List()
 
-    // 修改员工
+    // 删除员工
     hashtable.Delete(2)
 
     fmt.Println("删除员工后:")
     hashtable.List()
 }
-
-func main() {
-    testDeleteEmployee()
-}
 ```
 
-运行后输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDeleteEmployee$ ./hashtable
+=== RUN   TestDeleteEmployee
 删除员工前:
 linkArray[0]=[{id=5, name=孙七}]
 linkArray[1]=
