@@ -885,16 +885,18 @@ func deleteNode(nodes Nodes, node *Node) Nodes {
 测试代码：
 
 ```go
-func main() {
+func TestHuffmanTree(t *testing.T) {
     nums := []int{1, 7, 3, 8, 16}
     root := createHuffmanTree(nums)
     preOrder(root)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestHuffmanTree$ ./tree/huffman_tree
+=== RUN   TestHuffmanTree
 [value:1, value:3, value:7, value:8, value:16, ]
 [value:4, value:7, value:8, value:16, ]
 [value:8, value:11, value:16, ]
@@ -1073,7 +1075,7 @@ func deleteDataNode(nodes DataNodes, node *DataNode) DataNodes {
 测试代码：
 
 ```go
-func main() {
+func TestHuffmanCode(t *testing.T) {
     msg := "i love go"
     // 获取到要压缩的数据对应的字节数组
     bytes := []byte(msg)
@@ -1084,9 +1086,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestHuffmanCode$ ./tree/huffman_tree
+=== RUN   TestHuffmanCode
 ======前序遍历======
 {data:0, value:9}
 {data:0, value:4}
@@ -1191,7 +1195,7 @@ func encodeBytes(source []byte, codeMap map[byte]string) []byte {
 测试代码：
 
 ```go
-func main() {
+func TestHuffmanCode(t *testing.T) {
     msg := "i love go"
     // 获取到要压缩的数据对应的字节数组
     bytes := []byte(msg)
@@ -1212,9 +1216,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestHuffmanCode$ ./tree/huffman_tree
+=== RUN   TestHuffmanCode
 ======创建码表======
 map[32:00 101:010 103:011 105:100 108:101 111:111 118:110]
 未编码时的长度:9
@@ -1307,7 +1313,7 @@ func decodeBytes(target []byte, codeMap map[byte]string) []byte {
 测试代码：
 
 ```go
-func main() {
+func TestHuffmanCode(t *testing.T) {
     msg := "i love go"
     // 获取到要压缩的数据对应的字节数组
     bytes := []byte(msg)
@@ -1335,9 +1341,12 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+E:\Github\datastructure-algorithm\golang\datastructure>go test -v -run ^TestHuffmanCode$ ./tree/huffman_tree
+=== RUN   TestHuffmanCode
+...
 ======创建码表======
 map[32:00 101:010 103:011 105:100 108:101 111:111 118:110]
 未编码时的长度:9

@@ -1,4 +1,4 @@
-package main
+package huffman_tree
 
 import (
     "fmt"
@@ -93,10 +93,4 @@ func deleteNode(nodes Nodes, node *Node) Nodes {
         }
     }
     return nodes
-}
-
-func main() {
-    nums := []int{1, 7, 3, 8, 16}
-    root := createHuffmanTree(nums)
-    preOrder(root)
 }
