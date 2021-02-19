@@ -1,4 +1,4 @@
-package main
+package binary_tree
 
 import "fmt"
 
@@ -43,12 +43,4 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
     arrBinaryTree.preOrderFromIndex(leftIndex)
     // 向右遍历
     arrBinaryTree.preOrderFromIndex(rightIndex)
-}
-
-func main() {
-    nos := []int{1, 2, 3, 4, 5, 6, 7}
-    arrayBinaryTree := NewArrayBinaryTree(nos)
-
-    fmt.Println("======前序遍历======")
-    arrayBinaryTree.PreOrder()
 }

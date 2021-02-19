@@ -140,7 +140,7 @@ func initNode() *BinaryTreeNode {
 测试代码：
 
 ```go
-func testOrder() {
+func TestOrder(t *testing.T) {
     root := initNode()
 
     fmt.Println("======前序遍历======")
@@ -154,9 +154,11 @@ func testOrder() {
 }
 ```
 
-输出结果：
+运行：
 
-```go
+```shell
+golang/datastructure>go test -v -run ^TestOrder$ ./tree/binary_tree
+=== RUN   TestOrder
 ======前序遍历======
 no:1
 no:2
@@ -254,7 +256,7 @@ func postOrderSearch(node *BinaryTreeNode, no int) *BinaryTreeNode {
 查找 no = 4 的节点，分别输出前序、中序、后续查找的查找次数：
 
 ```go
-func testSearch() {
+func TestSearch(t *testing.T) {
     root := initNode()
 
     no := 4
@@ -273,14 +275,16 @@ func testSearch() {
     no = 4
     fmt.Println("======后序查找======")
     fmt.Printf("查找no=%v\n", no)
-    node = postOrderSearch(root,no)
+    node = postOrderSearch(root, no)
     fmt.Printf("查找结果: no=%v\n", node.no)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSearch$ ./tree/binary_tree
+=== RUN   TestSearch
 ======前序查找======
 查找no=4
 进入查找
@@ -337,7 +341,7 @@ func deleteNode(node *BinaryTreeNode, no int) {
 测试函数：
 
 ```go
-func testDelete()  {
+func TestDelete(t *testing.T) {
     root := initNode()
     no := 2
 
@@ -359,9 +363,11 @@ func testDelete()  {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDelete$ ./tree/binary_tree
+=== RUN   TestDelete
 ======删除前======
 no:1
 no:2
@@ -435,7 +441,7 @@ func (arrBinaryTree *ArrayBinaryTree) preOrderFromIndex(index int) {
 测试代码：
 
 ```go
-func main() {
+func TestSeqStorage(t *testing.T) {
     nos := []int{1, 2, 3, 4, 5, 6, 7}
     arrayBinaryTree := NewArrayBinaryTree(nos)
 
@@ -444,9 +450,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestSeqStorage$ ./tree/binary_tree
+=== RUN   TestSeqStorage
 ======前序遍历======
 1
 2
@@ -567,7 +575,7 @@ func initThreadedNode() *ThreadedBinaryTreeNode {
 测试代码：
 
 ```go
-func testInfixThreadedTree() {
+func TestInfixThreadedTree(t *testing.T) {
     root := initThreadedNode()
 
     infixThreadTree(root)
@@ -580,9 +588,11 @@ func testInfixThreadedTree() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestInfixThreadedTree$ ./tree/binary_tree
+=== RUN   TestInfixThreadedTree
 no=10的前驱节点为2
 no=10的后继节点为1
 ```
@@ -618,7 +628,7 @@ func infixOrderThreadedTree(node *ThreadedBinaryTreeNode) {
 测试代码：
 
 ```go
-func testInfixOrderThreadedTree() {
+func TestInfixOrderThreadedTree(t *testing.T) {
     root := initThreadedNode()
 
     infixThreadTree(root)
@@ -627,9 +637,11 @@ func testInfixOrderThreadedTree() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestInfixOrderThreadedTree$ ./tree/binary_tree
+=== RUN   TestInfixOrderThreadedTree
 id:8
 id:2
 id:10
@@ -737,7 +749,7 @@ func adjustHeap(nums[] int, i, count int) {
 测试代码：
 
 ```go
-func main() {
+func TestHeapSort(t *testing.T) {
     nums := []int{1, 7, 5, 2, 8}
 
     fmt.Printf("排序前: %v\n", nums)
@@ -748,9 +760,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestHeapSort$ ./tree/binary_tree
+=== RUN   TestHeapSort
 排序前: [1 7 5 2 8]
 排序后: [1 2 5 7 8]
 ```

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package binary_tree
 
 // 堆排序
 // 堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序
@@ -55,14 +53,4 @@ func adjustHeap(nums []int, i, count int) {
     }
     // 放入到最终位置
     nums[i] = temp
-}
-
-func main() {
-    nums := []int{1, 7, 5, 2, 8}
-
-    fmt.Printf("排序前: %v\n", nums)
-
-    heapSort(nums)
-
-    fmt.Printf("排序后: %v\n", nums)
 }
