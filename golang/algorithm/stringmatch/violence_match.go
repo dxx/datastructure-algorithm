@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package stringmatch
 
 // 暴力匹配
 // 如果当前字符匹配成功（即 S[i] == P[j]），则 i++，j ++，继续匹配下一个字符
@@ -35,11 +33,4 @@ func violenceSearch(str, match string) int {
         return i - j
     }
     return -1
-}
-
-func main() {
-    str := "CBC DCABCABABCABD BBCCA"
-    match := "ABCABD"
-    index := violenceSearch(str, match)
-    fmt.Printf("%s 在 %s 中的位置为 %d", match, str, index)
 }

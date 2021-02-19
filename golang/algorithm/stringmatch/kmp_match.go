@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package stringmatch
 
 // KMP 匹配
 // 核心是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的
@@ -49,11 +47,4 @@ func getNext(match string) []int {
         next[i] = j
     }
     return next
-}
-
-func main() {
-    str := "CBC DCABCABABCABD BBCCA"
-    match := "ABCABD"
-    index := kmpSearch(str, match)
-    fmt.Printf("%s 在 %s 中的位置为 %d", match, str, index)
 }

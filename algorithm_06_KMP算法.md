@@ -49,18 +49,22 @@ func violenceSearch(str, match string) int {
     }
     return -1
 }
+```
 
-func main() {
+```go
+func TestViolenceSearch(t *testing.T) {
     str := "CBC DCABCABABCABD BBCCA"
     match := "ABCABD"
     index := violenceSearch(str, match)
-    fmt.Printf("%s 在 %s 中的位置为 %d", match, str, index)
+    fmt.Printf("%s 在 %s 中的位置为 %d\n", match, str, index)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestViolenceSearch$ ./stringmatch
+=== RUN   TestViolenceSearch
 ABCABD 在 CBC DCABCABABCABD BBCCA 中的位置为 11
 ```
 
@@ -176,17 +180,21 @@ func getNext(match string) []int {
     }
     return next
 }
+```
 
-func main() {
+```go
+func TestKmpSearch(t *testing.T) {
     str := "CBC DCABCABABCABD BBCCA"
     match := "ABCABD"
     index := kmpSearch(str, match)
-    fmt.Printf("%s 在 %s 中的位置为 %d", match, str, index)
+    fmt.Printf("%s 在 %s 中的位置为 %d\n", match, str, index)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestKmpSearch$ ./stringmatch
+=== RUN   TestKmpSearch
 ABCABD 在 CBC DCABCABABCABD BBCCA 中的位置为 11
 ```
