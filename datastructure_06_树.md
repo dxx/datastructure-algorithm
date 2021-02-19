@@ -1741,7 +1741,7 @@ func (avlTree *AVLTree) height(node *BinaryTreeNode) int {
 测试代码：
 
 ```go
-func main() {
+func TestHeight(t *testing.T) {
     nos := []int{3, 2, 5, 4, 6, 7}
     avlTree := NewAVLTree()
     for _, no := range nos {
@@ -1753,9 +1753,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestHeight$ ./tree/avl_tree
+=== RUN   TestHeight
 左子树的高度为: 1
 右子树的高度为: 3
 ```
@@ -1823,7 +1825,7 @@ func (avlTree *AVLTree) Add(node *BinaryTreeNode) {
 测试左右子树的高度：
 
 ```go
-func testLeftRotate() {
+func TestLeftRotate(t *testing.T) {
     nos := []int{3, 2, 5, 4, 6, 7}
     avlTree := NewAVLTree()
     for _, no := range nos {
@@ -1841,9 +1843,11 @@ func testLeftRotate() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestLeftRotate$ ./tree/avl_tree
+=== RUN   TestLeftRotate
 左旋转后
 no:2
 no:3
@@ -1924,7 +1928,7 @@ func (avlTree *AVLTree) Add(node *BinaryTreeNode) {
 测试左右子树高度：
 
 ```go
-func testRightRotate() {
+func TestRightRotate(t *testing.T) {
     nos := []int{6, 4, 7, 3, 5, 2}
     avlTree := NewAVLTree()
     for _, no := range nos {
@@ -1942,9 +1946,11 @@ func testRightRotate() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestRightRotate$ ./tree/avl_tree
+=== RUN   TestRightRotate
 右旋转后
 no:2
 no:3
@@ -2022,7 +2028,7 @@ func (avlTree *AVLTree) Add(node *BinaryTreeNode) {
 测试：
 
 ```go
-func testDoubleRotate() {
+func TestDoubleRotate(t *testing.T) {
     nos := []int{6, 3, 7, 2, 4, 5}
     avlTree := NewAVLTree()
     for _, no := range nos {
@@ -2040,9 +2046,11 @@ func testDoubleRotate() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/datastructure>go test -v -run ^TestDoubleRotate$ ./tree/avl_tree
+=== RUN   TestDoubleRotate
 双旋转后
 no:2
 no:3
