@@ -1,8 +1,4 @@
-package main
-
-import (
-    "fmt"
-)
+package sort
 
 // 希尔排序
 // 1.计算出步长 step，step = length / 2
@@ -24,11 +20,4 @@ func shellSort(nums []int) {
             }
         }
     }
-}
-
-func main() {
-    nums := []int{5, 1, 7, 3, 2, 4, 9, 6, 8}
-    fmt.Printf("排序前: %v\n", nums)
-    shellSort(nums)
-    fmt.Printf("排序后: %v\n", nums)
 }

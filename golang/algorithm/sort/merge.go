@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 // 归并排序
 // 1.将要排序的序列，从中间开始递归分解
@@ -70,11 +68,4 @@ func merge(nums[] int, left, mid, right int) {
         left++
         t++
     }
-}
-
-func main() {
-    nums := []int{5, 0, 1, 7, 3, 2, 4, 9, 6, 8}
-    fmt.Printf("排序前: %v\n", nums)
-    mergeSort(nums)
-    fmt.Printf("排序后: %v\n", nums)
 }

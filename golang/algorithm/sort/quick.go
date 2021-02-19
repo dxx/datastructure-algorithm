@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 // 快速排序
 // 1.获取最中间的元素，然后分别将左边和右边的元素分别和最中间的元素进行比较
@@ -46,11 +44,4 @@ func quickSort(nums []int, start, end int) {
     if end > l {
         quickSort(nums, l, end)
     }
-}
-
-func main() {
-    nums := []int{5, 1, 8, 3, 7, 2, 9, 4, 6}
-    fmt.Printf("排序前: %v\n", nums)
-    quickSort(nums, 0, len(nums) - 1)
-    fmt.Printf("排序后: %v\n", nums)
 }

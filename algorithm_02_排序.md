@@ -59,7 +59,7 @@ func bubbleSort(nums []int) {
 测试代码：
 
 ```go
-func main() {
+func TestBubbleSort(t *testing.T) {
     nums := []int{1, 5, 7, 3, 2, 4, 9, 6, 8}
     fmt.Printf("交换前: %v\n", nums)
     bubbleSort(nums)
@@ -67,9 +67,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestBubbleSort$ ./sort
+=== RUN   TestBubbleSort
 交换前: [1 5 7 3 2 4 9 6 8]
 第 1 趟排序结果:[1 2 5 7 3 4 6 9 8]
 第 2 趟排序结果:[1 2 3 5 7 4 6 8 9]
@@ -116,17 +118,19 @@ func optimizeBubbleSort(nums []int) {
 测试代码：
 
 ```go
-func main() {
-    nums := []int{1, 5, 7, 3, 2, 4, 9, 6, 8}
-    fmt.Printf("优化前: %v\n", nums)
-    optimizeBubbleSort(nums)
-    fmt.Printf("优化后: %v\n", nums)
+func TestBubbleSort(t *testing.T) {
+    nums2 := []int{1, 5, 7, 3, 2, 4, 9, 6, 8}
+    fmt.Printf("优化前: %v\n", nums2)
+    optimizeBubbleSort(nums2)
+    fmt.Printf("优化后: %v\n", nums2)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestBubbleSort$ ./sort
+=== RUN   TestBubbleSort
 优化前: [1 5 7 3 2 4 9 6 8]
 第 1 趟排序结果:[1 2 5 7 3 4 6 9 8]
 第 2 趟排序结果:[1 2 3 5 7 4 6 8 9]
@@ -184,7 +188,7 @@ func selectSort(nums []int) {
 测试代码：
 
 ```go
-func main() {
+func TestSelectSort(t *testing.T) {
     nums := []int{3, 5, 7, 1, 2, 4, 9, 6, 8}
     fmt.Printf("排序前: %v\n", nums)
     selectSort(nums)
@@ -192,9 +196,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestSelectSort$ ./sort
+=== RUN   TestSelectSort
 排序前: [3 5 7 1 2 4 9 6 8]
 排序后: [1 2 3 4 5 6 7 8 9]
 ```
@@ -249,7 +255,7 @@ func insertSort(nums []int) {
 测试代码：
 
 ```go
-func main() {
+func TestInsertSort(t *testing.T) {
     nums := []int{5, 1, 7, 3, 2, 4, 9, 6, 8}
     fmt.Printf("排序前: %v\n", nums)
     insertSort(nums)
@@ -257,9 +263,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestInsertSort$ ./sort
+=== RUN   TestInsertSort
 排序前: [5 1 7 3 2 4 9 6 8]
 排序后: [1 2 3 4 5 6 7 8 9]
 ```
@@ -333,7 +341,7 @@ func quickSort(nums []int, start, end int) {
 测试代码：
 
 ```go
-func main() {
+func TestQuickSort(t *testing.T) {
     nums := []int{5, 1, 8, 3, 7, 2, 9, 4, 6}
     fmt.Printf("排序前: %v\n", nums)
     quickSort(nums, 0, len(nums) - 1)
@@ -341,9 +349,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestQuickSort$ ./sort
+=== RUN   TestQuickSort
 排序前: [5 1 8 3 7 2 9 4 6]
 排序后: [1 2 3 4 5 6 7 8 9]
 ```
@@ -391,7 +401,7 @@ func shellSort(nums []int) {
 测试代码：
 
 ```go
-func main() {
+func TestShellSort(t *testing.T) {
     nums := []int{5, 1, 7, 3, 2, 4, 9, 6, 8}
     fmt.Printf("排序前: %v\n", nums)
     shellSort(nums)
@@ -399,9 +409,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestShellSort$ ./sort
+=== RUN   TestShellSort
 排序前: [5 1 7 3 2 4 9 6 8]
 排序后: [1 2 3 4 5 6 7 8 9]
 ```
@@ -501,7 +513,7 @@ func merge(nums[] int, left, mid, right int) {
 测试代码：
 
 ```go
-func main() {
+func TestMergeSort(t *testing.T) {
     nums := []int{5, 0, 1, 7, 3, 2, 4, 9, 6, 8}
     fmt.Printf("排序前: %v\n", nums)
     mergeSort(nums)
@@ -509,9 +521,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestMergeSort$ ./sort
+=== RUN   TestMergeSort
 排序前: [5 0 1 7 3 2 4 9 6 8]
 排序后: [0 1 2 3 4 5 6 7 8 9]
 ```
@@ -586,7 +600,7 @@ func radixSort(nums[] int) {
 测试代码：
 
 ```go
-func main() {
+func TestRadixSort(t *testing.T) {
     nums := []int{5, 1, 7, 13, 21, 32, 9, 66, 8, 20}
     fmt.Printf("排序前: %v\n", nums)
     radixSort(nums)
@@ -594,9 +608,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestRadixSort$ ./sort
+=== RUN   TestRadixSort
 排序前: [5 1 7 13 21 32 9 66 8 20]
 排序后: [1 5 7 8 9 13 20 21 32 66]
 ```

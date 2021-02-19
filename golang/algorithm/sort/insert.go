@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 // 插入排序
 // 1.从第二个元素开始循环，循环到元素末尾，左边分为有序列表，右边分为无序列表
@@ -29,11 +27,4 @@ func insertSort(nums []int) {
             nums[insertIndex + 1] = insertValue
         }
     }
-}
-
-func main() {
-    nums := []int{5, 1, 7, 3, 2, 4, 9, 6, 8}
-    fmt.Printf("排序前: %v\n", nums)
-    insertSort(nums)
-    fmt.Printf("排序后: %v\n", nums)
 }

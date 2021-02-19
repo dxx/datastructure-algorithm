@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 // 选择排序
 // 1.假定第一元素为最大或最小的元素
@@ -25,11 +23,4 @@ func selectSort(nums []int) {
             nums[i], nums[minIndex] = nums[minIndex], nums[i]
         }
     }
-}
-
-func main() {
-    nums := []int{3, 5, 7, 1, 2, 4, 9, 6, 8}
-    fmt.Printf("排序前: %v\n", nums)
-    selectSort(nums)
-    fmt.Printf("排序后: %v\n", nums)
 }
