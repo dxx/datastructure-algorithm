@@ -1,4 +1,4 @@
-package main
+package recursion
 
 import (
     "fmt"
@@ -44,7 +44,6 @@ func (queen *EightQueen) putQueen(n int) {
     }
 }
 
-
 // 判断当前皇后是否和已经摆放过的皇后冲突
 func (queen *EightQueen) isCanPut(n int) bool {
     positions := queen.positions
@@ -57,9 +56,4 @@ func (queen *EightQueen) isCanPut(n int) bool {
         }
     }
     return true
-}
-
-func main() {
-    eightQueen := NewEightQueen()
-    eightQueen.putQueen(0)
 }

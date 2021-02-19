@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package recursion
 
 // 迷宫回溯
 // 假设一个二维数组中 0 表示通道，1 表示为墙壁，求一个到终点的最短路径
@@ -69,37 +67,4 @@ func walk2(miGongMap [][]int, i, j int) bool {
     }
     // 可能为 1, 2 , 3
     return false
-}
-
-func main() {
-    // 初始化地图，0 表示通道，1 表示墙
-    miGongMap := [][]int{
-        {1, 1, 1, 1, 1, 1 , 1, 1},
-        {1, 0, 0, 0, 0, 0 , 0, 1},
-        {1, 0, 0, 0, 0, 0 , 0, 1},
-        {1, 1, 1, 0, 0, 0 , 0, 1},
-        {1, 0, 0, 0, 0, 0 , 0, 1},
-        {1, 0, 0, 0, 0, 0 , 0, 1},
-        {1, 0, 0, 0, 0, 0 , 0, 1},
-        {1, 1, 1, 1, 1, 1 , 1, 1},
-    }
-
-    fmt.Printf("探路之前:\n")
-    for _, nums := range miGongMap {
-        for _, anInt := range nums {
-            fmt.Printf("%d ", anInt)
-        }
-        fmt.Println()
-    }
-
-    // 开始探路,起点为 1, 1
-    walk(miGongMap, 1, 1)
-
-    fmt.Printf("探路之后:\n")
-    for _, nums := range miGongMap {
-        for _, anInt := range nums {
-            fmt.Printf("%d ", anInt)
-        }
-        fmt.Println()
-    }
 }

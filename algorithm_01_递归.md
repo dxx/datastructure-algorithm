@@ -24,9 +24,9 @@ func factorial(n int) int {
 测试代码：
 
 ```go
-func main() {
+func TestFactorial(t *testing.T) {
     res := factorial(5)
-    fmt.Printf("%d\n", res) // 120
+    t.Logf("%d\n", res) // 120
 }
 ```
 
@@ -87,7 +87,7 @@ func walk(miGongMap [][]int, i, j int) bool {
 测试代码：
 
 ```go
-func main() {
+func TestWalk(t *testing.T) {
     // 初始化地图，0 表示通道，1 表示墙
     miGongMap := [][]int{
         {1, 1, 1, 1, 1, 1 , 1, 1},
@@ -121,9 +121,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestWalk$ ./recursion
+=== RUN   TestWalk
 探路之前:
 1 1 1 1 1 1 1 1
 1 0 0 0 0 0 0 1
@@ -148,7 +150,7 @@ func main() {
 
 ```go
 // 规定策略：上 -> 右 -> 下 -> 左
-func walk(miGongMap [][]int, i, j int) bool {
+func walk2(miGongMap [][]int, i, j int) bool {
     // 到达终点
     if miGongMap[x][y] == 2 {
         return true
@@ -175,9 +177,11 @@ func walk(miGongMap [][]int, i, j int) bool {
 }
 ```
 
-再次运行测试代码输出：
+运行测试代码：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestWalk2$ ./recursion
+=== RUN   TestWalk2
 探路之前:
 1 1 1 1 1 1 1 1
 1 0 0 0 0 0 0 1
@@ -262,15 +266,17 @@ func (queen *EightQueen) isCanPut(n int) bool {
 测试代码：
 
 ```go
-func main() {
+func TestEightQueen(t *testing.T) {
     eightQueen := NewEightQueen()
     eightQueen.putQueen(0)
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+E:\Github\datastructure-algorithm\golang\algorithm>go test -v -run ^TestEightQueen$ ./recursion
+=== RUN   TestEightQueen
 [0 4 7 5 2 6 1 3]
 [0 5 7 2 6 3 1 4]
 [0 6 3 5 7 1 4 2]
