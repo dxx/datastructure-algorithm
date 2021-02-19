@@ -78,6 +78,9 @@ func NewMinTree(vertexes []string, edges [][]int) *MinTree {
     return &MinTree{graph: &graph}
 }
 
+// int32 位最大值，使用最大值表示两个顶点不连通
+const intMax = 1 << 31 - 1
+
 func (minTree *MinTree) Prim(v int) {
     numOfVertex := len(minTree.graph.vertexes)
     // 存放已经连通的顶点集合
@@ -126,11 +129,10 @@ func (minTree *MinTree) ShowGraph() {
         fmt.Printf("]\n")
     }
 }
+```
 
-// int32 位最大值，使用最大值表示两个顶点不连通
-const intMax = 1 << 31 - 1
-
-func main() {
+```go
+func TestMinTree(t *testing.T) {
     vertexes := []string{"A", "B", "C", "D", "E", "F", "G"}
     edges := [][]int{
         {intMax, 5, 7, intMax, intMax, intMax, 2},
@@ -148,9 +150,11 @@ func main() {
 }
 ```
 
-输出：
+运行：
 
-```
+```shell
+golang/algorithm>go test -v -run ^TestMinTree$ ./prim
+=== RUN   TestMinTree
 边: A-G => 2
 边: G-B => 3
 边: G-E => 4

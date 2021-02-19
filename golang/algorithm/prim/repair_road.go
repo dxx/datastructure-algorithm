@@ -1,4 +1,4 @@
-package main
+package prim
 
 import "fmt"
 
@@ -36,6 +36,9 @@ func NewMinTree(vertexes []string, edges [][]int) *MinTree {
     graph := Graph{vertexes: initialVertexes, matrix: initialMatrix}
     return &MinTree{graph: &graph}
 }
+
+// int32 位最大值，使用最大值表示两个顶点不连通
+const intMax = 1 << 31 - 1
 
 func (minTree *MinTree) Prim(v int) {
     numOfVertex := len(minTree.graph.vertexes)
@@ -84,24 +87,4 @@ func (minTree *MinTree) ShowGraph() {
         }
         fmt.Printf("]\n")
     }
-}
-
-// int32 位最大值，使用最大值表示两个顶点不连通
-const intMax = 1 << 31 - 1
-
-func main() {
-    vertexes := []string{"A", "B", "C", "D", "E", "F", "G"}
-    edges := [][]int{
-        {intMax, 5, 7, intMax, intMax, intMax, 2},
-        {5, intMax, intMax, 9, intMax, intMax, 3},
-        {7, intMax, intMax, intMax, 8, intMax, intMax},
-        {intMax, 9, intMax, intMax, intMax, 4, intMax},
-        {intMax, intMax, 8, intMax, intMax, 5, 4},
-        {intMax, intMax, intMax, 4, 5, intMax, 6},
-        {2, 3, intMax, intMax, 4, 6, intMax},
-    }
-    minTree := NewMinTree(vertexes, edges)
-    // minTree.ShowGraph()
-    // 从 A 点开始
-    minTree.Prim(0)
 }
