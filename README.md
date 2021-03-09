@@ -1,5 +1,12 @@
 # 数据结构和算法
 
+![rust](https://img.shields.io/badge/language-rust-red.svg)
+![golang](https://img.shields.io/badge/language-golang-blue.svg)
+![java](https://img.shields.io/badge/language-java-lightgray.svg)
+![javascript](https://img.shields.io/badge/language-javascript-yellow.svg)
+
+> 数据结构和算法图解，使用多种语言实现
+
 ## 数据结构介绍
 
 数据结构是计算机存储、组织数据的方式。数据结构是组织数据元素的集合，这些数据元素之间存在一种或多种特定关系。在解决某种问题时，选择合适的数据结构可以带来更高的运行或者存储效率。
