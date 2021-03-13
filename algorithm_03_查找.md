@@ -1,6 +1,6 @@
 ## 查找
 
->各种语言实现代码：[Go](./golang/algorithm/search)   [Java](./java/algorithm/src/com/mcx/search)   [JavaScript](./javascript/algorithm/search)   [Rust](./rust/algorithm/src/search)
+>各种语言实现代码：[Go](./golang/algorithm/search)   [Java](./java/algorithm/src/com/dxx/search)   [JavaScript](./javascript/algorithm/search)   [Rust](./rust/algorithm/src/search)
 >
 >默认使用 **Go** 语言实现。
 
@@ -316,7 +316,7 @@ golang/algorithm>go test -v -run ^TestFibonacciSearch$ ./search
 
 ## 二分法查找(非递归)
 
->各种语言实现代码：[Go](./golang/algorithm/binarysearch)   [Java](./java/algorithm/src/com\mcx/binarysearch)   [JavaScript](./javascript/algorithm/binarysearch)
+>各种语言实现代码：[Go](./golang/algorithm/binarysearch)   [Java](./java/algorithm/src/com/dxx/binarysearch)   [JavaScript](./javascript/algorithm/binarysearch)   [Rust](./rust/algorithm/src/binary_search)
 >
 >默认使用 **Go** 语言实现。
 

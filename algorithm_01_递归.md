@@ -1,6 +1,6 @@
 ## 递归
 
->各种语言实现代码：[Go](./golang/algorithm/recursion)   [Java](./java/algorithm/src/com/mcx/recursion)   [JavaScript](./javascript/algorithm/recursion)   [Rust](./rust/algorithm/src/recursion)
+>各种语言实现代码：[Go](./golang/algorithm/recursion)   [Java](./java/algorithm/src/com/dxx/recursion)   [JavaScript](./javascript/algorithm/recursion)   [Rust](./rust/algorithm/src/recursion)
 >
 >默认使用 **Go** 语言实现。
 

@@ -1,6 +1,6 @@
 ## 排序
 
-> 各种语言实现代码：[Go](./golang/algorithm/sort)   [Java](./java/algorithm/src/com/mcx/sort)   [JavaScript](./javascript/algorithm/sort)   [Rust](./rust/algorithm/src/sort)
+> 各种语言实现代码：[Go](./golang/algorithm/sort)   [Java](./java/algorithm/src/com/dxx/sort)   [JavaScript](./javascript/algorithm/sort)   [Rust](./rust/algorithm/src/sort)
 >
 > 默认使用 **Go** 语言实现。
 

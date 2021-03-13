@@ -1,6 +1,6 @@
 ## 稀疏数组
 
-> 各种语言实现代码：[Go](./golang/datastructure/sparsearray)   [Java](./java/datastructure/src/com/mcx/sparsearray)   [JavaScript](./javascript/datastructure/sparsearray)   [Rust](./rust/datastructure/src/sparse_array)
+> 各种语言实现代码：[Go](./golang/datastructure/sparsearray)   [Java](./java/datastructure/src/com/dxx/sparsearray)   [JavaScript](./javascript/datastructure/sparsearray)   [Rust](./rust/datastructure/src/sparse_array)
 >
 > 默认使用 **Go** 语言实现。
 
