@@ -34,7 +34,7 @@ func TestFactorial(t *testing.T) {
 
 下图中黑色部分表示墙壁，白色部分表示可以走的通路。
 
-![algorithm_migong](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_migong.png)
+![algorithm_migong](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_migong.png)
 
 假设一个二维数组中 0 表示通道，1 表示为墙壁，给出一个起点，求起点到终点的最短路径。
 
@@ -208,7 +208,7 @@ golang/algorithm>go test -v -run ^TestWalk2$ ./recursion
 
 在 8×8 格的国际象棋上摆放 8 个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。
 
-![algorithm_eight_queen](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_eight_queen.png)
+![algorithm_eight_queen](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_eight_queen.png)
 
 思路分析：
 

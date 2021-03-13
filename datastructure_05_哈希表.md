@@ -8,7 +8,7 @@
 
 哈希表也叫散列表，是根据关键值 key 直接进行访问的数据结构。它通过把 key 映射到表中一个位置来记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
 
-![data_structure_hashtable_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_hashtable_01.png)
+![data_structure_hashtable_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_hashtable_01.png)
 
 ### 实现
 
@@ -16,7 +16,7 @@
 
 思路如下：
 
-![data_structure_hashtable_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_hashtable_02.png)
+![data_structure_hashtable_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_hashtable_02.png)
 
 * 定义一个结构体，声明一个存放记录的数组字段，数组大小定义为 5（可根据需要增加）
 * 定义一个链表结构体，声明员工结构体和指向下一个结点的指针两个字段

@@ -79,7 +79,7 @@ golang/algorithm>go test -v -run ^TestSequenceSearch$ ./search
 
 画图分析：
 
-![algorithm_search_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_search_01.png)
+![algorithm_search_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_search_01.png)
 
 代码实现：
 

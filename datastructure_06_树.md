@@ -57,7 +57,7 @@
 
 如下面的二叉树，分别使用前序、中序、后续遍历。
 
-![data_structure_tree_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_01.png)
+![data_structure_tree_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_01.png)
 
 创建二叉树节点结构体：
 
@@ -393,7 +393,7 @@ no:5
 
 下图是一个数组转换成的二叉树，其中红色的数字表示每个节点对应在数组中下标：
 
-![data_structure_tree_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_02.png)
+![data_structure_tree_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_02.png)
 
 接下来实现上述使用顺序存储的二叉树，对其进行前序、中序、后续遍历。
 
@@ -473,7 +473,7 @@ golang/datastructure>go test -v -run ^TestSeqStorage$ ./tree/binary_tree
 
 下图是一个被线索化的二叉树：
 
-![data_structure_tree_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_03.png)
+![data_structure_tree_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_03.png)
 
 当二叉树线索化后，增加 leftTag 和 rightTag 两个标记，leftTag 和 rightTag 表示不同值时，情况如下：
 
@@ -660,13 +660,13 @@ id:6
 
 在一个完全二叉树中，任意非叶子节点的值大于或等于左右子节点的值。
 
-![data_structure_tree_04](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_04.png)
+![data_structure_tree_04](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_04.png)
 
 **小顶堆**
 
 在一个完全二叉树中，任意非叶子节点的值小于或等于左右子节点的值。
 
-![data_structure_tree_05](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_05.png)
+![data_structure_tree_05](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_05.png)
 
 步骤：
 
@@ -687,14 +687,14 @@ id:6
 
 画图分析：
 
-![data_structure_tree_06](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_06.png)
-![data_structure_tree_07](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_07.png)
-![data_structure_tree_08](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_08.png)
-![data_structure_tree_09](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_09.png)
-![data_structure_tree_10](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_10.png)
-![data_structure_tree_11](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_11.png)
-![data_structure_tree_12](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_12.png)
-![data_structure_tree_13](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_13.png)
+![data_structure_tree_06](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_06.png)
+![data_structure_tree_07](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_07.png)
+![data_structure_tree_08](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_08.png)
+![data_structure_tree_09](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_09.png)
+![data_structure_tree_10](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_10.png)
+![data_structure_tree_11](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_11.png)
+![data_structure_tree_12](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_12.png)
+![data_structure_tree_13](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_13.png)
 
 代码实现：
 
@@ -787,7 +787,7 @@ golang/datastructure>go test -v -run ^TestHeapSort$ ./tree/binary_tree
 
 树的带权路径长度规定为所有叶子节点的带权路径长度之和，记为 WPL。
 
-![data_structure_tree_14](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_14.png)
+![data_structure_tree_14](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_14.png)
 
 WPL = (2 - 1) * 16 + (3 - 1) * 8 + (4 - 1) * 7 + (5 - 1) * 1 + (5 - 1) * 3
 
@@ -805,7 +805,7 @@ WPL = (2 - 1) * 16 + (3 - 1) * 8 + (4 - 1) * 7 + (5 - 1) * 1 + (5 - 1) * 3
 
 将序列 1, 7, 3, 8, 16 构造成哈夫曼树
 
-![data_structure_tree_15](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_15.png)
+![data_structure_tree_15](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_15.png)
 
 代码实现：
 
@@ -930,7 +930,7 @@ i: 105  空格: 32  l: 108  o: 111  v: 118  e: 101  空格: 32  g: 103  o: 111
 
 统计每个字符出现的次数，每个字符出现的次数分别为 i: 1 次、l: 1 次、o: 2 次、v: 1 次、e: 1 次、g: 1 次、空格: 2 次，将次数作为权值，构建一颗哈夫曼树如下：
 
-![data_structure_tree_16](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_16.png)
+![data_structure_tree_16](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_16.png)
 
 > 转成哈夫曼树时顺序不同，每个字符在树中的位置也会不同，但是最后生成的哈夫曼编码长度不变。
 
@@ -1371,7 +1371,7 @@ map[32:00 101:010 103:011 105:100 108:101 111:111 118:110]
 
 如下是一颗二叉排序树：
 
-![data_structure_tree_17](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17.png)
+![data_structure_tree_17](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17.png)
 
 #### 创建树结构
 
@@ -1670,13 +1670,13 @@ no:12
 
 如下是一个颗 AVL 树：
 
-![data_structure_tree_17](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17.png)
+![data_structure_tree_17](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17.png)
 
 #### 计算树的高度
 
 有一个序列，其元素为 [3, 2, 5, 4, 6, 7]，将此序列构建成一颗二叉排序树，如下图：
 
-![data_structure_tree_18](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_18.png)
+![data_structure_tree_18](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_18.png)
 
 先定义 AVL 树结构体：
 
@@ -1766,17 +1766,17 @@ golang/datastructure>go test -v -run ^TestHeight$ ./tree/avl_tree
 
 如果一颗二叉排序树中，右子树的高度减去左子树的高度大于 1，将其进行左旋转使其变成平衡二叉排序树，左旋转过程如下图：
 
-![data_structure_tree_19_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_1.png)
+![data_structure_tree_19_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_1.png)
 
-![data_structure_tree_19_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_2.png)
+![data_structure_tree_19_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_2.png)
 
 
 
-![data_structure_tree_19_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_3.png)
+![data_structure_tree_19_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_3.png)
 
-![data_structure_tree_19_4](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_4.png)
+![data_structure_tree_19_4](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_4.png)
 
-![data_structure_tree_19_5](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_5.png)
+![data_structure_tree_19_5](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_19_5.png)
 
 左旋转代码：
 
@@ -1864,21 +1864,21 @@ no:7
 
 假设有一个序列  [6, 4, 7, 2, 5, 3], 将其构建成一颗二叉排序树，如果左子树的高度减去右子树的高度大于 1，将其进行右旋转使其变成平衡二叉排序树，右旋转过程如下图：
 
-![data_structure_tree_20_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_1.png)
+![data_structure_tree_20_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_1.png)
 
 
 
-![data_structure_tree_20_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_2.png)
+![data_structure_tree_20_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_2.png)
 
-![data_structure_tree_20_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_3.png)
-
-
-
-![data_structure_tree_20_4](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_4.png)
+![data_structure_tree_20_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_3.png)
 
 
 
-![data_structure_tree_20_5](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_5.png)
+![data_structure_tree_20_4](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_4.png)
+
+
+
+![data_structure_tree_20_5](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_20_5.png)
 
 右旋转代码：
 
@@ -1967,13 +1967,13 @@ no:7
 
 有些情况将根节点左旋转或者旋转后，任然不能满足平衡二叉排序树的要求，如下图是一个二叉排序树进行右旋转：
 
-![data_structure_tree_21_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_1.png)
+![data_structure_tree_21_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_1.png)
 
 旋转后任然不是一颗 AVL 树，当左子节点的右子树高度大于其左子树高度时，需要将根节点的左子节点进行左旋转，然后再将根节点进行右旋转：
 
-![data_structure_tree_21_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_2.png)
+![data_structure_tree_21_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_2.png)
 
-![data_structure_tree_21_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_3.png)
+![data_structure_tree_21_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_21_3.png)
 
 反之，先将根节点的右子树进行右旋转，然后再将根节点进行左旋转。
 

@@ -8,7 +8,7 @@
 
 国际象棋的棋盘为 8x8 的方格棋盘，现将“马”放在任意指定的方格中，按照“马”走棋的规则将“马”进行移动，要求每个方格只能进入一次，最终使得“马”走遍棋盘 64 个方格。
 
-![algorithm_chessboard](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_chessboard.png)
+![algorithm_chessboard](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_chessboard.png)
 
 ### 实现
 

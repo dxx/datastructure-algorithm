@@ -24,27 +24,27 @@
 
 如果只有一个盘，直接将盘从 A 柱子移动到 C 柱子。
 
-![algorithm_hannotower](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower.png)
+![algorithm_hannotower](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower.png)
 
 如果有两个或以上的盘，将盘分成两份，最下面一个盘一份和上面所有的面盘一份。
 
-![algorithm_hannotower_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_1.png)
+![algorithm_hannotower_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_1.png)
 
 先将上面所有的盘移动到 B 柱子，然后将下面的盘从 A 柱子移动到 C 柱子，再将 B 柱子上的所有盘移动到 C 柱子上。
 
-![algorithm_hannotower_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_2.png)
+![algorithm_hannotower_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_2.png)
 
-![algorithm_hannotower_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_3.png)
+![algorithm_hannotower_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_3.png)
 
-![algorithm_hannotower_4](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_4.png)
+![algorithm_hannotower_4](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_4.png)
 
-![algorithm_hannotower_5](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_5.png)
+![algorithm_hannotower_5](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_5.png)
 
-![algorithm_hannotower_6](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_6.png)
+![algorithm_hannotower_6](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_6.png)
 
-![algorithm_hannotower_7](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_7.png)
+![algorithm_hannotower_7](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_7.png)
 
-![algorithm_hannotower_8](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_8.png)
+![algorithm_hannotower_8](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_hannotower_8.png)
 
 代码实现：
 

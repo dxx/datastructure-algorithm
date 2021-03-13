@@ -23,7 +23,7 @@
 
 有 A、B、C、D、E 、F 和 G 这 7 个村庄，每个村庄之间的距离用边线的权表示，A-B 的距离为 5 公里。如何修路能保证各个村庄连通，总的修建总路程最短？
 
-![algorithm_prim_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_prim_1.png)
+![algorithm_prim_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_prim_1.png)
 
 分析：
 
@@ -47,7 +47,7 @@
 
 最小生成树如下图：
 
-![algorithm_prim_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_prim_2.png)
+![algorithm_prim_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_prim_2.png)
 
 代码实现：
 

@@ -14,19 +14,19 @@
 
 边：顶点和顶点之间的连线
 
-![data_structure_graph_01_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_1.png)
+![data_structure_graph_01_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_1.png)
 
 无向图：边没有方向的图称为无向图
 
-![data_structure_graph_01_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
+![data_structure_graph_01_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
 
 有向图：顶点和顶点之间的边有方向
 
-![data_structure_graph_01_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_3.png)
+![data_structure_graph_01_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_3.png)
 
 带权图：边带有权值，权值指的是边的值
 
-![data_structure_graph_01_4](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_4.png)
+![data_structure_graph_01_4](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_4.png)
 
 ### 存储方式
 
@@ -34,13 +34,13 @@
 
 使用二维数组来存储图信息，一维数组存放图中顶点，二维数组存储各顶点之间的关系。
 
-![data_structure_graph_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_02.png)
+![data_structure_graph_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_02.png)
 
 **邻接表**
 
 给图中的每个顶点独自建立一个链表，用节点存储该顶点，用链表中其他节点存储各自的临界点。
 
-![data_structure_graph_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_03.png)
+![data_structure_graph_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_03.png)
 
 ### 实现
 
@@ -151,7 +151,7 @@ golang/datastructure>go test -v -run ^TestGraph$ ./graph
 
 深度优先遍历从某个顶点出发，访问此顶点 v，然后从 v 的未被访问的邻接点触发深度优先遍历图，直至所有和 v 有路径想通的顶点都被访问到。
 
-![data_structure_graph_01_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
+![data_structure_graph_01_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
 
 上图中添加顶点的顺序为 A B C D E。假设 A 为初始顶点，对上图进行深度优先遍历后就是 A -> B -> C -> D -> E。
 
@@ -259,7 +259,7 @@ A->B->C->D->E->
 
 从图中某顶点v出发，在访问了 v 之后依次访问 v 的各个未曾访问过的邻接点，然后分别从这些邻接点出发依次访问它们的邻接点，并使得先被访问的顶点的邻接点先于后被访问的顶点的邻接点被访问，直至图中所有已被访问的顶点的邻接点都被访问到。如果此时图中尚有顶点未被访问，则需要另选一个未曾被访问过的顶点作为新的起始点，重复上述过程，直至图中所有顶点都被访问到为止。
 
-![data_structure_graph_01_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
+![data_structure_graph_01_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_graph_01_2.png)
 
 上图中添加顶点的顺序为 A B C D E。假设 A 为初始顶点，对上图进行广度优先遍历后就是 A -> B -> C -> E -> D。
 

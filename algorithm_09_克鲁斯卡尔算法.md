@@ -16,7 +16,7 @@ Kruskal 算法是一种用来查找最小生成树的算法。用来解决同样
 
 某城市需要建设 7 个公交站点，现在需要修路把这 7 个站点连通，每个站点的距离用边的权值表示，如 A 到 B 距离 12 公里。如何修路保证每个站点连通，并且总的修建里程最短？
 
-![algorithm_kruskal_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_1.png)
+![algorithm_kruskal_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_1.png)
 
 分析：
 
@@ -31,7 +31,7 @@ Kruskal 算法是一种用来查找最小生成树的算法。用来解决同样
 
 最小生成树如下图：
 
-![algorithm_kruskal_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_2.png)
+![algorithm_kruskal_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_2.png)
 
 上述分析过程中有以下关键点：
 
@@ -44,7 +44,7 @@ Kruskal 算法是一种用来查找最小生成树的算法。用来解决同样
 
 在将 E-F、C-D、D-E 加入到 V 中之后，这几条边的顶点就都有了终点 F。
 
-![algorithm_kruskal_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_3.png)
+![algorithm_kruskal_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kruskal_3.png)
 
 终点就是将所有顶点按照从小到大的顺序排列好之后，某个顶点的终点就是与它连通的最大顶点。也就是说边的两个顶点不能都指向同一个终点，否则将构成回路。
 

@@ -8,7 +8,7 @@
 
 栈和队列一样也是一种特殊的线性表。它只能在表尾进行插入和删除操作。在进行插入和删除操作的一端被称为栈顶，另一端称为栈底。向一个栈放入新元素称为进栈、入栈或压栈，从一个栈取出元素称为出栈或退栈。每一个新元素都会放在之前放入的元素之上，删除时会删除最新的元素，所以栈有先进后出（FILO—first in last out）的特点。
 
-![data_structure_stack_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_stack_01.png)
+![data_structure_stack_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_stack_01.png)
 
 ### 实现
 
@@ -156,13 +156,13 @@ stack is empty
 
 #### 画图分析
 
-![stack_calculator_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_01.png)
+![stack_calculator_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_01.png)
 
-![stack_calculator_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_02.png)
+![stack_calculator_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_02.png)
 
-![stack_calculator_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_03.png)
+![stack_calculator_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_03.png)
 
-![stack_calculator_04](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_04.png)
+![stack_calculator_04](https://dxx.github.io/static-resource/datastructure-algorithm/images/stack_calculator_04.png)
 
 #### 代码实现
 

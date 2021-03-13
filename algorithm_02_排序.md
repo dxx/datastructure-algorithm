@@ -32,7 +32,7 @@
 
 画图分析：
 
-![algorithm_sort_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_01.png)
+![algorithm_sort_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_01.png)
 
 代码实现：
 
@@ -158,7 +158,7 @@ golang/algorithm>go test -v -run ^TestBubbleSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_02.png)
+![algorithm_sort_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_02.png)
 
 代码实现：
 
@@ -222,7 +222,7 @@ golang/algorithm>go test -v -run ^TestSelectSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_03.png)
+![algorithm_sort_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_03.png)
 
 代码实现：
 
@@ -288,9 +288,9 @@ golang/algorithm>go test -v -run ^TestInsertSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_04_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_04_1.png)
+![algorithm_sort_04_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_04_1.png)
 
-![algorithm_sort_04_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_04_2.png)
+![algorithm_sort_04_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_04_2.png)
 
 代码实现：
 
@@ -375,7 +375,7 @@ golang/algorithm>go test -v -run ^TestQuickSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_05](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_05.png)
+![algorithm_sort_05](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_05.png)
 
 代码实现：
 
@@ -439,11 +439,11 @@ golang/algorithm>go test -v -run ^TestShellSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_06_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_1.png)
+![algorithm_sort_06_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_1.png)
 
-![algorithm_sort_06_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_2.png)
+![algorithm_sort_06_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_2.png)
 
-![algorithm_sort_06_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_3.png)
+![algorithm_sort_06_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_06_3.png)
 
 代码实现：
 
@@ -547,7 +547,7 @@ golang/algorithm>go test -v -run ^TestMergeSort$ ./sort
 
 画图分析：
 
-![algorithm_sort_07](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_07.png)
+![algorithm_sort_07](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_sort_07.png)
 
 代码实现：
 

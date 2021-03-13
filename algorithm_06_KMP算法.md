@@ -76,27 +76,27 @@ ABCABD 在 CBC DCABCABABCABD BBCCA 中的位置为 11
 
 首先比较文本串和模式串的第一字符。
 
-![algorithm_kmp_1](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_1.png)
+![algorithm_kmp_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_1.png)
 
 不相等，使用后一个字符比较。
 
-![algorithm_kmp_2](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_2.png)
+![algorithm_kmp_2](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_2.png)
 
 还是不相等，继续后移一位比较，直到模式串的第一字符和文本串中的字符相等。
 
-![algorithm_kmp_3](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_3.png)
+![algorithm_kmp_3](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_3.png)
 
 接着比较文本串和模式串的下一个字符。
 
-![algorithm_kmp_4](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_4.png)
+![algorithm_kmp_4](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_4.png)
 
 直到遇到文本串中有一个字符和模式串的当前字符串不相等。
 
-![algorithm_kmp_5](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_5.png)
+![algorithm_kmp_5](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_5.png)
 
 如果是暴力匹配，则将文本串中和模式串中第一字符相等的下一个字符开始继续比较。
 
-![algorithm_kmp_6](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_6.png)
+![algorithm_kmp_6](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_6.png)
 
 这是不明智的，因为此时 B C 已经比较过了。KMP 算法的想法是，设法利用已知信息，不要把"搜索位置"移回已经比较过的位置，继续把它向后移，这样就提高了效率。
 
@@ -114,11 +114,11 @@ ABCABD 在 CBC DCABCABABCABD BBCCA 中的位置为 11
 
 5 - 2 = 3，故此时将模式串后移 3 位，按照之前的逻辑继续匹配，直到 A 和 C 不匹配。
 
-![algorithm_kmp_7](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_7.png)
+![algorithm_kmp_7](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_7.png)
 
 按照移动位数计算公式，此时后移 2 位，整个模式串匹配成功。
 
-![algorithm_kmp_8](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_8.png)
+![algorithm_kmp_8](https://dxx.github.io/static-resource/datastructure-algorithm/images/algorithm_kmp_8.png)
 
 **部分匹配值就是前缀和后缀的最长共有元素的长度**。假设一个字符串 "hello"，它的前缀有 h、he、hel、hell，它的后缀有 ello、llo、lo、o。
 

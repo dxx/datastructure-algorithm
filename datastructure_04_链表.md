@@ -8,17 +8,17 @@
 
 链表是一种物理存储单元上非连续、非顺序，但是在逻辑上是顺序的存储结构。链表的每个结点包括两个部分，一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域，链表使用一个 head 指针来指向第一个表头的结点，而最后一个结点的指针指向 NULL。由于链表不必须按顺序存储，所以链表在插入的时候比线性顺序表快得多，但是查找或者访问某个节点则比线性表和顺序表要慢。链表有很多种不同的类型：单向链表，双向链表以及循环链表。
 
-![data_structure_linkedlist_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_01.png)
+![data_structure_linkedlist_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_01.png)
 
 ### 单向链表
 
 单向链表是链表的一种，其特点是链表的链接方向是单向的，对链表的访问要从头部开始。
 
-![data_structure_linkedlist_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_02.png)
+![data_structure_linkedlist_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_02.png)
 
 我们的都知道水浒传里面有梁山英雄排名，以梁山英雄排名为例，用单向链表来写一个示例。
 
-![shuihuzhuan](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/shuihuzhuan.png)
+![shuihuzhuan](https://dxx.github.io/static-resource/datastructure-algorithm/images/shuihuzhuan.png)
 
 首先定义一个结构体用来存储数据和下一个指针：
 
@@ -393,7 +393,7 @@ func reverseNode(headNode *Node) {
 
 双向链表也叫双链表，是链表的一种，它的每个数据结点中都有两个指针，分别指向前一个和后一个结点。所以，从双向链表中的任意一个结点开始，都可以很方便地访问它的前一个结点和后一个结点。
 
-![data_structure_linkedlist_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_03.png)
+![data_structure_linkedlist_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_03.png)
 
 双向链表相比于单向链表有以下优点：
 
@@ -571,7 +571,7 @@ golang/datastructure>go test -v -run ^TestDeleteNode$ ./linkedlist/double
 
 循环链表的特点是表中最后一个结点的指针域指向头结点，整个链表形成一个环。
 
-![data_structure_linkedlist_04](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_04.png)
+![data_structure_linkedlist_04](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_linkedlist_04.png)
 
 下面创建一个双向的循环链表结构体：
 
@@ -774,13 +774,13 @@ golang/datastructure>go test -v -run ^TestDeleteNode$ ./linkedlist/round
 
 假设有 5 个人，从第 1 个人开始，每次数到第 3 个人就出列，画图分析如下：
 
-![josephu_01](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/josephu_01.png)
+![josephu_01](https://dxx.github.io/static-resource/datastructure-algorithm/images/josephu_01.png)
 
-![josephu_02](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/josephu_02.png)
+![josephu_02](https://dxx.github.io/static-resource/datastructure-algorithm/images/josephu_02.png)
 
-![josephu_03](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/josephu_03.png)
+![josephu_03](https://dxx.github.io/static-resource/datastructure-algorithm/images/josephu_03.png)
 
-![josephu_04](https://code-mcx.github.io/static-resource/datastructure-algorithm/images/josephu_04.png)
+![josephu_04](https://dxx.github.io/static-resource/datastructure-algorithm/images/josephu_04.png)
 
 **代码实现**
 
