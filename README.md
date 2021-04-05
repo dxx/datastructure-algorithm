@@ -1,7 +1,7 @@
 # 数据结构和算法
 
-![golang](https://img.shields.io/badge/language-golang-00add8.svg)
 ![rust](https://img.shields.io/badge/language-rust-c99272.svg)
+![golang](https://img.shields.io/badge/language-golang-00add8.svg)
 ![java](https://img.shields.io/badge/language-java-b07219.svg)
 ![javascript](https://img.shields.io/badge/language-javascript-yellow.svg)
 
