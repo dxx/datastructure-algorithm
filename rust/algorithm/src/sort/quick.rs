@@ -2,11 +2,11 @@
 /// 1.获取最中间的元素，然后分别将左边和右边的元素分别和最中间的元素进行比较
 /// 2.左边找出比中间大的元素，右边找出比中间小的元素，交换左右的位置
 /// 3.一次比较完成后，将左边和右边分别递归重复以上操作
-fn quick_sort(nums: &mut [i32], start: usize, end: usize) {
-    let mut l = start as i32;
-    let mut r = end as i32;
+fn quick_sort(nums: &mut [i32], start: i32, end: i32) {
+    let mut l = start;
+    let mut r = end;
     // 获取最中间的元素
-    let center_value = nums[(start + end) / 2];
+    let center_value = nums[((start + end) / 2) as usize];
     while l < r {
         // 从左边找出比中间元素大的元素值
         while nums[l as usize] < center_value {
@@ -35,11 +35,11 @@ fn quick_sort(nums: &mut [i32], start: usize, end: usize) {
         l += 1;
         r -= 1;
     }
-    if start < r as usize {
-        quick_sort(nums, start, r as usize);
+    if start < r {
+        quick_sort(nums, start, r);
     }
-    if end > l as usize {
-        quick_sort(nums, l as usize, end);
+    if end > l {
+        quick_sort(nums, l, end);
     }
 }
 
@@ -54,6 +54,6 @@ fn test_quick_sort() {
     let mut nums = [5, 1, 8, 3, 7, 2, 9, 4, 6];
     println!("排序前: {:?}", nums);
     let len = nums.len();
-    quick_sort(&mut nums, 0, len - 1);
+    quick_sort(&mut nums, 0, (len - 1) as i32);
     println!("排序后: {:?}", nums);
 }
