@@ -5,6 +5,7 @@ use std::rc::Rc;
 /// 循环链表的特点是表中最后一个结点的指针域指向头结点，整个链表形成一个环
 
 /// 双向循环链表
+#[derive(Eq, PartialEq)]
 pub struct PersonNode {
     no: i32,
     name: String,
@@ -33,7 +34,7 @@ fn insert_node(
         let next = match last_node.borrow().next.as_ref() {
             Some(rc_node) => {
                 // 下一个结点等于头结点跳出循环
-                if rc_node.borrow().no == head_node.as_ref().unwrap().borrow().no {
+                if rc_node == head_node.as_ref().unwrap() {
                     break;
                 }
                 Rc::clone(rc_node)
@@ -117,11 +118,10 @@ fn print_round_node_info(head_node: Option<Rc<RefCell<PersonNode>>>) {
     loop {
         let next = match temp_node.borrow().next.as_ref() {
             Some(rc_node) => {
-                let info_node = rc_node.borrow();
-                if info_node.no == head_node.as_ref().unwrap().borrow().no {
+                if rc_node == head_node.as_ref().unwrap() {
                     break;
                 }
-                info.push_str(&format!("{{no:{}, name:{}}}", info_node.no, info_node.name));
+                info.push_str(&format!("{{no:{}, name:{}}}", rc_node.borrow().no, rc_node.borrow().name));
                 Rc::clone(rc_node)
             }
             None => {
