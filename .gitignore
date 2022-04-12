@@ -10,3 +10,7 @@ target
 # cargo
 
 Cargo.lock
+
+# Mac
+
+.DS_Store
