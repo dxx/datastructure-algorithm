@@ -1663,7 +1663,7 @@ no:12
 
 当将一个有序的序列按顺序添加到二叉排序树中，这时二叉排序树就形成了一个链表。如序列 [1, 2, 3, 4, 5] ，按顺序添加节点后构成的二叉排序树如下图：
 
-<img src="https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17_1.png" alt="data_structure_tree_17" style="zoom:60%;" />
+![data_structure_tree_17_1](https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17_1.png)
 
 这时就需要将二叉排序树平衡。
 
