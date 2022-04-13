@@ -1661,6 +1661,12 @@ no:12
 
 ### AVL树
 
+当将一个有序的序列按顺序添加到二叉排序树中，这时二叉排序树就形成了一个链表。如序列 [1, 2, 3, 4, 5] ，按顺序添加节点后构成的二叉排序树如下图：
+
+<img src="https://dxx.github.io/static-resource/datastructure-algorithm/images/data_structure_tree_17_1.png" alt="data_structure_tree_17" style="zoom:60%;" />
+
+这时就需要将二叉排序树平衡。
+
 在 AVL 树中任何节点的两个子树的高度最大差别为 1，所以它也被称为高度平衡树。增加和删除可能需要通过一次或多次树旋转来重新平衡这个树。AVL 树本质上是带了平衡功能的二叉排序树（二叉查找树，二叉搜索树）。
 
 特点：
