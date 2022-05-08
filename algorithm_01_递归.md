@@ -275,7 +275,7 @@ func TestEightQueen(t *testing.T) {
 运行：
 
 ```shell
-E:\Github\datastructure-algorithm\golang\algorithm>go test -v -run ^TestEightQueen$ ./recursion
+golang/algorithm>go test -v -run ^TestEightQueen$ ./recursion
 === RUN   TestEightQueen
 [0 4 7 5 2 6 1 3]
 [0 5 7 2 6 3 1 4]
