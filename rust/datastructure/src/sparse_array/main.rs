@@ -35,17 +35,14 @@ fn to_sparse_array(array: [[i32; 5]; 5]) -> Vec<[i32; 3]> {
     }
     // 编译报错
     // let mut sparse_array = [[0; 3]; count + 1];
-    let mut sparse_array: Vec<[i32; 3]> = vec![[0; 3]; count + 1];
+    let mut sparse_array: Vec<[i32; 3]> = vec![];
     // 存储第一行信息，从左到右存储的依次是 行，列，非 0 的个数
-    sparse_array[0] = [array.len() as i32, array[0].len() as i32, count as i32];
-    let mut row = 1;
+    sparse_array.push([array.len() as i32, array[0].len() as i32, count as i32]);
     for i in 0..array.len() {
         for j in 0..array[i].len() {
             if array[i][j] != 0 {
-                sparse_array[row][0] = i as i32; // row
-                sparse_array[row][1] = j as i32; // col
-                sparse_array[row][2] = array[i][j]; // val
-                row = row + 1;
+                // 保存 row, col, val
+                sparse_array.push([i as i32, j as i32, array[i][j]]);
             }
         }
     }
@@ -133,7 +130,7 @@ fn print_sparse_array(array: Vec<[i32; 3]>) {
 fn test_sparse_array() {
     // 定义一个 5x5 的二维数组
     let mut array: [[i32; 5]; 5] = [[0; 5]; 5];
-    // 初始化 3，6， 1，5
+    // 初始化 3，6，1，5
     array[0][2] = 3;
     array[1][3] = 6;
     array[2][1] = 1;

@@ -39,21 +39,15 @@ function toSparseArray(array) {
     }
   }
 
-  let sparseArray = new Array(count + 1);
-  for (let i = 0; i < sparseArray.length; i++) {
-    // 每行 3 列
-    sparseArray[i] = [0, 0, 0];
-  }
-
+  let sparseArray = [];
   // 存储第一行信息，从左到右存储的依次是 行，列，非 0 的个数
-  sparseArray[0] = [array.length, array[0].length, count];
+  sparseArray.push([array.length, array[0].length, count]);
+
   for (let i = 0, row = 1; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
       if (array[i][j] != 0) {
-        sparseArray[row][0] = i;
-        sparseArray[row][1] = j;
-        sparseArray[row][2] = array[i][j];
-        row++;
+        // 保存 row, col, val
+        sparseArray.push([i, j , array[i][j]]);
       }
     }
   }
@@ -142,7 +136,7 @@ function main() {
   for (let i = 0; i < array.length; i++) {
     array[i] = [0, 0, 0, 0, 0];
   }
-  // 初始化 3，6， 1，5
+  // 初始化 3，6，1，5
   array[0][2] = 3;
   array[1][3] = 6;
   array[2][1] = 1;
