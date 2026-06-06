@@ -6,31 +6,34 @@
  * 后序或层次等）进行遍历，使其变为线索二叉树的过程称为对二叉树进行线索化
  */
 
-function ThreadedBinaryTreeNode(no) {
-  this.no = no; // 编号
-  this.left = null; // 左子节点
-  this.right = null; // 右子节点
+class ThreadedBinaryTreeNode {
+  constructor(no) {
+    this.no = no; // 编号
+    this.left = null; // 左子节点
+    this.right = null; // 右子节点
 
-  // 增加两个标记
-  this.leftTag = 0; // 左节点标记。如果 leftTag = 0, left 表示左子节点, 如果为 leftTag = 1, left 表示前驱节点
-  this.rightTag = 0; // 右节点标记。如果 rightTag = 0, right 表示右子节点, 如果为 rightTag = 1, right 表示后继节点
-}
-/**
- * 从最左边至最右边查找指定节点（测试使用）
- */
-ThreadedBinaryTreeNode.prototype.search = function(no) {
-  let leftChildNode = this;
-  while (leftChildNode.left !== null) {
-    leftChildNode = leftChildNode.left;
+    // 增加两个标记
+    this.leftTag = 0; // 左节点标记。如果 leftTag = 0, left 表示左子节点, 如果为 leftTag = 1, left 表示前驱节点
+    this.rightTag = 0; // 右节点标记。如果 rightTag = 0, right 表示右子节点, 如果为 rightTag = 1, right 表示后继节点
   }
 
-  while (leftChildNode !== null) {
-    if (leftChildNode.no === no) {
-        break;
+  /**
+   * 从最左边至最右边查找指定节点（测试使用）
+   */
+  search(no) {
+    let leftChildNode = this;
+    while (leftChildNode.left !== null) {
+      leftChildNode = leftChildNode.left;
     }
-    leftChildNode = leftChildNode.right;
+
+    while (leftChildNode !== null) {
+      if (leftChildNode.no === no) {
+        break;
+      }
+      leftChildNode = leftChildNode.right;
+    }
+    return leftChildNode;
   }
-  return leftChildNode;
 }
 
 let previous = null; // 记录遍历时的上一个结点

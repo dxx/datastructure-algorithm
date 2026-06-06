@@ -13,66 +13,68 @@
  * 数组实现循环队列
  */
 
-function IntQueue(size) {
-  this.array = new Array(size); // 存放队列元素的数组
-  this.maxSize = size; // 最大队列元素大小
-  this.front = 0; // 队头指针
-  this.rear = 0; // 队尾指针
-}
-
-/**
- * 放入队列元素
- */
-IntQueue.prototype.put = function(elem) {
-  if (this.isFull()) {
-    console.error("queue is full");
-    return false;
+class IntQueue {
+  constructor(size) {
+    this.array = new Array(size); // 存放队列元素的数组
+    this.maxSize = size; // 最大队列元素大小
+    this.front = 0; // 队头指针
+    this.rear = 0; // 队尾指针
   }
-  // 把元素放入队尾
-  this.array[this.rear] = elem;
-  // 循环累加，当 rear + 1 等于 maxSize 时变成 0，重新累加
-  this.rear = (this.rear + 1) % this.maxSize;
-  return true;
-}
 
-/**
- * 取出队列元素
- */
-IntQueue.prototype.take = function() {
-  if (this.isEmpty()) {
-    console.error("queue is empty");
-    return Number.MIN_VALUE;
+  /**
+   * 放入队列元素
+   */
+  put(elem) {
+    if (this.isFull()) {
+      console.error("queue is full");
+      return false;
+    }
+    // 把元素放入队尾
+    this.array[this.rear] = elem;
+    // 循环累加，当 rear + 1 等于 maxSize 时变成 0，重新累加
+    this.rear = (this.rear + 1) % this.maxSize;
+    return true;
   }
-  // 取出当前队头指向的元素
-  elem = this.array[this.front];
-  this.front = (this.front + 1) % this.maxSize;
-  return elem;
-}
 
-IntQueue.prototype.isEmpty = function() {
-  // 队头指针等于队尾指针表示队列为空
-  return this.front == this.rear;
-}
-
-IntQueue.prototype.isFull = function() {
-  // 空出一个位置，判断是否等于队头指针
-  // 队尾指针指向的位置不能存放队列元素，实际上会比 maxSize 指定的大小少一
-  return (this.rear + 1) % this.maxSize == this.front;
-}
-
-IntQueue.prototype.size = function() {
-  return (this.rear + this.maxSize - this.front) % this.maxSize;
-}
-
-IntQueue.prototype.show = function() {
-  let str = "[";
-  let tempFront = this.front;
-  for (let i = 0; i < this.size(); i++) {
-    str += this.array[tempFront] + " ";
-    tempFront = (tempFront + 1) % this.maxSize;
+  /**
+   * 取出队列元素
+   */
+  take() {
+    if (this.isEmpty()) {
+      console.error("queue is empty");
+      return Number.MIN_VALUE;
+    }
+    // 取出当前队头指向的元素
+    let elem = this.array[this.front];
+    this.front = (this.front + 1) % this.maxSize;
+    return elem;
   }
-  str += "]";
-  console.log(str);
+
+  isEmpty() {
+    // 队头指针等于队尾指针表示队列为空
+    return this.front == this.rear;
+  }
+
+  isFull() {
+    // 空出一个位置，判断是否等于队头指针
+    // 队尾指针指向的位置不能存放队列元素，实际上会比 maxSize 指定的大小少一
+    return (this.rear + 1) % this.maxSize == this.front;
+  }
+
+  size() {
+    return (this.rear + this.maxSize - this.front) % this.maxSize;
+  }
+
+  show() {
+    let str = "[";
+    let tempFront = this.front;
+    for (let i = 0; i < this.size(); i++) {
+      str += this.array[tempFront] + " ";
+      tempFront = (tempFront + 1) % this.maxSize;
+    }
+    str += "]";
+    console.log(str);
+  }
 }
 
 function main() {

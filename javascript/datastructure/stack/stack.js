@@ -7,62 +7,64 @@
  * 先进后出（FILO—first in last out）的特点。
  */
 
-function Stack(size) {
-  this.array = new Array(size); // 存放栈元素
-  this.maxSize = size; // 最大栈元素大小
-  this.top = -1; // 栈顶
-}
-
-/**
- * 入栈
- */
-Stack.prototype.push = function(elem) {
-  // 判栈是否已满
-  if (this.top == this.maxSize - 1) {
-    console.error("stack is full");
-    return false;
+class Stack {
+  constructor(size) {
+    this.array = new Array(size); // 存放栈元素
+    this.maxSize = size; // 最大栈元素大小
+    this.top = -1; // 栈顶
   }
-  // 栈顶加 1，将元素放入栈顶
-  this.array[++this.top] = elem;
-  return true;
-}
 
-/**
- * 出栈
- */
-Stack.prototype.pop = function() {
-  if (this.top == -1) {
-    console.error("stack is empty");
-    return "";
+  /**
+   * 入栈
+   */
+  push(elem) {
+    // 判栈是否已满
+    if (this.top == this.maxSize - 1) {
+      console.error("stack is full");
+      return false;
+    }
+    // 栈顶加 1，将元素放入栈顶
+    this.array[++this.top] = elem;
+    return true;
   }
-  // 取出栈顶元素，然后加 1
-  return this.array[this.top--];
-}
 
-/**
- * 判断栈是否为空
- */
-Stack.prototype.isEmpty = function() {
-  return this.top == -1;
-}
-
-/**
- * 窥视栈顶元素
- */
-Stack.prototype.peek = function() {
-  if (this.isEmpty()) {
-    return undefined;
+  /**
+   * 出栈
+   */
+  pop() {
+    if (this.top == -1) {
+      console.error("stack is empty");
+      return "";
+    }
+    // 取出栈顶元素，然后加 1
+    return this.array[this.top--];
   }
-  return this.array[this.top];
-}
 
-Stack.prototype.show = function() {
-  let str = "[";
-  for (let i = this.top; i >= 0; i --) {
-    str += this.array[i] + " ";
+  /**
+   * 判断栈是否为空
+   */
+  isEmpty() {
+    return this.top == -1;
   }
-  str += "]";
-  console.log(str);
+
+  /**
+   * 窥视栈顶元素
+   */
+  peek() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.array[this.top];
+  }
+
+  show() {
+    let str = "[";
+    for (let i = this.top; i >= 0; i --) {
+      str += this.array[i] + " ";
+    }
+    str += "]";
+    console.log(str);
+  }
 }
 
 module.exports = Stack;

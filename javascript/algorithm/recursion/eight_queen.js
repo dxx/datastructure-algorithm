@@ -11,40 +11,42 @@
  * **|n - i| == |positions[n] - positions[i]|** 表示在同一斜线。
  */
 
-function EightQueen() {
-  this.positions = new Array(8).fill(0);
-}
-
-EightQueen.prototype.putQueen = function(n) {
-  // 最后一个皇后已经放置完成
-  if (n === this.positions.length) {
-    // 打印当前摆放的位置
-    console.log(this.positions);
-    return;
+class EightQueen {
+  constructor() {
+    this.positions = new Array(8).fill(0);
   }
-  for (let i = 0; i < this.positions.length; i++) {
-    // i=0 时，假设当前皇后可以放在第一列
-    // 如果不能放，将进行下一次循环，当前皇后放在下一个位置
-    this.positions[n] = i;
-    // 判断是否可以放
-    if (this._isCanPut(n)) {
-      // 放置下一个皇后
-      this.putQueen(n + 1);
+
+  putQueen(n) {
+    // 最后一个皇后已经放置完成
+    if (n === this.positions.length) {
+      // 打印当前摆放的位置
+      console.log(this.positions);
+      return;
+    }
+    for (let i = 0; i < this.positions.length; i++) {
+      // i=0 时，假设当前皇后可以放在第一列
+      // 如果不能放，将进行下一次循环，当前皇后放在下一个位置
+      this.positions[n] = i;
+      // 判断是否可以放
+      if (this._isCanPut(n)) {
+        // 放置下一个皇后
+        this.putQueen(n + 1);
+      }
     }
   }
-}
 
-/**
- * 判断当前皇后是否和已经摆放过的皇后冲突
- */
-EightQueen.prototype._isCanPut = function(n) {
-  for (let i = 0; i < n; i++) {
-    if (this.positions[n] == this.positions[i] ||
-      Math.abs(n - i) == Math.abs(this.positions[n] - this.positions[i])) {
+  /**
+   * 判断当前皇后是否和已经摆放过的皇后冲突
+   */
+  _isCanPut(n) {
+    for (let i = 0; i < n; i++) {
+      if (this.positions[n] == this.positions[i] ||
+        Math.abs(n - i) == Math.abs(this.positions[n] - this.positions[i])) {
         return false;
       }
+    }
+    return true;
   }
-  return true;
 }
 
 function main() {

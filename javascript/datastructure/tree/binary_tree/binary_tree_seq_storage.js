@@ -13,32 +13,34 @@
  * 位置从 0 开始，顺序为从上之下，从左至右
  */
 
-function SeqBinaryTree(array) {
-  this.array = array;
-}
-
-SeqBinaryTree.prototype.preOrder = function() {
-  this._preOrderFromIndex(0);
-}
-
-SeqBinaryTree.prototype._preOrderFromIndex = function(index) {
-  if (!this.array) {
-    return;
+class SeqBinaryTree {
+  constructor(array) {
+    this.array = array;
   }
-  let len = this.array.length;
-  if (len === 0 || index >= len) {
-    return;
+
+  preOrder() {
+    this._preOrderFromIndex(0);
   }
-  // 当前节点
-  console.log(this.array[index]);
-  // 左子节点下标
-  let leftIndex = 2 * index + 1;
-  // 右子节点下标
-  let rightIndex = 2 * index + 2;
-  // 向左遍历
-  this._preOrderFromIndex(leftIndex);
-  // 向右遍历
-  this._preOrderFromIndex(rightIndex);
+
+  _preOrderFromIndex(index) {
+    if (!this.array) {
+      return;
+    }
+    let len = this.array.length;
+    if (len === 0 || index >= len) {
+      return;
+    }
+    // 当前节点
+    console.log(this.array[index]);
+    // 左子节点下标
+    let leftIndex = 2 * index + 1;
+    // 右子节点下标
+    let rightIndex = 2 * index + 2;
+    // 向左遍历
+    this._preOrderFromIndex(leftIndex);
+    // 向右遍历
+    this._preOrderFromIndex(rightIndex);
+  }
 }
 
 function main() {

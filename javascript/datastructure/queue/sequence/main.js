@@ -12,47 +12,49 @@
  * 数组实现顺序队列
  */
 
-function IntQueue(size) {
-  this.array = new Array(size); // 存放队列元素的数组
-  this.maxSize = size; // 最大队列元素大小
-  this.front = 0; // 队头指针
-  this.rear = 0; // 队尾指针
-}
-
-/**
- * 放入队列元素
- */
-IntQueue.prototype.put = function(elem) {
-  // 队尾指针不能超过最大队列元素大小
-  if (this.rear >= this.maxSize) {
-    console.error("queue is full");
-    return false;
+class IntQueue {
+  constructor(size) {
+    this.array = new Array(size); // 存放队列元素的数组
+    this.maxSize = size; // 最大队列元素大小
+    this.front = 0; // 队头指针
+    this.rear = 0; // 队尾指针
   }
-  // 把元素放入队尾，然后队尾指针加一
-  this.array[this.rear++] = elem;
-  return true;
-}
 
-/**
- * 取出队列元素
- */
-IntQueue.prototype.take = function() {
-  // 队头指针等于队尾指针表示队列为空
-  if (this.front == this.rear) {
-    console.error("queue is empty");
-    return Number.MIN_VALUE;
+  /**
+   * 放入队列元素
+   */
+  put(elem) {
+    // 队尾指针不能超过最大队列元素大小
+    if (this.rear >= this.maxSize) {
+      console.error("queue is full");
+      return false;
+    }
+    // 把元素放入队尾，然后队尾指针加一
+    this.array[this.rear++] = elem;
+    return true;
   }
-  // 取出当前队头指向的元素，然后队头指针加一
-  return this.array[this.front++];
-}
 
-IntQueue.prototype.show = function() {
-  let str = "[";
-  for (let i = this.front; i < this.rear; i++) {
-    str += this.array[i] + " ";
+  /**
+   * 取出队列元素
+   */
+  take() {
+    // 队头指针等于队尾指针表示队列为空
+    if (this.front == this.rear) {
+      console.error("queue is empty");
+      return Number.MIN_VALUE;
+    }
+    // 取出当前队头指向的元素，然后队头指针加一
+    return this.array[this.front++];
   }
-  str += "]";
-  console.log(str);
+
+  show() {
+    let str = "[";
+    for (let i = this.front; i < this.rear; i++) {
+      str += this.array[i] + " ";
+    }
+    str += "]";
+    console.log(str);
+  }
 }
 
 function main() {

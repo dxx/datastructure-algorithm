@@ -1,21 +1,23 @@
-function Node(name) {
-  this.name = name;
-  this.next = null;
-}
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.next = null;
+  }
 
-Node.prototype.printNodeInfo = function() {
-  if (!this.next) {
-    console.log("该链表没有节点");
-    return;
+  printNodeInfo() {
+    if (!this.next) {
+      console.log("该链表没有节点");
+      return;
+    }
+    let str = "[";
+    let tempNode = this.next;
+    while (tempNode !== null) {
+      str += "{name:" + tempNode.name + "}";
+      tempNode = tempNode.next;
+    }
+    str += "]";
+    console.log(str);
   }
-  let str = "[";
-  let tempNode = this.next;
-  while (tempNode !== null) {
-    str += "{name:" + tempNode.name + "}";
-    tempNode = tempNode.next;
-  }
-  str += "]";
-  console.log(str);
 }
 
 /**
@@ -57,19 +59,19 @@ function getLastIndexNode(headNode, index) {
   let i = index;
   let length = 0;
   while (fast != null) {
-	  length++;
-      if (i > 0) {
-          fast = fast.next;
-          i--;
-          continue;
-      }
-      // 快慢指针同时走
+    length++;
+    if (i > 0) {
       fast = fast.next;
-      slow = slow.next;
+      i--;
+      continue;
+    }
+    // 快慢指针同时走
+    fast = fast.next;
+    slow = slow.next;
   }
   // index 超过了链表的长度
   if (index > length) {
-      return null;
+    return null;
   }
   return slow;
 }
