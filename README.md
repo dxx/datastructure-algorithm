@@ -5,6 +5,7 @@
 ![python](https://img.shields.io/badge/language-python-4571A1.svg)
 ![java](https://img.shields.io/badge/language-java-b07219.svg)
 ![javascript](https://img.shields.io/badge/language-javascript-yellow.svg)
+![typescript](https://img.shields.io/badge/language-typescript-4577C0.svg)
 
 > 数据结构和算法图解，使用多种语言实现
 
