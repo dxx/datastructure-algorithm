@@ -1,6 +1,6 @@
 ## 栈(stack)
 
-> 各种语言实现代码：[Go](./golang/datastructure/stack)   [Java](./java/datastructure/src/com/dxx/stack)   [JavaScript](./javascript/datastructure/stack)   [Rust](./rust/datastructure/src/stack)
+> 各种语言实现代码：[Go](./golang/datastructure/stack)   [Java](./java/datastructure/src/com/dxx/stack)   [JavaScript](./javascript/datastructure/stack)   [Python](./python/datastructure/stack)   [Rust](./rust/datastructure/src/stack)
 >
 > 默认使用 **Go** 语言实现。
 
@@ -610,4 +610,3 @@ golang/datastructure>go test -v -run ^TestReversePoland$ ./stack
 ```
 
 > 注意：这里只能计算整数，且表达式前后不能有空格。
-
