@@ -4,17 +4,16 @@
 所以，从双向链表中的任意一个结点开始，都可以很方便地访问它的前一个结点和后一个结点。
 """
 
-
 class HeroNode:
-    def __init__(self, no=None, name=None, nickname=None):
+    def __init__(self, no: int | None = None, name: str | None = None, nickname: str | None = None) -> None:
         self.no = no  # 编号
         self.name = name  # 姓名
         self.nickname = nickname  # 昵称
-        self.prev = None  # 上一个节点
-        self.next = None  # 下一个节点
+        self.prev: HeroNode | None = None  # 上一个节点
+        self.next: HeroNode | None = None  # 下一个节点
 
 
-def insert_at_tail(head_node, new_node):
+def insert_at_tail(head_node: HeroNode, new_node: HeroNode) -> None:
     """在链表尾部插入，通过 head 找到链表的尾部"""
     last_node = head_node
     # 下一个结点不为空继续循环
@@ -27,13 +26,16 @@ def insert_at_tail(head_node, new_node):
     new_node.prev = last_node
 
 
-def delete_node(head_node, node):
+def delete_node(head_node: HeroNode, node: HeroNode) -> None:
     """删除指定结点"""
     temp_node = head_node.next
     while temp_node is not None:
         if temp_node.no == node.no:
+            prev_node = temp_node.prev
+            if prev_node is None:
+                return
             # 将查找到的结点的上一个结点的下一个结点指针指向当前结点的下一个结点
-            temp_node.prev.next = temp_node.next
+            prev_node.next = temp_node.next
             # 最后一个结点的 next 指向空
             if temp_node.next is not None:
                 # 将查找到的结点的下一个结点的上一个结点指针指向当前指针的上一个结点
@@ -41,7 +43,7 @@ def delete_node(head_node, node):
         temp_node = temp_node.next
 
 
-def print_head_node_info(head_node):
+def print_head_node_info(head_node: HeroNode) -> None:
     """打印链表结点内容"""
     if not head_node.next:
         print("该链表没有节点")
@@ -49,13 +51,13 @@ def print_head_node_info(head_node):
     result = "["
     temp_node = head_node.next
     while temp_node is not None:
-        result += "{no:" + str(temp_node.no) + ", name:" + temp_node.name + ", nickname:" + temp_node.nickname + "}"
+        result += "{no:" + str(temp_node.no) + ", name:" + str(temp_node.name) + ", nickname:" + str(temp_node.nickname) + "}"
         temp_node = temp_node.next
     result += "]"
     print(result)
 
 
-def test_insert_at_tail():
+def test_insert_at_tail() -> None:
     # 创建 head 结点，head 结点不包含数据
     head_node = HeroNode()
     # 创建第一个结点
@@ -73,7 +75,7 @@ def test_insert_at_tail():
     print_head_node_info(head_node)
 
 
-def test_delete_node():
+def test_delete_node() -> None:
     # 创建结点
     head_node = HeroNode()
     hero_node1 = HeroNode(1, "宋江", "呼保义")
@@ -104,7 +106,7 @@ def test_delete_node():
     print_head_node_info(head_node)
 
 
-def main():
+def main() -> None:
     # test_insert_at_tail()
     # test_delete_node()
     pass

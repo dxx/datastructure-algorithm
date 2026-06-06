@@ -1,9 +1,9 @@
 class Node:
-    def __init__(self, name: str | None = None):
+    def __init__(self, name: str | None = None) -> None:
         self.name = name
         self.next: Node | None = None
 
-    def print_node_info(self):
+    def print_node_info(self) -> None:
         if not self.next:
             print("该链表没有节点")
             return
@@ -16,7 +16,7 @@ class Node:
         print(result)
 
 
-def get_node_length(head_node):
+def get_node_length(head_node: Node | None) -> int:
     """
     获取单链表有效的结点数
     1.遍历结点数
@@ -33,7 +33,7 @@ def get_node_length(head_node):
     return length
 
 
-def get_last_index_node(head_node, index):
+def get_last_index_node(head_node: Node | None, index: int) -> Node | None:
     """
     获取倒数第 n 个结点
 
@@ -59,6 +59,8 @@ def get_last_index_node(head_node, index):
             continue
         # 快慢指针同时走
         fast = fast.next
+        if slow is None:
+            return None
         slow = slow.next
     # index 超过了链表的长度
     if index > length:
@@ -66,7 +68,7 @@ def get_last_index_node(head_node, index):
     return slow
 
 
-def get_last_index_node2(head_node, index):
+def get_last_index_node2(head_node: Node | None, index: int) -> Node | None:
     """
     获取倒数第 n 个结点
 
@@ -89,7 +91,7 @@ def get_last_index_node2(head_node, index):
     return last_node
 
 
-def reverse_node(head_node):
+def reverse_node(head_node: Node | None) -> None:
     """
     单链表反转
     1.定义一个新的头结点 reverseHead
@@ -113,7 +115,7 @@ def reverse_node(head_node):
     head_node.next = reverse_head.next
 
 
-def main():
+def main() -> None:
     pass
 
 

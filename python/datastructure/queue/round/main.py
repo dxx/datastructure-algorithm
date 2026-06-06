@@ -17,13 +17,13 @@ MIN_VALUE = float("-inf")
 
 
 class IntQueue:
-    def __init__(self, size):
-        self.array = [None] * size  # 存放队列元素的数组
+    def __init__(self, size: int) -> None:
+        self.array: list[int | None] = [None] * size  # 存放队列元素的数组
         self.max_size = size  # 最大队列元素大小
         self.front = 0  # 队头指针
         self.rear = 0  # 队尾指针
 
-    def put(self, elem):
+    def put(self, elem: int) -> bool:
         """放入队列元素"""
         if self.is_full():
             print("queue is full")
@@ -34,7 +34,7 @@ class IntQueue:
         self.rear = (self.rear + 1) % self.max_size
         return True
 
-    def take(self):
+    def take(self) -> int | float | None:
         """取出队列元素"""
         if self.is_empty():
             print("queue is empty")
@@ -44,19 +44,19 @@ class IntQueue:
         self.front = (self.front + 1) % self.max_size
         return elem
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         # 队头指针等于队尾指针表示队列为空
         return self.front == self.rear
 
-    def is_full(self):
+    def is_full(self) -> bool:
         # 空出一个位置，判断是否等于队头指针
         # 队尾指针指向的位置不能存放队列元素，实际上会比 maxSize 指定的大小少一
         return (self.rear + 1) % self.max_size == self.front
 
-    def size(self):
+    def size(self) -> int:
         return (self.rear + self.max_size - self.front) % self.max_size
 
-    def show(self):
+    def show(self) -> None:
         result = "["
         temp_front = self.front
         for _ in range(self.size()):
@@ -66,7 +66,7 @@ class IntQueue:
         print(result)
 
 
-def main():
+def main() -> None:
     int_queue = IntQueue(5)
     int_queue.put(1)
     int_queue.put(2)

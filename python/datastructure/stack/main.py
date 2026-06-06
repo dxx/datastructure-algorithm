@@ -1,7 +1,7 @@
 from stack import Stack
 
 
-def main():
+def main() -> None:
     # 创建一个栈
     stack = Stack(3)
     # 入栈

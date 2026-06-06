@@ -4,18 +4,18 @@
 
 
 class Graph:
-    def __init__(self, num):
-        self.vertexes = [None] * num
+    def __init__(self, num: int) -> None:
+        self.vertexes: list[str | None] = [None] * num
         self.matrix = [[0] * num for _ in range(num)]
         self.num_of_vertex = 0
         self.num_of_edge = 0
 
-    def add_vertex(self, vertex):
+    def add_vertex(self, vertex: str) -> None:
         """添加顶点"""
         self.vertexes[self.num_of_vertex] = vertex
         self.num_of_vertex += 1
 
-    def add_edge(self, i1, i2, weight):
+    def add_edge(self, i1: int, i2: int, weight: int) -> None:
         """
         添加边
         i1: 第一个顶点下标
@@ -27,15 +27,15 @@ class Graph:
         self.matrix[i2][i1] = weight
         self.num_of_edge += 1
 
-    def get_num_of_vertex(self):
+    def get_num_of_vertex(self) -> int:
         """获取顶点数量"""
         return self.num_of_vertex
 
-    def get_num_of_edge(self):
+    def get_num_of_edge(self) -> int:
         """获取边的数量"""
         return self.num_of_edge
 
-    def dfs(self):
+    def dfs(self) -> None:
         """深度优先遍历"""
         is_visited = [False] * self.get_num_of_vertex()
         # 遍历所有的顶点，进行深度优先遍历
@@ -43,7 +43,7 @@ class Graph:
             if not is_visited[i]:
                 self.dfs_recursion(is_visited, i)
 
-    def dfs_recursion(self, is_visited, v):
+    def dfs_recursion(self, is_visited: list[bool], v: int) -> None:
         """
         递归遍历
         1.访问初始顶点 v，并标记顶点 v 为已访问
@@ -68,7 +68,7 @@ class Graph:
             # 查找顶点 v 的 w 邻接顶点的下一个邻接顶点
             w = self.get_next_vertex(v, w)
 
-    def bfs(self):
+    def bfs(self) -> None:
         """广度优先遍历"""
         is_visited = [False] * self.get_num_of_vertex()
         # 遍历所有的顶点，进行广度优先遍历
@@ -76,7 +76,7 @@ class Graph:
             if not is_visited[i]:
                 self.bfs2(is_visited, i)
 
-    def bfs2(self, is_visited, v):
+    def bfs2(self, is_visited: list[bool], v: int) -> None:
         """
         1.访问初始顶点 v 并标记顶点 v 为已访问。
         2.顶点 v 入队列。
@@ -90,7 +90,7 @@ class Graph:
         """
         print(self.vertexes[v])
 
-        queue = []
+        queue: list[int] = []
         # 标记已被访问
         is_visited[v] = True
         # 将顶点入队列
@@ -111,27 +111,27 @@ class Graph:
                 # 获取顶点 u 的继 w 邻接顶点后的下一个邻接顶点
                 w = self.get_next_vertex(u, w)
 
-    def get_first_vertex(self, i):
+    def get_first_vertex(self, i: int) -> int:
         """获取第一个邻接顶点下标"""
         for j in range(self.get_num_of_vertex()):
             if self.matrix[i][j] > 0:
                 return j
         return -1
 
-    def get_next_vertex(self, i1, i2):
+    def get_next_vertex(self, i1: int, i2: int) -> int:
         """获取下一个邻接顶点下标"""
         for j in range(i2 + 1, self.get_num_of_vertex()):
             if self.matrix[i1][j] > 0:
                 return j
         return -1
 
-    def show_edges(self):
+    def show_edges(self) -> None:
         """显示邻接矩阵"""
         for row in self.matrix:
             print("[" + "".join(f" {value} " for value in row) + "]")
 
 
-def main():
+def main() -> None:
     vertexes = ["A", "B", "C", "D", "E"]
     graph = Graph(5)
 

@@ -14,13 +14,13 @@
 
 
 class Node:
-    def __init__(self, value):
+    def __init__(self, value: int) -> None:
         self.value = value
-        self.left = None
-        self.right = None
+        self.left: Node | None = None
+        self.right: Node | None = None
 
 
-def create_huffman_tree(nums):
+def create_huffman_tree(nums: list[int]) -> Node | None:
     if not nums:
         return None
     nodes = []
@@ -46,7 +46,7 @@ def create_huffman_tree(nums):
     return nodes[0]
 
 
-def pre_order(node):
+def pre_order(node: Node | None) -> None:
     if node is None:
         return
     print(node.value)
@@ -54,7 +54,7 @@ def pre_order(node):
     pre_order(node.right)
 
 
-def main():
+def main() -> None:
     nums = [1, 7, 3, 8, 16]
     root = create_huffman_tree(nums)
     pre_order(root)

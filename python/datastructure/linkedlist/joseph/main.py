@@ -7,14 +7,14 @@
 
 
 class Person:
-    def __init__(self, no):
+    def __init__(self, no: int) -> None:
         self.no = no
         self.prev: Person | None = None
         self.next: Person | None = None
 
 
 class PersonLinkedList:
-    def __init__(self, count):
+    def __init__(self, count: int) -> None:
         if count <= 0:
             print("链表至少需要一个元素")
             self.first = None
@@ -51,7 +51,7 @@ class PersonLinkedList:
 
             prev = person
 
-    def show_persons(self):
+    def show_persons(self) -> None:
         if self.first is None:
             return
         current = self.first
@@ -63,7 +63,7 @@ class PersonLinkedList:
             if current == self.first:
                 break
 
-    def count(self, start, num):
+    def count(self, start: int, num: int) -> None:
         if start < 1 or start > self.length:
             print("start 不能小于 1 或者不能大于 " + str(self.length))
             return
@@ -103,7 +103,7 @@ class PersonLinkedList:
         print("最后留下人的编号: " + str(current.no))
 
 
-def main():
+def main() -> None:
     person_linked_list = PersonLinkedList(5)
     person_linked_list.show_persons()
 

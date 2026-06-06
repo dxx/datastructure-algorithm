@@ -26,7 +26,7 @@ from pathlib import Path
 SPARSE_ARRAY_FILE_NAME = Path(__file__).with_name("sparse.data")
 
 
-def to_sparse_array(array):
+def to_sparse_array(array: list[list[int]]) -> list[list[int]]:
     """二维数组转稀疏数组"""
     # 统计非 0 的数量
     count = 0
@@ -47,7 +47,7 @@ def to_sparse_array(array):
     return sparse_array
 
 
-def to_array(sparse_array):
+def to_array(sparse_array: list[list[int]]) -> list[list[int]]:
     """稀疏数组转二维数组"""
     row = sparse_array[0][0]
     col = sparse_array[0][1]
@@ -62,7 +62,7 @@ def to_array(sparse_array):
     return array
 
 
-def storage_sparse_array(sparse_array):
+def storage_sparse_array(sparse_array: list[list[int]]) -> None:
     """存储稀疏数组"""
     data = ""
     # 存储矩阵格式
@@ -73,7 +73,7 @@ def storage_sparse_array(sparse_array):
     SPARSE_ARRAY_FILE_NAME.write_text(data, encoding="utf-8")
 
 
-def read_sparse_array():
+def read_sparse_array() -> list[list[int]]:
     """读取稀疏数组"""
     file_lines = SPARSE_ARRAY_FILE_NAME.read_text(encoding="utf-8").split("\n")
     # 读取第一行
@@ -97,7 +97,7 @@ def read_sparse_array():
     return sparse_array
 
 
-def print_array(array):
+def print_array(array: list[list[int]]) -> None:
     result = ""
     for row in array:
         for value in row:
@@ -106,7 +106,7 @@ def print_array(array):
     print(result)
 
 
-def main():
+def main() -> None:
     # 定义一个 5x5 的二维数组
     array = [[0, 0, 0, 0, 0] for _ in range(5)]
     # 初始化 3，6，1，5

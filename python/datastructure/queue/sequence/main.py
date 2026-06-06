@@ -16,13 +16,13 @@ MIN_VALUE = float("-inf")
 
 
 class IntQueue:
-    def __init__(self, size):
-        self.array = [None] * size  # 存放队列元素的数组
+    def __init__(self, size: int) -> None:
+        self.array: list[int | None] = [None] * size  # 存放队列元素的数组
         self.max_size = size  # 最大队列元素大小
         self.front = 0  # 队头指针
         self.rear = 0  # 队尾指针
 
-    def put(self, elem):
+    def put(self, elem: int) -> bool:
         """放入队列元素"""
         # 队尾指针不能超过最大队列元素大小
         if self.rear >= self.max_size:
@@ -33,7 +33,7 @@ class IntQueue:
         self.rear += 1
         return True
 
-    def take(self):
+    def take(self) -> int | float | None:
         """取出队列元素"""
         # 队头指针等于队尾指针表示队列为空
         if self.front == self.rear:
@@ -44,7 +44,7 @@ class IntQueue:
         self.front += 1
         return elem
 
-    def show(self):
+    def show(self) -> None:
         result = "["
         for i in range(self.front, self.rear):
             result += str(self.array[i]) + " "
@@ -52,7 +52,7 @@ class IntQueue:
         print(result)
 
 
-def main():
+def main() -> None:
     int_queue = IntQueue(3)
     int_queue.put(1)
     int_queue.put(2)

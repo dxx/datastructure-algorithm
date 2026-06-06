@@ -1,3 +1,6 @@
+from collections.abc import Sequence
+from typing import Callable
+
 from stack import Stack
 
 
@@ -7,7 +10,7 @@ from stack import Stack
 
 
 class Operation:
-    def __init__(self, opt, priority, opt_fun):
+    def __init__(self, opt: str, priority: int, opt_fun: Callable[[float, float], float]) -> None:
         self.opt = opt
         self.priority = priority
         self.opt_fun = opt_fun
@@ -26,13 +29,13 @@ class ReversePoland:
     """
     判断是否为数字
     """
-    def _is_num(self, text):
+    def _is_num(self, text: str) -> bool:
         return text.isdigit()
 
     """
     计算操作符的优先级
     """
-    def _priority(self, opt1, opt2):
+    def _priority(self, opt1: str, opt2: str) -> int | None:
         operation1 = operations.get(opt1)
         operation2 = operations.get(opt2)
         if not operation1 or not operation2:
@@ -43,7 +46,7 @@ class ReversePoland:
     """
     计算结果
     """
-    def _calculate_num(self, num1, num2, opt):
+    def _calculate_num(self, num1: float, num2: float, opt: str) -> float:
         operation = operations.get(opt)
         if operation:
             if operation.opt == "-" or operation.opt == "/":
@@ -60,7 +63,9 @@ class ReversePoland:
     2. 如果是数字直接入栈
     3. 如果是运算符，从栈中弹出两个数，计算表达式的值，将结果压入栈中
     """
-    def cal_suffix_expression(self, expr):
+    def cal_suffix_expression(self, expr: Sequence[str] | None) -> float | None:
+        if expr is None:
+            return None
         stack = Stack(len(expr))
         for text in expr:
             if self._is_num(text):
@@ -81,7 +86,7 @@ class ReversePoland:
     """
     将表达式转换成数组
     """
-    def expr_to_array(self, expr):
+    def expr_to_array(self, expr: str) -> list[str]:
         if not expr:
             return []
         expressions = []
@@ -100,13 +105,13 @@ class ReversePoland:
     """
     中缀表达式转后缀表达式
     """
-    def infix_to_suffix(self, infix):
+    def infix_to_suffix(self, infix: list[str]) -> list[str] | None:
         if not infix:
             return None
         # 初始化两个栈，一个运算符栈 stack1 和另一个储存中间结果的栈 stack2
         stack = Stack(len(infix))
         # 由于中间结果栈不需要弹出元素，可以使用集合来保存
-        suffixes = []
+        suffixes: list[str] = []
         # 循环表达式
         for text in infix:
             # 遇到数字时，将其放入 suffixes
@@ -120,7 +125,7 @@ class ReversePoland:
             if text == ")":
                 while not stack.is_empty() and stack.peek() != "(":
                     # 弹出 stack 中栈顶的元素，并添加到 suffixes
-                    suffixes.append(stack.pop())
+                    suffixes.append(str(stack.pop()))
                 # 弹出 (，消除一对 ( )
                 stack.pop()
                 continue
@@ -136,7 +141,7 @@ class ReversePoland:
                     if priority is None or priority > 0:
                         break
                     # 将栈顶的元素添加到 suffixes
-                    suffixes.append(stack.pop())
+                    suffixes.append(str(stack.pop()))
                 # 入栈
                 stack.push(text)
             else:
@@ -144,12 +149,12 @@ class ReversePoland:
                 return None
         # 将 stack 中剩余的运算符依次添加到 suffixes
         while not stack.is_empty():
-            suffixes.append(stack.pop())
+            suffixes.append(str(stack.pop()))
         # 因为这里用的是集合，它里面元素的顺序就是栈元素出栈后逆序排列的顺序
         return suffixes
 
 
-def main():
+def main() -> None:
     reverse_poland = ReversePoland()
     expr = "3 5 3 * + 2 -"
     # 假设数和数或符号之间有空格

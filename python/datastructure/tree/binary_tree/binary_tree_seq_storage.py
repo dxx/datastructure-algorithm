@@ -15,13 +15,13 @@ n 表示二叉树中第几个节点，对应该节点在数组中的位置
 
 
 class SeqBinaryTree:
-    def __init__(self, array):
+    def __init__(self, array: list[int]) -> None:
         self.array = array
 
-    def pre_order(self):
+    def pre_order(self) -> None:
         self._pre_order_from_index(0)
 
-    def _pre_order_from_index(self, index):
+    def _pre_order_from_index(self, index: int) -> None:
         if not self.array:
             return
         length = len(self.array)
@@ -39,7 +39,7 @@ class SeqBinaryTree:
         self._pre_order_from_index(right_index)
 
 
-def main():
+def main() -> None:
     nos = [1, 2, 3, 4, 5, 6, 7]
     seq_binary_tree = SeqBinaryTree(nos)
 

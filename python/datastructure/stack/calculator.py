@@ -1,3 +1,5 @@
+from typing import Callable
+
 from stack import Stack
 
 
@@ -7,7 +9,7 @@ from stack import Stack
 
 
 class Operation:
-    def __init__(self, opt, priority, opt_fun):
+    def __init__(self, opt: str, priority: int, opt_fun: Callable[[float, float], float]) -> None:
         self.opt = opt
         self.priority = priority
         self.opt_fun = opt_fun
@@ -23,26 +25,26 @@ operations = {
 
 
 class Calculator:
-    def __init__(self):
+    def __init__(self) -> None:
         self.num_stack = Stack(10)
         self.operation_stack = Stack(10)
 
     """
     判断是否是操作符号
     """
-    def _is_operation(self, opt):
+    def _is_operation(self, opt: str) -> bool:
         return opt in operations
 
     """
     判断是否为数字
     """
-    def _is_num(self, text):
+    def _is_num(self, text: str) -> bool:
         return text.isdigit()
 
     """
     计算操作符的优先级
     """
-    def _priority(self, opt1, opt2):
+    def _priority(self, opt1: str, opt2: str) -> int | None:
         operation1 = operations.get(opt1)
         operation2 = operations.get(opt2)
         if not operation1 or not operation2:
@@ -53,7 +55,7 @@ class Calculator:
     """
     计算结果
     """
-    def _calculate_num(self, num1, num2, opt):
+    def _calculate_num(self, num1: float, num2: float, opt: str) -> float:
         operation = operations.get(opt)
         if operation:
             if operation.opt == "-" or operation.opt == "/":
@@ -64,7 +66,7 @@ class Calculator:
             return operation.opt_fun(num1, num2)
         return 0
 
-    def _calculate_num_from_stack(self):
+    def _calculate_num_from_stack(self) -> float:
         # 从数栈中弹出两个数，从符号栈中弹出一个符号
         num_str1 = self.num_stack.pop()
         num_str2 = self.num_stack.pop()
@@ -75,7 +77,7 @@ class Calculator:
     """
     计算表达式的值
     """
-    def calculate(self, expression):
+    def calculate(self, expression: str) -> None:
         if not expression:
             return
         index = 0
@@ -124,7 +126,7 @@ class Calculator:
         print("表达式执行结果:" + expression + "=" + str(result))
 
 
-def main():
+def main() -> None:
     calculator = Calculator()
 
     calculator.calculate("3+5*3-6")

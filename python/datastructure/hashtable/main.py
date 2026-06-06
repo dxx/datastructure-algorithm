@@ -8,7 +8,7 @@
 class Employee:
     """员工"""
 
-    def __init__(self, emp_id, name):
+    def __init__(self, emp_id: int, name: str) -> None:
         self.id = emp_id
         self.name = name
 
@@ -16,7 +16,7 @@ class Employee:
 class LinkNode:
     """单链表"""
 
-    def __init__(self, employee: Employee, next_node: "LinkNode | None" = None):
+    def __init__(self, employee: Employee, next_node: "LinkNode | None" = None) -> None:
         self.employee = employee
         self.next = next_node
 
@@ -24,10 +24,10 @@ class LinkNode:
 class Hashtable:
     """哈希表结，包含一个 LinkNode 数组"""
 
-    def __init__(self, length):
+    def __init__(self, length: int) -> None:
         self.link_array: list[LinkNode | None] = [None] * length
 
-    def add(self, employee):
+    def add(self, employee: Employee) -> None:
         """添加员工的方法，按照 id 升序插入"""
         link_node = LinkNode(employee)
         # 计算下标
@@ -63,13 +63,13 @@ class Hashtable:
         # 将 linkNode 插入到 tempNode 后面
         temp_node.next = link_node
 
-    def update(self, employee):
+    def update(self, employee: Employee) -> None:
         """修改员工的方法"""
         emp = self.get_employee_by_id(employee.id)
         if emp is not None:
             emp.name = employee.name
 
-    def delete(self, emp_id):
+    def delete(self, emp_id: int) -> None:
         """删除员工的方法"""
         # 计算下标
         index = emp_id % len(self.link_array)
@@ -91,7 +91,7 @@ class Hashtable:
                 return
             temp_node = temp_node.next
 
-    def get_employee_by_id(self, emp_id):
+    def get_employee_by_id(self, emp_id: int) -> Employee | None:
         """通过 id 查找员工"""
         # 计算下标
         index = emp_id % len(self.link_array)
@@ -107,7 +107,7 @@ class Hashtable:
             temp_node = temp_node.next
         return None
 
-    def list(self):
+    def list(self) -> None:
         """显示哈希表内容的方法"""
         for i, head_node in enumerate(self.link_array):
             employee_info = ""
@@ -121,7 +121,7 @@ class Hashtable:
             print("linkArray[" + str(i) + "]=" + employee_info)
 
 
-def test_add_employee():
+def test_add_employee() -> None:
     # 创建一个哈希表
     hashtable = Hashtable(5)
     # 创建员工
@@ -138,7 +138,7 @@ def test_add_employee():
     hashtable.list()
 
 
-def test_update_employee():
+def test_update_employee() -> None:
     hashtable = Hashtable(5)
     employee1 = Employee(1, "张三")
     employee2 = Employee(2, "李四")
@@ -159,7 +159,7 @@ def test_update_employee():
     hashtable.list()
 
 
-def test_delete_employee():
+def test_delete_employee() -> None:
     hashtable = Hashtable(5)
     employee1 = Employee(2, "李四")
     employee2 = Employee(5, "孙七")
@@ -176,7 +176,7 @@ def test_delete_employee():
     hashtable.list()
 
 
-def main():
+def main() -> None:
     # test_add_employee()
     # test_update_employee()
     # test_delete_employee()

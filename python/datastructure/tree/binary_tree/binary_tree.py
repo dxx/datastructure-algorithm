@@ -7,13 +7,13 @@
 
 
 class BinaryTreeNode:
-    def __init__(self, no):
+    def __init__(self, no: int) -> None:
         self.no = no
         self.left: BinaryTreeNode | None = None
         self.right: BinaryTreeNode | None = None
 
 
-def pre_order(node):
+def pre_order(node: BinaryTreeNode | None) -> None:
     """前序遍历"""
     if not node:
         return
@@ -25,7 +25,7 @@ def pre_order(node):
     pre_order(node.right)
 
 
-def infix_order(node):
+def infix_order(node: BinaryTreeNode | None) -> None:
     """中序遍历"""
     if not node:
         return
@@ -37,7 +37,7 @@ def infix_order(node):
     infix_order(node.right)
 
 
-def post_order(node):
+def post_order(node: BinaryTreeNode | None) -> None:
     """后序遍历"""
     if not node:
         return
@@ -49,7 +49,7 @@ def post_order(node):
     print(node.no)
 
 
-def pre_order_search(node, no):
+def pre_order_search(node: BinaryTreeNode | None, no: int) -> BinaryTreeNode | None:
     """前序查找"""
     if not node:
         return None
@@ -65,7 +65,7 @@ def pre_order_search(node, no):
     return pre_order_search(node.right, no)
 
 
-def infix_order_search(node, no):
+def infix_order_search(node: BinaryTreeNode | None, no: int) -> BinaryTreeNode | None:
     """中序查找"""
     if not node:
         return None
@@ -81,7 +81,7 @@ def infix_order_search(node, no):
     return infix_order_search(node.right, no)
 
 
-def post_order_search(node, no):
+def post_order_search(node: BinaryTreeNode | None, no: int) -> BinaryTreeNode | None:
     """后序查找"""
     if not node:
         return None
@@ -101,7 +101,7 @@ def post_order_search(node, no):
     return return_node
 
 
-def init_node():
+def init_node() -> BinaryTreeNode:
     root = BinaryTreeNode(1)
     node2 = BinaryTreeNode(2)
     node3 = BinaryTreeNode(3)
@@ -117,7 +117,7 @@ def init_node():
     return root
 
 
-def test_order():
+def test_order() -> None:
     root = init_node()
 
     print("======前序遍历======")
@@ -130,7 +130,7 @@ def test_order():
     post_order(root)
 
 
-def test_search():
+def test_search() -> None:
     root = init_node()
 
     no = 4
@@ -156,7 +156,7 @@ def test_search():
         print("查找结果: no=" + str(node.no))
 
 
-def main():
+def main() -> None:
     # test_order()
     # test_search()
     pass

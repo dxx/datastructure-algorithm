@@ -8,7 +8,7 @@
 
 
 class ThreadedBinaryTreeNode:
-    def __init__(self, no):
+    def __init__(self, no: int) -> None:
         self.no = no  # 编号
         self.left: ThreadedBinaryTreeNode | None = None  # 左子节点
         self.right: ThreadedBinaryTreeNode | None = None  # 右子节点
@@ -17,7 +17,7 @@ class ThreadedBinaryTreeNode:
         self.left_tag = 0  # 左节点标记。如果 leftTag = 0, left 表示左子节点, 如果为 leftTag = 1, left 表示前驱节点
         self.right_tag = 0  # 右节点标记。如果 rightTag = 0, right 表示右子节点, 如果为 rightTag = 1, right 表示后继节点
 
-    def search(self, no):
+    def search(self, no: int) -> "ThreadedBinaryTreeNode | None":
         """从最左边至最右边查找指定节点（测试使用）"""
         left_child_node = self
         while left_child_node.left is not None:
@@ -30,10 +30,10 @@ class ThreadedBinaryTreeNode:
         return left_child_node
 
 
-previous = None  # 记录遍历时的上一个结点
+previous: ThreadedBinaryTreeNode | None = None  # 记录遍历时的上一个结点
 
 
-def infix_thread_tree(node):
+def infix_thread_tree(node: ThreadedBinaryTreeNode | None) -> None:
     """中序线索化二叉树"""
     global previous
     if not node:
@@ -59,7 +59,7 @@ def infix_thread_tree(node):
     infix_thread_tree(node.right)
 
 
-def infix_order_threaded_tree(node):
+def infix_order_threaded_tree(node: ThreadedBinaryTreeNode | None) -> None:
     """中序遍历线索化二叉树"""
     current_node = node
     while current_node is not None:
@@ -80,7 +80,7 @@ def infix_order_threaded_tree(node):
         current_node = current_node.right
 
 
-def init_threaded_node():
+def init_threaded_node() -> ThreadedBinaryTreeNode:
     root = ThreadedBinaryTreeNode(1)
     node2 = ThreadedBinaryTreeNode(2)
     node3 = ThreadedBinaryTreeNode(6)
@@ -98,7 +98,7 @@ def init_threaded_node():
     return root
 
 
-def test_infix_threaded_tree():
+def test_infix_threaded_tree() -> None:
     global previous
     previous = None
     root = init_threaded_node()
@@ -114,7 +114,7 @@ def test_infix_threaded_tree():
     print("no=" + str(node.no) + "的后继节点为" + str(node.right.no))
 
 
-def test_infix_order_threaded_tree():
+def test_infix_order_threaded_tree() -> None:
     global previous
     previous = None
     root = init_threaded_node()
@@ -124,7 +124,7 @@ def test_infix_order_threaded_tree():
     infix_order_threaded_tree(root)
 
 
-def main():
+def main() -> None:
     # test_infix_threaded_tree()
     # test_infix_order_threaded_tree()
     pass

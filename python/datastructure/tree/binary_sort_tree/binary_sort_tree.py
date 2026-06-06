@@ -7,17 +7,17 @@
 
 
 class BinaryTreeNode:
-    def __init__(self, no):
+    def __init__(self, no: int) -> None:
         self.no = no
-        self.left = None
-        self.right = None
+        self.left: BinaryTreeNode | None = None
+        self.right: BinaryTreeNode | None = None
 
 
 class BinarySortTree:
-    def __init__(self):
-        self.root = None  # 树的根节点
+    def __init__(self) -> None:
+        self.root: BinaryTreeNode | None = None  # 树的根节点
 
-    def add(self, node):
+    def add(self, node: BinaryTreeNode | None) -> None:
         """添加结点"""
         if node is None:
             return
@@ -27,7 +27,7 @@ class BinarySortTree:
             return
         self._add(self.root, node)
 
-    def _add(self, root, node):
+    def _add(self, root: BinaryTreeNode, node: BinaryTreeNode) -> None:
         # 要添加的节点小于根节点
         if node.no < root.no:
             # 左子节点为 null，直接添加为左子节点
@@ -44,15 +44,15 @@ class BinarySortTree:
             # 右递归
             self._add(root.right, node)
 
-    def search(self, no):
+    def search(self, no: int) -> tuple[BinaryTreeNode | None, BinaryTreeNode] | None:
         if self.root is None:
             return None
         # 查找的节点就是根节点
         if self.root.no == no:
-            return [None, self.root]
+            return (None, self.root)
         return self._recursion_search(self.root, no)
 
-    def _recursion_search(self, node, no):
+    def _recursion_search(self, node: BinaryTreeNode | None, no: int) -> tuple[BinaryTreeNode | None, BinaryTreeNode] | None:
         """
         递归查找指定节点
         返回查找到的父节点和查找到的节点
@@ -60,15 +60,15 @@ class BinarySortTree:
         if node is None:
             return None
         if node.left is not None and node.left.no == no:
-            return [node, node.left]
+            return (node, node.left)
         if node.right is not None and node.right.no == no:
-            return [node, node.right]
+            return (node, node.right)
         # 判断是往左边还是往右边查找
         if no < node.no:
             return self._recursion_search(node.left, no)
         return self._recursion_search(node.right, no)
 
-    def delete(self, no):
+    def delete(self, no: int) -> None:
         """
         删除节点
         1.节点是叶子节点直接删除
@@ -126,10 +126,10 @@ class BinarySortTree:
             if parent_node.right is not None and parent_node.right.no == no:
                 parent_node.right = replace_node
 
-    def infix_order(self):
+    def infix_order(self) -> None:
         self._infix_order(self.root)
 
-    def _infix_order(self, node):
+    def _infix_order(self, node: BinaryTreeNode | None) -> None:
         if node is None:
             return
         self._infix_order(node.left)
@@ -137,7 +137,7 @@ class BinarySortTree:
         self._infix_order(node.right)
 
 
-def main():
+def main() -> None:
     nos = [8, 5, 10, 3, 6, 9, 12, 2]
     binary_sort_tree = BinarySortTree()
     for no in nos:

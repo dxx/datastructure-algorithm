@@ -1,7 +1,7 @@
 from single_node import Node, get_last_index_node, get_node_length, reverse_node
 
 
-def test_get_length():
+def test_get_length() -> None:
     head_node = Node()
     node1 = Node("node1")
     node2 = Node("node2")
@@ -15,7 +15,7 @@ def test_get_length():
     print("单链表结点个数为: " + str(length))
 
 
-def test_get_last_index_node():
+def test_get_last_index_node() -> None:
     head_node = Node()
     node1 = Node("node1")
     node2 = Node("node2")
@@ -29,7 +29,7 @@ def test_get_last_index_node():
         print("单链表结点中倒数第 " + str(index) + " 个结点为: " + str(last_node.name))
 
 
-def test_reverse_node():
+def test_reverse_node() -> None:
     head_node = Node()
     node1 = Node("node1")
     node2 = Node("node2")
@@ -47,7 +47,7 @@ def test_reverse_node():
     head_node.print_node_info()
 
 
-def main():
+def main() -> None:
     # test_get_length()
     # test_get_last_index_node()
     # test_reverse_node()

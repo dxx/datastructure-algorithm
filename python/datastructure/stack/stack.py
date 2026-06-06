@@ -9,15 +9,15 @@
 
 
 class Stack:
-    def __init__(self, size):
-        self.array = [None] * size  # 存放栈元素
+    def __init__(self, size: int) -> None:
+        self.array: list[object | None] = [None] * size  # 存放栈元素
         self.max_size = size  # 最大栈元素大小
         self.top = -1  # 栈顶
 
     """
     入栈
     """
-    def push(self, elem):
+    def push(self, elem: object) -> bool:
         # 判栈是否已满
         if self.top == self.max_size - 1:
             print("stack is full")
@@ -30,7 +30,7 @@ class Stack:
     """
     出栈
     """
-    def pop(self):
+    def pop(self) -> object:
         if self.top == -1:
             print("stack is empty")
             return ""
@@ -42,18 +42,18 @@ class Stack:
     """
     判断栈是否为空
     """
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.top == -1
 
     """
     窥视栈顶元素
     """
-    def peek(self):
+    def peek(self) -> object | None:
         if self.is_empty():
             return None
         return self.array[self.top]
 
-    def show(self):
+    def show(self) -> None:
         text = "["
         for i in range(self.top, -1, -1):
             text += str(self.array[i]) + " "
@@ -61,7 +61,7 @@ class Stack:
         print(text)
 
 
-def main():
+def main() -> None:
     # 创建一个栈
     stack = Stack(3)
     stack.push("one")

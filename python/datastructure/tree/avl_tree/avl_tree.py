@@ -7,17 +7,17 @@ AVL 树
 
 
 class BinaryTreeNode:
-    def __init__(self, no):
+    def __init__(self, no: int) -> None:
         self.no = no
         self.left: BinaryTreeNode | None = None
         self.right: BinaryTreeNode | None = None
 
 
 class AVLTree:
-    def __init__(self):
-        self.root = None  # 树的根节点
+    def __init__(self) -> None:
+        self.root: BinaryTreeNode | None = None  # 树的根节点
 
-    def add(self, node):
+    def add(self, node: BinaryTreeNode | None) -> None:
         """添加结点"""
         if node is None:
             return
@@ -49,25 +49,25 @@ class AVLTree:
 
             self._right_rotate(self.root)
 
-    def _height(self, node):
+    def _height(self, node: BinaryTreeNode | None) -> int:
         """计算节点的高度"""
         if not node:
             return 0
         return max(self._height(node.left), self._height(node.right)) + 1
 
-    def _left_height(self):
+    def _left_height(self) -> int:
         """左子树高度"""
         if self.root is None:
             return 0
         return self._height(self.root.left)
 
-    def _right_height(self):
+    def _right_height(self) -> int:
         """右子树高度"""
         if self.root is None:
             return 0
         return self._height(self.root.right)
 
-    def _left_rotate(self, node):
+    def _left_rotate(self, node: BinaryTreeNode | None) -> None:
         """左旋转"""
         if not node:
             return
@@ -84,7 +84,7 @@ class AVLTree:
         # 让当前节点的左子节点指向新创建的节点
         node.left = new_node
 
-    def _right_rotate(self, node):
+    def _right_rotate(self, node: BinaryTreeNode | None) -> None:
         """右旋转"""
         if not node:
             return
@@ -101,7 +101,7 @@ class AVLTree:
         # 让当前节点的右子节点指向新创建的节点
         node.right = new_node
 
-    def _add(self, root, node):
+    def _add(self, root: BinaryTreeNode, node: BinaryTreeNode) -> None:
         # 要添加的节点小于根节点
         if node.no < root.no:
             # 左子节点为 null，直接添加为左子节点
@@ -118,10 +118,10 @@ class AVLTree:
             # 右递归
             self._add(root.right, node)
 
-    def infix_order(self):
+    def infix_order(self) -> None:
         self._infix_order(self.root)
 
-    def _infix_order(self, node):
+    def _infix_order(self, node: BinaryTreeNode | None) -> None:
         if node is None:
             return
         self._infix_order(node.left)
@@ -129,7 +129,7 @@ class AVLTree:
         self._infix_order(node.right)
 
 
-def test_left_rotate():
+def test_left_rotate() -> None:
     nos = [3, 2, 5, 4, 6, 7]
     avl_tree = AVLTree()
     for no in nos:
@@ -146,7 +146,7 @@ def test_left_rotate():
     print("右子树的高度为: ", avl_tree._right_height())
 
 
-def test_right_rotate():
+def test_right_rotate() -> None:
     nos = [6, 4, 7, 3, 5, 2]
     avl_tree = AVLTree()
     for no in nos:
@@ -163,7 +163,7 @@ def test_right_rotate():
     print("右子树的高度为: ", avl_tree._right_height())
 
 
-def test_double_rotate():
+def test_double_rotate() -> None:
     nos = [6, 3, 7, 2, 4, 5]
     avl_tree = AVLTree()
     for no in nos:
@@ -180,7 +180,7 @@ def test_double_rotate():
     print("右子树的高度为: ", avl_tree._right_height())
 
 
-def main():
+def main() -> None:
     # test_left_rotate()
     # test_right_rotate()
     # test_double_rotate()

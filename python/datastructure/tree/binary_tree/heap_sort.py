@@ -10,7 +10,7 @@
 """
 
 
-def heap_sort(nums):
+def heap_sort(nums: list[int]) -> None:
     if not nums:
         return
     # 调整所有叶子节点, 构造成一个大顶堆
@@ -24,7 +24,7 @@ def heap_sort(nums):
         adjust_heap(nums, 0, i)
 
 
-def adjust_heap(nums, i, count):
+def adjust_heap(nums: list[int], i: int, count: int) -> None:
     """
     调整堆, 使其成为大顶堆
     i: 当前需要调整的节点下标
@@ -47,7 +47,7 @@ def adjust_heap(nums, i, count):
     nums[i] = temp
 
 
-def main():
+def main() -> None:
     nums = [1, 7, 5, 2, 8]
 
     print("排序前: " + str(nums))
