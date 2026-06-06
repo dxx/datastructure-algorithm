@@ -1,0 +1,42 @@
+"""
+暴力匹配
+如果当前字符匹配成功（即 S[i] == P[j]），则 i++，j ++，继续匹配下一个字符
+如果失配（即 S[i] != P[j]），令i = i - (j - 1)，j = 0。相当于每次匹配失败时，i 回溯，j 被置为 0
+"""
+
+
+def violence_search(string: str, match: str) -> int:
+    str_length = len(string)
+    match_length = len(match)
+
+    if str_length < match_length:
+        return -1
+
+    i = 0
+    j = 0
+    # 当字符串长度并且子字符串长度超出范围
+    while i < str_length and j < match_length:
+        # 相等继续匹配
+        if string[i] == match[j]:
+            i += 1
+            j += 1
+        else:
+            # i 重置到上一次第一个相等字符的位置 + 1
+            i = i - (j - 1)
+            # j 重置为 0
+            j = 0
+
+    if j == match_length:  # 匹配到，然后返回索引
+        return i - j
+    return -1
+
+
+def main() -> None:
+    string = "CBC DCABCABABCABD BBCCA"
+    match = "ABCABD"
+    index = violence_search(string, match)
+    print(match + " 在 " + string + " 中的位置为 " + str(index))
+
+
+if __name__ == "__main__":
+    main()

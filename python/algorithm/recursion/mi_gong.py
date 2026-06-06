@@ -1,0 +1,95 @@
+"""
+迷宫回溯
+假设一个二维数组中 0 表示通道，1 表示为墙壁，求一个到终点的最短路径
+思路分析
+使用递归算法，判断小球是否能够继续往下走，如果可以走就继续，不可用走就退回寻找其它通道。
+需要指定一个走路策略即走路的方向是从下 -> 右 -> 左 -> 上，还是从上 -> 右 -> 左 -> 下。
+测试每一种走路策略，对比找出最少的步骤就是最短路径。
+"""
+
+X = 6
+Y = 6
+
+
+def walk(mi_gong_map: list[list[int]], i: int, j: int) -> bool:
+    """
+    走路函数
+    如果小球走到 6,6 的位置，表示已经走完
+    假设 0-未走过，1-墙，2-走过，3-走不通
+    规定策略：下 -> 右 -> 上 -> 左
+    如果走不通再回溯
+    """
+    # 到达终点
+    if mi_gong_map[X][Y] == 2:
+        return True
+    if mi_gong_map[i][j] == 0:
+        # 设置为已走过
+        mi_gong_map[i][j] = 2
+        if walk(mi_gong_map, i + 1, j):  # 向下走
+            return True
+        if walk(mi_gong_map, i, j + 1):  # 向右走
+            return True
+        if walk(mi_gong_map, i - 1, j):  # 向上走
+            return True
+        if walk(mi_gong_map, i, j - 1):  # 向左走
+            return True
+        # 走过但路不通
+        mi_gong_map[i][j] = 3
+    # 可能为 1, 2 , 3
+    return False
+
+
+def walk2(mi_gong_map: list[list[int]], i: int, j: int) -> bool:
+    # 规定策略：上 -> 右 -> 下 -> 左
+    # 到达终点
+    if mi_gong_map[X][Y] == 2:
+        return True
+    if mi_gong_map[i][j] == 0:
+        # 设置为已走过
+        mi_gong_map[i][j] = 2
+        if walk2(mi_gong_map, i - 1, j):  # 向上走
+            return True
+        if walk2(mi_gong_map, i, j + 1):  # 向右走
+            return True
+        if walk2(mi_gong_map, i + 1, j):  # 向下走
+            return True
+        if walk2(mi_gong_map, i, j - 1):  # 向左走
+            return True
+        # 走过但路不通
+        mi_gong_map[i][j] = 3
+    # 可能为 1, 2 , 3
+    return False
+
+
+def print_map(mi_gong_map: list[list[int]]) -> None:
+    result = ""
+    for row in mi_gong_map:
+        for value in row:
+            result += " " + str(value)
+        result += "\n"
+    print(result)
+
+
+def main() -> None:
+    # 初始化地图，0 表示通道，1 表示墙
+    mi_gong_map = [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1],
+    ]
+
+    print("探路之前:")
+    print_map(mi_gong_map)
+    # 开始探路, 起点为1,1
+    walk(mi_gong_map, 1, 1)
+    print("探路之后:")
+    print_map(mi_gong_map)
+
+
+if __name__ == "__main__":
+    main()
