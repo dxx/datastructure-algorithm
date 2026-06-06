@@ -1,6 +1,6 @@
 ## 动态规划
 
-> 各种语言实现代码：[Go](./golang/algorithm/dynamicprogramming)   [Java](./java/algorithm/src/com/dxx/dynamicprogramming)   [JavaScript](./javascript/algorithm/dynamicprogramming)   [Python](./python/algorithm/dynamicprogramming)   [Rust](./rust/algorithm/src/dynamic_programming)
+> 各种语言实现代码：[Go](./golang/algorithm/dynamicprogramming)   [Java](./java/algorithm/src/com/dxx/dynamicprogramming)   [JavaScript](./javascript/algorithm/dynamicprogramming)   [TypeScript](./typescript/algorithm/dynamicprogramming)   [Python](./python/algorithm/dynamicprogramming)   [Rust](./rust/algorithm/src/dynamic_programming)
 >
 > 默认使用 **Go** 语言实现。
 

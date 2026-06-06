@@ -1,6 +1,6 @@
 ## 普里姆(Prim)算法
 
->各种语言实现代码：[Go](./golang/algorithm/prim)   [Java](./java/algorithm/src/com/dxx/prim)   [JavaScript](./javascript/algorithm/prim)   [Python](./python/algorithm/prim)   [Rust](./rust/algorithm/src/prim)
+>各种语言实现代码：[Go](./golang/algorithm/prim)   [Java](./java/algorithm/src/com/dxx/prim)   [JavaScript](./javascript/algorithm/prim)   [TypeScript](./typescript/algorithm/prim)   [Python](./python/algorithm/prim)   [Rust](./rust/algorithm/src/prim)
 >
 >默认使用 **Go** 语言实现。
 
