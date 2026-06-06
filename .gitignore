@@ -11,6 +11,10 @@ target
 
 Cargo.lock
 
+# Python-generated files
+__pycache__/
+*.py[oc]
+
 # Mac
 
 .DS_Store
