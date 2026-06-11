@@ -101,14 +101,3 @@ class PersonLinkedList:
             print("出队人的编号: " + str(current.no))
             current = next_node
         print("最后留下人的编号: " + str(current.no))
-
-
-def main() -> None:
-    person_linked_list = PersonLinkedList(5)
-    person_linked_list.show_persons()
-
-    person_linked_list.count(1, 3)
-
-
-if __name__ == "__main__":
-    main()

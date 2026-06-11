@@ -23,17 +23,3 @@ def binary_search(nums: list[int], start: int, end: int, find_val: int) -> int:
         return binary_search(nums, mid + 1, end, find_val)
     # 查找值和中间值相等，返回下标
     return mid
-
-
-def main() -> None:
-    value = 100
-    nums = [1, 8, 10, 89, 100, 100, 123]
-    index = binary_search(nums, 0, len(nums) - 1, value)
-    if index != -1:
-        print(f"找到 {value}, 下标为 {index}")
-    else:
-        print(f"未找到 {value}")
-
-
-if __name__ == "__main__":
-    main()

@@ -70,19 +70,3 @@ def find_max_value2(w: list[int], v: list[int], c: int) -> int:
             # 滑动数组优化空间复杂度
             value[j] = max(value[j], v[i] + value[j - w[i]])
     return value[c]
-
-
-def main() -> None:
-    # 物品重量(kg)
-    w = [1, 2, 1]
-    # 物品价值
-    v = [500, 5000, 3000]
-    # 背包容量
-    c = 3
-    # max_value = find_max_value(w, v, c)
-    max_value = find_max_value2(w, v, c)
-    print("最大价值总和为:", max_value)
-
-
-if __name__ == "__main__":
-    main()

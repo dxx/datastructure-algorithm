@@ -148,14 +148,3 @@ def test_delete_node() -> None:
     delete_node(head_node, hero_node4)
     print("删除 no 为 3,4 的结点后:")
     print_head_node_info(head_node)
-
-
-def main() -> None:
-    # test_insert_at_tail()
-    # test_sort_insert_by_no()
-    # test_delete_node()
-    pass
-
-
-if __name__ == "__main__":
-    main()

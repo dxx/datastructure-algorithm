@@ -52,13 +52,3 @@ def pre_order(node: Node | None) -> None:
     print(node.value)
     pre_order(node.left)
     pre_order(node.right)
-
-
-def main() -> None:
-    nums = [1, 7, 3, 8, 16]
-    root = create_huffman_tree(nums)
-    pre_order(root)
-
-
-if __name__ == "__main__":
-    main()

@@ -37,15 +37,3 @@ class SeqBinaryTree:
         self._pre_order_from_index(left_index)
         # 向右遍历
         self._pre_order_from_index(right_index)
-
-
-def main() -> None:
-    nos = [1, 2, 3, 4, 5, 6, 7]
-    seq_binary_tree = SeqBinaryTree(nos)
-
-    print("======前序遍历======")
-    seq_binary_tree.pre_order()
-
-
-if __name__ == "__main__":
-    main()

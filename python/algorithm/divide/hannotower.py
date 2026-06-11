@@ -21,11 +21,3 @@ def hannotower(num: int, a: str, b: str, c: str) -> None:
     hannotower(num - 1, a, c, b)
     print(f"第 {num} 个盘从 {a} 到 {c}")
     hannotower(num - 1, b, a, c)
-
-
-def main() -> None:
-    hannotower(3, "A", "B", "C")
-
-
-if __name__ == "__main__":
-    main()

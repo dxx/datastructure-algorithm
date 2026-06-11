@@ -62,24 +62,3 @@ class MinTree:
     def show_graph(self) -> None:
         for edges in self.graph.matrix:
             print("[ " + " ".join(str(edge) for edge in edges) + " ]")
-
-
-def main() -> None:
-    vertexes = ["A", "B", "C", "D", "E", "F", "G"]
-    edges = [
-        [MAX_VALUE, 5, 7, MAX_VALUE, MAX_VALUE, MAX_VALUE, 2],
-        [5, MAX_VALUE, MAX_VALUE, 9, MAX_VALUE, MAX_VALUE, 3],
-        [7, MAX_VALUE, MAX_VALUE, MAX_VALUE, 8, MAX_VALUE, MAX_VALUE],
-        [MAX_VALUE, 9, MAX_VALUE, MAX_VALUE, MAX_VALUE, 4, MAX_VALUE],
-        [MAX_VALUE, MAX_VALUE, 8, MAX_VALUE, MAX_VALUE, 5, 4],
-        [MAX_VALUE, MAX_VALUE, MAX_VALUE, 4, 5, MAX_VALUE, 6],
-        [2, 3, MAX_VALUE, MAX_VALUE, 4, 6, MAX_VALUE],
-    ]
-    min_tree = MinTree(vertexes, edges)
-    # min_tree.show_graph()
-    # 从 A 点开始
-    min_tree.prim(0)
-
-
-if __name__ == "__main__":
-    main()

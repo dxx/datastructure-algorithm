@@ -39,19 +39,3 @@ def swap(nums: list[int], i: int, j: int) -> None:
     temp = nums[i]
     nums[i] = nums[j]
     nums[j] = temp
-
-
-def main() -> None:
-    nums = [1, 5, 7, 3, 2, 4, 9, 6, 8]
-    print("交换前: " + str(nums))
-    bubble_sort(nums)
-    print("交换后: " + str(nums))
-
-    nums2 = [1, 5, 7, 3, 2, 4, 9, 6, 8]
-    print("优化前: " + str(nums2))
-    optimize_bubble_sort(nums2)
-    print("优化后: " + str(nums2))
-
-
-if __name__ == "__main__":
-    main()

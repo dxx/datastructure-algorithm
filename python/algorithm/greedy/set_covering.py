@@ -66,19 +66,3 @@ def delete_element(array: list[str], delete_val: str) -> list[str]:
             # 避免删除重复的数据
             return array
     return array
-
-
-def main() -> None:
-    broadcast_map = {
-        "B1": ["北京", "上海", "天津"],
-        "B2": ["广州", "北京", "深圳"],
-        "B3": ["成都", "上海", "杭州"],
-        "B4": ["上海", "天津"],
-        "B5": ["杭州", "大连"],
-    }
-    broadcasts = get_broadcast(broadcast_map)
-    print("最少选择的广播电台: " + ",".join(broadcasts))
-
-
-if __name__ == "__main__":
-    main()

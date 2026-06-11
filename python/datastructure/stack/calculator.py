@@ -124,15 +124,3 @@ class Calculator:
             self.num_stack.push(result)
         result = self.num_stack.pop()
         print("表达式执行结果:" + expression + "=" + str(result))
-
-
-def main() -> None:
-    calculator = Calculator()
-
-    calculator.calculate("3+5*3-6")
-    calculator.calculate("30+5*3-6")
-    calculator.calculate("130+5*3-6")
-
-
-if __name__ == "__main__":
-    main()

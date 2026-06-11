@@ -41,14 +41,3 @@ def radix_sort(nums: list[int] | None) -> None:
                     num_index += 1
                 order[order_index] = 0  # 重置当前桶下标
         n *= 10
-
-
-def main() -> None:
-    nums = [5, 1, 7, 13, 21, 32, 9, 66, 8, 20]
-    print("排序前: " + str(nums))
-    radix_sort(nums)
-    print("排序后: " + str(nums))
-
-
-if __name__ == "__main__":
-    main()

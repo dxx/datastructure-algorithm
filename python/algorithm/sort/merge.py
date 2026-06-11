@@ -56,14 +56,3 @@ def merge(nums: list[int], left: int, mid: int, right: int) -> None:
         nums[left] = temp[t]
         left += 1
         t += 1
-
-
-def main() -> None:
-    nums = [5, 0, 1, 7, 3, 2, 4, 9, 6, 8]
-    print("排序前: " + str(nums))
-    merge_sort(nums)
-    print("排序后: " + str(nums))
-
-
-if __name__ == "__main__":
-    main()

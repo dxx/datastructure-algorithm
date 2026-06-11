@@ -45,17 +45,3 @@ def adjust_heap(nums: list[int], i: int, count: int) -> None:
             break
         j = 2 * j + 1
     nums[i] = temp
-
-
-def main() -> None:
-    nums = [1, 7, 5, 2, 8]
-
-    print("排序前: " + str(nums))
-
-    heap_sort(nums)
-
-    print("排序后: " + str(nums))
-
-
-if __name__ == "__main__":
-    main()

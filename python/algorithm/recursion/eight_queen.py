@@ -37,12 +37,3 @@ class EightQueen:
             if self.positions[n] == self.positions[i] or abs(n - i) == abs(self.positions[n] - self.positions[i]):
                 return False
         return True
-
-
-def main() -> None:
-    eight_queen = EightQueen()
-    eight_queen.put_queen(0)
-
-
-if __name__ == "__main__":
-    main()

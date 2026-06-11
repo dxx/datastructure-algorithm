@@ -40,14 +40,3 @@ def get_next(match: str) -> list[int]:
             j += 1
         next_values[i] = j
     return next_values
-
-
-def main() -> None:
-    string = "CBC DCABCABABCABD BBCCA"
-    match = "ABCABD"
-    index = kmp_search(string, match)
-    print(match + " 在 " + string + " 中的位置为 " + str(index))
-
-
-if __name__ == "__main__":
-    main()

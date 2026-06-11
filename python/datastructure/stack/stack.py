@@ -59,16 +59,3 @@ class Stack:
             text += str(self.array[i]) + " "
         text += "]"
         print(text)
-
-
-def main() -> None:
-    # 创建一个栈
-    stack = Stack(3)
-    stack.push("one")
-    stack.push("two")
-    stack.push("three")
-    stack.show()
-
-
-if __name__ == "__main__":
-    main()

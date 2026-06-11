@@ -25,14 +25,3 @@ def insert_sort(nums: list[int] | None) -> None:
         if insert_index + 1 != i:
             # 插入
             nums[insert_index + 1] = insert_value
-
-
-def main() -> None:
-    nums = [5, 1, 7, 3, 2, 4, 9, 6, 8]
-    print("排序前: " + str(nums))
-    insert_sort(nums)
-    print("排序后: " + str(nums))
-
-
-if __name__ == "__main__":
-    main()

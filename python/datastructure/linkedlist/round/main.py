@@ -141,13 +141,3 @@ def test_delete_node() -> None:
     head_node = delete_node(head_node, person_node3)
     print("删除 no 为 1,3 的结点后:")
     print_round_node_info(head_node)
-
-
-def main() -> None:
-    # test_insert_node()
-    # test_delete_node()
-    pass
-
-
-if __name__ == "__main__":
-    main()

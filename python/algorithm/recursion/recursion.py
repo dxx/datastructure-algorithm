@@ -8,12 +8,3 @@ def factorial(n: int) -> int:
     if n > 0:
         return n * factorial(n - 1)
     return 1
-
-
-def main() -> None:
-    res = factorial(5)
-    print(res)  # 120
-
-
-if __name__ == "__main__":
-    main()

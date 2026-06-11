@@ -59,37 +59,3 @@ def walk2(mi_gong_map: list[list[int]], i: int, j: int) -> bool:
         mi_gong_map[i][j] = 3
     # 可能为 1, 2 , 3
     return False
-
-
-def print_map(mi_gong_map: list[list[int]]) -> None:
-    result = ""
-    for row in mi_gong_map:
-        for value in row:
-            result += " " + str(value)
-        result += "\n"
-    print(result)
-
-
-def main() -> None:
-    # 初始化地图，0 表示通道，1 表示墙
-    mi_gong_map = [
-        [1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 1, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1],
-    ]
-
-    print("探路之前:")
-    print_map(mi_gong_map)
-    # 开始探路, 起点为1,1
-    walk(mi_gong_map, 1, 1)
-    print("探路之后:")
-    print_map(mi_gong_map)
-
-
-if __name__ == "__main__":
-    main()

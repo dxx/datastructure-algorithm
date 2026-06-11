@@ -21,20 +21,3 @@ def insert_val_search(nums: list[int], start: int, end: int, find_val: int) -> i
         return insert_val_search(nums, mid + 1, end, find_val)
     # 查找值和中间值相等，返回下标
     return mid
-
-
-def main() -> None:
-    nums = []
-    # 填充 1 - 100
-    for i in range(1, 101):
-        nums.append(i)
-    value = 58
-    index = insert_val_search(nums, 0, len(nums) - 1, value)
-    if index != -1:
-        print(f"找到 {value}, 下标为 {index}")
-    else:
-        print(f"未找到 {value}")
-
-
-if __name__ == "__main__":
-    main()

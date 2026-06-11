@@ -97,12 +97,3 @@ class Chessboard:
         if point.x - 2 >= 0 and point.y - 1 >= 0:
             points.append(Point(point.x - 2, point.y - 1))
         return points
-
-
-def main() -> None:
-    chessboard = Chessboard(8, 8)
-    chessboard.move(4, 4)
-
-
-if __name__ == "__main__":
-    main()

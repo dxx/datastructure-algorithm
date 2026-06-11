@@ -29,14 +29,3 @@ def violence_search(string: str, match: str) -> int:
     if j == match_length:  # 匹配到，然后返回索引
         return i - j
     return -1
-
-
-def main() -> None:
-    string = "CBC DCABCABABCABD BBCCA"
-    match = "ABCABD"
-    index = violence_search(string, match)
-    print(match + " 在 " + string + " 中的位置为 " + str(index))
-
-
-if __name__ == "__main__":
-    main()

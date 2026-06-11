@@ -178,14 +178,3 @@ def test_double_rotate() -> None:
 
     print("左子树的高度为: ", avl_tree._left_height())
     print("右子树的高度为: ", avl_tree._right_height())
-
-
-def main() -> None:
-    # test_left_rotate()
-    # test_right_rotate()
-    # test_double_rotate()
-    pass
-
-
-if __name__ == "__main__":
-    main()

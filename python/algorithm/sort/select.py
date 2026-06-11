@@ -26,14 +26,3 @@ def swap(nums: list[int], i: int, j: int) -> None:
     temp = nums[i]
     nums[i] = nums[j]
     nums[j] = temp
-
-
-def main() -> None:
-    nums = [3, 5, 7, 1, 2, 4, 9, 6, 8]
-    print("排序前: " + str(nums))
-    select_sort(nums)
-    print("排序后: " + str(nums))
-
-
-if __name__ == "__main__":
-    main()

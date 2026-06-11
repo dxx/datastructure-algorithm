@@ -58,17 +58,3 @@ def fibonacci_search(nums: list[int], find_val: int) -> int:
                 return mid  # 若相等则说明 mid 即为查找到的位置
             return end  # 若 mid > end 则说明是扩展的数值，返回 end
     return -1
-
-
-def main() -> None:
-    value = 100
-    nums = [1, 8, 10, 89, 100, 100, 123]
-    index = fibonacci_search(nums, value)
-    if index != -1:
-        print(f"找到 {value}, 下标为 {index}")
-    else:
-        print(f"未找到 {value}")
-
-
-if __name__ == "__main__":
-    main()

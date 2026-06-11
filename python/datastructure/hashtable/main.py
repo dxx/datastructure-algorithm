@@ -174,14 +174,3 @@ def test_delete_employee() -> None:
 
     print("删除员工后:")
     hashtable.list()
-
-
-def main() -> None:
-    # test_add_employee()
-    # test_update_employee()
-    # test_delete_employee()
-    pass
-
-
-if __name__ == "__main__":
-    main()
