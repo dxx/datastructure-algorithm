@@ -23,7 +23,7 @@ class Edge:
         self.weight = weight  # 边的权值
 
     def __repr__(self) -> str:
-        return f"Edge(start={self.start!r}, end={self.end!r}, weight={self.weight!r})"
+        return f"{self.start}-{self.end}:{self.weight}"
 
 
 class MinTree:
