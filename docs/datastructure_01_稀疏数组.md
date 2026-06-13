@@ -1,6 +1,6 @@
 ## 稀疏数组
 
-> 各种语言实现代码：[Go](../code/golang/datastructure/sparsearray)   [Java](../code/java/datastructure/src/com/dxx/sparsearray)   [JavaScript](../code/javascript/datastructure/sparsearray)   [TypeScript](../code/typescript/datastructure/sparsearray)   [Python](../code/python/datastructure/sparsearray)   [Rust](../code/rust/datastructure/src/sparse_array)
+> 各种语言实现代码：[Go](../code/golang/datastructure/sparsearray)   [Java](../code/java/datastructure/src/com/dxx/sparsearray)   [JavaScript](../code/javascript/datastructure/sparsearray)   [TypeScript](../code/typescript/datastructure/sparsearray)   [Python](../code/python/datastructure/sparse_array)   [Rust](../code/rust/datastructure/src/sparse_array)
 >
 > 默认使用 **Python** 语言实现。
 

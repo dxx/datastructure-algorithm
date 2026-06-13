@@ -1,6 +1,6 @@
 ## 链表
 
-> 各种语言实现代码：[Go](../../code/golang/datastructure/linkedlist)   [Java](../../code/java/datastructure/src/com/dxx/linkedlist)   [JavaScript](../../code/javascript/datastructure/linkedlist)   [TypeScript](../../code/typescript/datastructure/linkedlist)   [Python](../../code/python/datastructure/linkedlist)   [Rust](../../code/rust/datastructure/src/linked_list)
+> 各种语言实现代码：[Go](../../code/golang/datastructure/linkedlist)   [Java](../../code/java/datastructure/src/com/dxx/linkedlist)   [JavaScript](../../code/javascript/datastructure/linkedlist)   [TypeScript](../../code/typescript/datastructure/linkedlist)   [Python](../../code/python/datastructure/linked_list)   [Rust](../../code/rust/datastructure/src/linked_list)
 >
 > 默认使用 **Go** 语言实现。
 
