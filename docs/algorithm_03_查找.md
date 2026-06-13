@@ -1,6 +1,6 @@
 ## 查找
 
->各种语言实现代码：[Go](./golang/algorithm/search)   [Java](./java/algorithm/src/com/dxx/search)   [JavaScript](./javascript/algorithm/search)   [TypeScript](./typescript/algorithm/search)   [Python](./python/algorithm/search)   [Rust](./rust/algorithm/src/search)
+>各种语言实现代码：[Go](../code/golang/algorithm/search)   [Java](../code/java/algorithm/src/com/dxx/search)   [JavaScript](../code/javascript/algorithm/search)   [TypeScript](../code/typescript/algorithm/search)   [Python](../code/python/algorithm/search)   [Rust](../code/rust/algorithm/src/search)
 >
 >默认使用 **Python** 语言实现。
 
@@ -294,7 +294,7 @@ class Test(unittest.TestCase):
 
 ## 二分法查找(非递归)
 
->各种语言实现代码：[Go](./golang/algorithm/binarysearch)   [Java](./java/algorithm/src/com/dxx/binarysearch)   [JavaScript](./javascript/algorithm/binarysearch)   [TypeScript](./typescript/algorithm/binarysearch)   [Python](./python/algorithm/binarysearch)   [Rust](./rust/algorithm/src/binary_search)
+>各种语言实现代码：[Go](../code/golang/algorithm/binarysearch)   [Java](../code/java/algorithm/src/com/dxx/binarysearch)   [JavaScript](../code/javascript/algorithm/binarysearch)   [TypeScript](../code/typescript/algorithm/binarysearch)   [Python](../code/python/algorithm/binarysearch)   [Rust](../code/rust/algorithm/src/binary_search)
 >
 >默认使用 **Python** 语言实现。
 

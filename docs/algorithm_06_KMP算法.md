@@ -1,6 +1,6 @@
 ## KMP 算法
 
->各种语言实现代码：[Go](./golang/algorithm/stringmatch)   [Java](./java/algorithm/src/com/dxx/stringmatch)   [JavaScript](./javascript/algorithm/stringmatch)   [TypeScript](./typescript/algorithm/stringmatch)   [Python](./python/algorithm/stringmatch)   [Rust](./rust/algorithm/src/string_match)
+>各种语言实现代码：[Go](../code/golang/algorithm/stringmatch)   [Java](../code/java/algorithm/src/com/dxx/stringmatch)   [JavaScript](../code/javascript/algorithm/stringmatch)   [TypeScript](../code/typescript/algorithm/stringmatch)   [Python](../code/python/algorithm/stringmatch)   [Rust](../code/rust/algorithm/src/string_match)
 >
 >默认使用 **Python** 语言实现。
 

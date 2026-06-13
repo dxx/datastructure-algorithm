@@ -41,64 +41,64 @@
 
 ## 数据结构
 
-[稀疏数组](./datastructure_01_稀疏数组.md)
+[稀疏数组](./docs/datastructure_01_稀疏数组.md)
 
-[队列](./datastructure_02_队列.md)
+[队列](./docs/datastructure_02_队列.md)
 
-[栈](./datastructure_03_栈.md)
+[栈](./docs/datastructure_03_栈.md)
 
-[链表](./datastructure_04_链表.md)
+[链表](./docs/datastructure_04_链表.md)
 
-[哈希表](./datastructure_05_哈希表.md)
+[哈希表](./docs/datastructure_05_哈希表.md)
 
-[树](./datastructure_06_树.md)
+[树](./docs/datastructure_06_树.md)
 
-[图](./datastructure_07_图.md)
+[图](./docs/datastructure_07_图.md)
 
 ## 算法
 
-[递归](./algorithm_01_递归.md)
+[递归](./docs/algorithm_01_递归.md)
 
-* [迷宫回溯](./algorithm_01_递归.md#迷宫回溯)
+* [迷宫回溯](./docs/algorithm_01_递归.md#迷宫回溯)
 
-* [八皇后](./algorithm_01_递归.md#八皇后)
+* [八皇后](./docs/algorithm_01_递归.md#八皇后)
 
-[排序](./algorithm_02_排序.md)
+[排序](./docs/algorithm_02_排序.md)
 
-* [冒泡排序](./algorithm_02_排序.md#冒泡排序)
-* [选择排序](./algorithm_02_排序.md#选择排序)
-* [插入排序](./algorithm_02_排序.md#插入排序)
-* [快速排序](./algorithm_02_排序.md#快速排序)
-* [希尔排序](./algorithm_02_排序.md#希尔排序)
-* [归并排序](./algorithm_02_排序.md#归并排序)
-* [基数排序](./algorithm_02_排序.md#基数排序)
-* [堆排序](./datastructure_06_树.md#堆排序)
+* [冒泡排序](./docs/algorithm_02_排序.md#冒泡排序)
+* [选择排序](./docs/algorithm_02_排序.md#选择排序)
+* [插入排序](./docs/algorithm_02_排序.md#插入排序)
+* [快速排序](./docs/algorithm_02_排序.md#快速排序)
+* [希尔排序](./docs/algorithm_02_排序.md#希尔排序)
+* [归并排序](./docs/algorithm_02_排序.md#归并排序)
+* [基数排序](./docs/algorithm_02_排序.md#基数排序)
+* [堆排序](./docs/datastructure_06_树.md#堆排序)
 
-[查找](./algorithm_03_查找.md)
+[查找](./docs/algorithm_03_查找.md)
 
-* [线性查找](./algorithm_03_查找.md#线性查找)
-* [二分法查找](./algorithm_03_查找.md#二分法查找)
-* [二分法查找(非递归)](./algorithm_03_查找.md#二分法查找非递归)
-* [插值查找](./algorithm_03_查找.md#插值查找)
-* [斐波那契查找](./algorithm_03_查找.md#斐波那契查找)
+* [线性查找](./docs/algorithm_03_查找.md#线性查找)
+* [二分法查找](./docs/algorithm_03_查找.md#二分法查找)
+* [二分法查找(非递归)](./docs/algorithm_03_查找.md#二分法查找非递归)
+* [插值查找](./docs/algorithm_03_查找.md#插值查找)
+* [斐波那契查找](./docs/algorithm_03_查找.md#斐波那契查找)
 
-[分治算法](./algorithm_04_分治算法.md)
+[分治算法](./docs/algorithm_04_分治算法.md)
 
-* [汉诺塔](./algorithm_04_分治算法.md#汉诺塔)
+* [汉诺塔](./docs/algorithm_04_分治算法.md#汉诺塔)
 
-[动态规划](./algorithm_05_动态规划.md)
+[动态规划](./docs/algorithm_05_动态规划.md)
 
-* [背包问题](./algorithm_05_动态规划.md#背包问题)
+* [背包问题](./docs/algorithm_05_动态规划.md#背包问题)
 
-[KMP算法](./algorithm_06_KMP算法.md)
+[KMP算法](./docs/algorithm_06_KMP算法.md)
 
-* [暴力匹配](./algorithm_06_KMP算法.md#暴力匹配)
-* [KMP匹配](./algorithm_06_KMP算法.md#KMP匹配)
+* [暴力匹配](./docs/algorithm_06_KMP算法.md#暴力匹配)
+* [KMP匹配](./docs/algorithm_06_KMP算法.md#KMP匹配)
 
-[贪心算法](./algorithm_07_贪心算法.md)
+[贪心算法](./docs/algorithm_07_贪心算法.md)
 
-[普里姆(Prim)算法](./algorithm_08_普里姆(Prim)算法.md)
+[普里姆(Prim)算法](./docs/algorithm_08_普里姆(Prim)算法.md)
 
-[克鲁斯卡尔算法](./algorithm_09_克鲁斯卡尔算法.md)
+[克鲁斯卡尔算法](./docs/algorithm_09_克鲁斯卡尔算法.md)
 
-[马踏棋盘算法](./algorithm_10_马踏棋盘算法.md)
+[马踏棋盘算法](./docs/algorithm_10_马踏棋盘算法.md)

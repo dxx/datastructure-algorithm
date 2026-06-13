@@ -1,6 +1,6 @@
 ## 栈(stack)
 
-> 各种语言实现代码：[Go](./golang/datastructure/stack)   [Java](./java/datastructure/src/com/dxx/stack)   [JavaScript](./javascript/datastructure/stack)   [TypeScript](./typescript/datastructure/stack)   [Python](./python/datastructure/stack)   [Rust](./rust/datastructure/src/stack)
+> 各种语言实现代码：[Go](../code/golang/datastructure/stack)   [Java](../code/java/datastructure/src/com/dxx/stack)   [JavaScript](../code/javascript/datastructure/stack)   [TypeScript](../code/typescript/datastructure/stack)   [Python](../code/python/datastructure/stack)   [Rust](../code/rust/datastructure/src/stack)
 >
 > 默认使用 **Python** 语言实现。
 

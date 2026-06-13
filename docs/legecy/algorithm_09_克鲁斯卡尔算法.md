@@ -1,6 +1,6 @@
 ## 克鲁斯卡尔算法
 
->各种语言实现代码：[Go](./golang/algorithm/kruskal)   [Java](java/algorithm/src/com/dxx/kruskal)   [JavaScript](javascript/algorithm/kruskal)   [TypeScript](./typescript/algorithm/kruskal)   [Python](./python/algorithm/kruskal)   [Rust](./rust/algorithm/src/kruskal)
+>各种语言实现代码：[Go](../../code/golang/algorithm/kruskal)   [Java](../../code/java/algorithm/src/com/dxx/kruskal)   [JavaScript](../../code/javascript/algorithm/kruskal)   [TypeScript](../../code/typescript/algorithm/kruskal)   [Python](../../code/python/algorithm/kruskal)   [Rust](../../code/rust/algorithm/src/kruskal)
 >
 >默认使用 **Go** 语言实现。
 

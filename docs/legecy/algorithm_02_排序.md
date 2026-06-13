@@ -1,6 +1,6 @@
 ## 排序
 
-> 各种语言实现代码：[Go](./golang/algorithm/sort)   [Java](./java/algorithm/src/com/dxx/sort)   [JavaScript](./javascript/algorithm/sort)   [TypeScript](./typescript/algorithm/sort)   [Python](./python/algorithm/sort)   [Rust](./rust/algorithm/src/sort)
+> 各种语言实现代码：[Go](../../code/golang/algorithm/sort)   [Java](../../code/java/algorithm/src/com/dxx/sort)   [JavaScript](../../code/javascript/algorithm/sort)   [TypeScript](../../code/typescript/algorithm/sort)   [Python](../../code/python/algorithm/sort)   [Rust](../../code/rust/algorithm/src/sort)
 >
 > 默认使用 **Go** 语言实现。
 

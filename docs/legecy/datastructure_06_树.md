@@ -1,6 +1,6 @@
 ## 树
 
-> 各种语言实现代码：[Go](./golang/datastructure/tree)   [Java](java/datastructure/src/com/dxx/tree)   [JavaScript](javascript/datastructure/tree)   [TypeScript](./typescript/datastructure/tree)   [Python](./python/datastructure/tree)   [Rust](./rust/datastructure/src/tree)
+> 各种语言实现代码：[Go](../../code/golang/datastructure/tree)   [Java](../../code/java/datastructure/src/com/dxx/tree)   [JavaScript](../../code/javascript/datastructure/tree)   [TypeScript](../../code/typescript/datastructure/tree)   [Python](../../code/python/datastructure/tree)   [Rust](../../code/rust/datastructure/src/tree)
 >
 > 默认使用 **Go** 语言实现。
 

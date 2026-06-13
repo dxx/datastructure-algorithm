@@ -1,6 +1,6 @@
 ## 队列(queue)
 
-> 各种语言实现代码：[Go](./golang/datastructure/queue)   [Java](./java/datastructure/src/com/dxx/queue)   [JavaScript](./javascript/datastructure/queue)   [TypeScript](./typescript/datastructure/queue)   [Python](./python/datastructure/queue)   [Rust](./rust/datastructure/src/queue)
+> 各种语言实现代码：[Go](../../code/golang/datastructure/queue)   [Java](../../code/java/datastructure/src/com/dxx/queue)   [JavaScript](../../code/javascript/datastructure/queue)   [TypeScript](../../code/typescript/datastructure/queue)   [Python](../../code/python/datastructure/queue)   [Rust](../../code/rust/datastructure/src/queue)
 >
 > 默认使用 **Go** 语言实现。
 

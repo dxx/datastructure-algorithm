@@ -1,6 +1,6 @@
 ## 哈希表(散列)
 
-> 各种语言实现代码：[Go](./golang/datastructure/hashtable)   [Java](./java/datastructure/src/com/dxx/hashtable)   [JavaScript](./javascript/datastructure/hashtable)   [TypeScript](./typescript/datastructure/hashtable)   [Python](./python/datastructure/hashtable)   [Rust](./rust/datastructure/src/hashtable)
+> 各种语言实现代码：[Go](../../code/golang/datastructure/hashtable)   [Java](../../code/java/datastructure/src/com/dxx/hashtable)   [JavaScript](../../code/javascript/datastructure/hashtable)   [TypeScript](../../code/typescript/datastructure/hashtable)   [Python](../../code/python/datastructure/hashtable)   [Rust](../../code/rust/datastructure/src/hashtable)
 >
 > 默认使用 **Go** 语言实现。
 
