@@ -1,5 +1,5 @@
 import unittest
-from python.datastructure.linkedlist.interview.main import (
+from main import (
     Node, get_last_index_node, get_node_length, reverse_node
 )
 

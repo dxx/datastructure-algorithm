@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
         int_queue.put(3)
         int_queue.put(4)  # 队列已满，无法放入数据
 
-        print("intQueue: ")
+        print("intQueue: ", end="")
         int_queue.show()
 
         num = int_queue.take()
@@ -29,5 +29,5 @@ class Test(unittest.TestCase):
         is_success = int_queue.put(4)
         if not is_success:
             print("入队失败!!!")
-        print("intQueue: ")
+        print("intQueue: ", end="")
         int_queue.show()

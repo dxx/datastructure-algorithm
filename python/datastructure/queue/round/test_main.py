@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
         int_queue.put(4)
         int_queue.put(5)  # 队列已满，无法放入数据，实际上只能放 4 个元素
 
-        print("intQueue: ")
+        print("intQueue: ", end="")
         int_queue.show()
 
         num = int_queue.take()
@@ -30,5 +30,5 @@ class Test(unittest.TestCase):
 
         # 取出数据后可以继续放入数据
         int_queue.put(5)
-        print("intQueue: ")
+        print("intQueue: ", end="")
         int_queue.show()
